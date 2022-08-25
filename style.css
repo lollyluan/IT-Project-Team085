@@ -1,0 +1,52 @@
+/* Set up type and colour */
+:root {
+    /* font size */
+    --text-title-desktop: 64px;
+    --text-subheading-desktop: 40px;
+    --text-content-title: 24px;
+    --text-content: 20px;
+    --text-article: 18px;
+    --text-nav: 15px;
+    --text-tips: 12px;
+
+    /* Fonts */
+    --font-family-body:'Rubik Dirt', cursive;;
+
+    /* Background Colours */
+    --color-background-: #F4F3EE;
+    --color-background-header: #FFFFFF;
+    --color-background-footer: #90A955;
+
+    /* Font Colours */
+    --color-text-white: #ffffff;
+    --color-text-dark: #132A13;
+    --color-text-green: #90A955;
+    --color-text-blank:#000000,0.4;
+}
+
+/****************** font css style ************************/
+
+/****************** header style ************************/
+header{
+    background-color: #FFFFFF;
+    position: fixed;
+    width: 100%;
+    height: 7.5%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    z-index: 100;
+}
+
+nav{
+
+}
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: none;
+}
