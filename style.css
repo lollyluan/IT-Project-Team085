@@ -28,7 +28,7 @@
 
 /****************** header style ************************/
 header{
-    background-color: #FFFFFF;
+    background-color: var(--color-text-white);
     position: fixed;
     width: 100%;
     height: 7.5%;
@@ -43,10 +43,24 @@ nav{
 }
 
 
+/******************** container *****************************/
 
+
+/****************** body css style ************************/
 * {
     margin: 0;
     padding: 0;
     border: 0;
     outline: none;
+    background-color: var(--color-background-);
 }
+
+body { 
+    background-color: var(--color-background-);
+    display: flex;
+    flex-direction: column;
+    width: 100%; 
+    height:100%;
+    background-attachment: fixed;
+}
+
