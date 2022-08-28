@@ -25,20 +25,19 @@
 }
 
 /****************** font css style ************************/
-h1{
-    font-size: var(--text-title-desktop);
-}
+h1{font-size: var(--text-title-desktop);
+    text-align: center;
+    padding-top: 5%;}
 
-h2{
-    font-size: var(--text-subheading-desktop);
-}
+h2{font-size: var(--text-subheading-desktop);}
 
-h3{
-    font-size: var(--text-content-title);
-}
+h3{font-size: var(--text-content-title);}
 /****************** style ************************/
 
+/******************** container *****************************/
 
+
+/****************** body css style ************************/
 * {
     margin: 0;
     padding: 0;
@@ -74,10 +73,6 @@ h3{
     background-color:  rgba(241, 242, 245, 0.7);;
 }
 
-h1{
-    text-align: center;
-    padding-top: 5%;
-}
 
 
 body{
