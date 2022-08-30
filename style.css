@@ -98,6 +98,8 @@ h3{font-size: var(--text-content-title);}
 /******************** container *****************************/
 .research{padding-left: 5%;}
 .research_box{border: none;}
+.container_login{padding-top: 8%;}
+.container_login h2{padding-bottom: 4%;}
 
 .research_bar{
     margin-top: 4%;
@@ -127,6 +129,7 @@ h3{font-size: var(--text-content-title);}
     background-color:  rgba(241, 242, 245, 0.7);
     border-radius: 10px;
 }
+
 
 
     
