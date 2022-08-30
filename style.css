@@ -52,10 +52,25 @@ h3{font-size: var(--text-content-title);}
     border: 1px solid #90A955;
 }
 
+.btn{border-radius: 10px;}
+.rbtn{padding: 0.4rem 2.5rem;}
+.sbtn{   
+    text-align: center;
+    width: 41%; 
+    margin-left: 6%;
+    margin-top:5%;
+}
+
 .btn-success{
     background-color:var(--color-text-green);
     border: 1px solid #90A955;
 }
+
+.btn-outline-success {
+    background-color:var(--color-background-);
+    border-color: var(--color-text-green);
+}
+
 
 
 /******************* element state ****************************/
@@ -72,6 +87,12 @@ h3{font-size: var(--text-content-title);}
     color:var(--color-background-);
     background-color:var(--color-text-green);
     border-color: var(--color-text-green);
+}
+
+.btn-outline-success:hover {
+    color: #fff;
+    background-color: var(--color-text-green);
+    border-color:var(--color-text-green);
 }
 
 /******************** container *****************************/
@@ -98,6 +119,18 @@ h3{font-size: var(--text-content-title);}
 }
 
 
+.container-lg{
+    height:80%;
+    width: 80%;
+    margin-top:10%;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    background-color:  rgba(241, 242, 245, 0.7);
+    border-radius: 10px;
+}
+
+
+    
+
 /****************** body css style ************************/
 
 * {
@@ -105,6 +138,15 @@ h3{font-size: var(--text-content-title);}
     padding: 0;
     border: 0;
     outline: none;
+}
+
+.Logo{display: table;}
+.Logo h1{
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    width: 100%;
+    font-style: var(--font-family-body);
 }
 
 body{background-color: var(--color-background-);}
@@ -139,6 +181,11 @@ footer{background-color:var(--color-background-footer);}
     background-color:  rgba(241, 242, 245, 0.7);
 }
 
+.product-list .card{ 
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
 
 .product-list{ 
     display: grid; 
@@ -148,7 +195,26 @@ footer{background-color:var(--color-background-footer);}
     margin-right: 6.5%;
 }
 
-.card{ 
-    margin-top: 1rem;
-    margin-bottom: 1rem;
+.row1{
+    display: flex;
+    flex-wrap: nowrap;
 }
+
+
+.short_input{width: 41%;}
+.long_input{width: 88%;}
+.form-check-inline, .long_input, .short_input{
+    margin-left: 6%;
+    margin-top:5%;
+}
+
+.container h2{
+    text-align: center;
+    padding-top: 7%;
+}
+
+.center{
+    text-align: center;
+    padding-top: 5%;
+}
+
