@@ -157,9 +157,8 @@ footer{background-color:var(--color-background-footer);}
 
 
 .initial-img{
-    background-image:url(images/homepage_cat.jpg);
+    background-image:url(images/home_cat.png);
     background-repeat:no-repeat;
-    height:950px;
 }
 
 .container-fluid{
