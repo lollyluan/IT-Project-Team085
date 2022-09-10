@@ -1,127 +1,43 @@
 <!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="Web site created using create-react-app"
+    />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <!--
+      manifest.json provides metadata used when your web app is installed on a
+      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+    -->
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <!--
+      Notice the use of %PUBLIC_URL% in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
-    <link href="./style.css" rel="stylesheet" type="text/css">
-</head>
+      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+    <title>Pets Home</title>
+  </head>
+  <body>
+    <!-- <noscript>You need to enable JavaScript to run this app.</noscript> -->
+    <div id="root"></div>
+    <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
 
-<body>
-    <nav class="navbar navbar-expand-lg bg-white">
-        <a class="navbar-brand disabled" href="#">PetHome</a>
-        <div class="collapse navbar-collapse" id="collapsibleNavbar">
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link" href="#">Donation</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Location</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Finance</a>
-            </li>    
-            <li class="nav-item">
-                <a class="nav-link" href="#">Support</a>
-              </li>   
-          </ul>
-        </div>  
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
 
-        <div class="">
-            <a href="#" class="btn btn-outline-success" role="button">Log in</a>
-            <a href="#" class="btn btn-success" role="button">Register</a>
-        </div>     
-      </nav>
-
-    <main>
-    <div class="initial-img">
-        <h1>ANIMALS PLAY A MEANINGFUL ROLE IN OUR LIVES</h1>
-    <div class="container-fluid">
-      <div class="row">
-        <article class="container container-lg col-lg-2">
-         <div class="card" >
-            <img src="images/adoption.jpg" class="rounded-circle" alt="Adopt" width="85" height="85">
-            <h3  class="card-title">Adopt a Pet</h3>
-            <p>Tens of thousands of pets are homeless every year and they deserve better, please give them a home.</p>
-            <button type="button" class="btn btn-link">Learn more.</button>
-        </div>
-        </article>
-
-        <article class="container container-lg col-lg-2">
-          <div class="card">
-            <img src="images/donation.jpg" class="rounded-circle" alt="Adopt" width="85" height="85">
-            <h3 class="card-title">Donate</h3>
-            <p>Pets are man's best friend, and a little kindness from you can bring them more hope and care.</p>
-            <button type="button" class="btn btn-link">Learn more.</button>
-          </div>
-        </article>
-    
-
-        <article class="container container-lg col-lg-2">
-         <div class="card">
-            <img src="images/volunteer.jpg" class="rounded-circle" alt="Adopt" width="85" height="85">
-            <h3 class="card-title">Volunteers</h3>
-            <p>With hundreds of volunteers already on board, we are a trusted team and welcome every caring individual.</p>
-            <button type="button" class="btn btn-link">Learn more.</button>
-         </div>
-        </article>
-       </div>
-    </div>
-</div>
-
-    <article class="container">
-        <h2>About Us</h2>
-        <h3>Around us, there is such a group of pets -
-
-            They live in the open and in the cold, and struggle to survive in the harsh environment.
-   
-            They have a low survival rate, with an average life expectancy of 3 years.
-   
-             They suffer from diseases and usually die within a very short period of time.
-   
-             They are the stray animals in urgent need of human rescue - "fur kids"</h3>
-        <h3>Public Welfare Business Development Center has long been dedicated to helping the needy groups, 
-            carrying out poverty relief work, providing material and spiritual comfort for the needy groups,
-            and providing services for social organizations, and in recent years has been committed to: 
-            professional fundraising communication services.</h3>
-    </article>
-
-    </main>
-
-    <footer>
-        
-     <nav class="navbar navbar-expand-lg">
-        <a class="navbar-brand disabled" href="#">PetHome</a>
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link" href="#">Support</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Community</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Company</a>
-            </li>   
-            <li class="nav-item">
-                <a class="nav-link" href="#">Help desk</a>
-            </li>   
-            <li class="nav-item">
-                <a class="nav-link" href="#">Blog</a>
-            </li>    
-            <li class="nav-item">
-                <a class="nav-link" href="#">Resources</a>
-            </li> 
-        </ul>
-    </nav>
-    
-        <p>© Pets Home. 2022. We love our users!</p>
-
-    </footer>
-
-<script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
-<script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
-<script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
-
-</body>
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
+  </body>
 </html>
