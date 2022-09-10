@@ -70,25 +70,7 @@ async function postPet(reqBody){
     });
 }
 
-const fakedata = {
-    "category": "CAT",
-    "picture": [
-      ""
-    ],
-    "nickname": "string",
-    "detail": "string",
-    "color": "RED",
-    "sex": "MALE",
-    "age": 0,
-    "character": "string",
-    "immunization": "YES"
-  }
-  const query = {
-    "category": "CAT",
-    "sex": "",
-    "immunization": "YES"
-  }
-  //getPets(1, query)
+
   
   async function deletePet(id){
     const request = {
