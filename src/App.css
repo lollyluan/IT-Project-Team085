@@ -1,0 +1,222 @@
+/* Set up type and colour */
+:root {
+    /* font size */
+    --text-title-desktop: 64px;
+    --text-subheading-desktop: 40px;
+    --text-content-title: 24px;
+    --text-content: 20px;
+    --text-article: 18px;
+    --text-nav: 15px;
+    --text-tips: 12px;
+
+    /* Fonts */
+    --font-family-body:'Rubik Dirt', cursive;;
+
+    /* Background Colours */
+    --color-background-: #F4F3EE;
+    --color-background-header: #FFFFFF;
+    --color-background-footer: #90A955;
+
+    /* Font Colours */
+    --color-text-white: #ffffff;
+    --color-text-dark: #132A13;
+    --color-text-green: #90A955;
+    --color-text-blank:#000000,0.4;
+}
+
+/****************** font css style ************************/
+.navbar-brand{font-style: var(--font-family-body);}
+
+h1{font-size: var(--text-title-desktop);
+    text-align: center;
+    padding-top: 5%;}
+
+h2{font-size: var(--text-subheading-desktop);}
+
+h3{font-size: var(--text-content-title);}
+
+/****************** icon ************************/
+.research_icon{width: 3%;}
+
+
+/*********************** button *****************/
+.pagination{
+    float: right;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+}
+
+.page-link{
+    color: var(--color-background-footer);
+    background-color: var(--color-background-);
+    border: 1px solid #90A955;
+}
+
+.btn{border-radius: 10px;}
+.rbtn{padding: 0.4rem 2.5rem;}
+.sbtn{   
+    text-align: center;
+    width: 41%; 
+    margin-left: 6%;
+    margin-top:5%;
+}
+
+.btn-success{
+    background-color:var(--color-text-green);
+    border: 1px solid #90A955;
+}
+
+.btn-outline-success {
+    background-color:var(--color-background-);
+    border-color: var(--color-text-green);
+}
+
+
+
+/******************* element state ****************************/
+
+.form-control:focus {
+    color: #495057;
+    background-color:var(--color-background-);
+    border-color: none;
+    outline: 0;
+}
+
+.page-item.active .page-link {
+    z-index: 3;
+    color:var(--color-background-);
+    background-color:var(--color-text-green);
+    border-color: var(--color-text-green);
+}
+
+.btn-outline-success:hover {
+    color: #fff;
+    background-color: var(--color-text-green);
+    border-color:var(--color-text-green);
+}
+
+/******************** container *****************************/
+.research{padding-left: 5%;}
+.research_box{border: none;}
+.container_login{padding-top: 8%;}
+.container_login h2{padding-bottom: 4%;}
+
+.research_bar{
+    margin-top: 4%;
+    margin-bottom: 2%;
+    border: 1px solid #90A955;
+    box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    display: inline-flex;
+}
+
+.form-control{
+    background-color: var(--color-background-);
+    height: auto;
+}
+
+.swich{
+    margin-top: 3%;
+    margin-bottom: 2%;
+}
+
+
+.container-lg{
+    height:80%;
+    width: 80%;
+    margin-top:10%;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    background-color:  rgba(241, 242, 245, 0.7);
+    border-radius: 10px;
+}
+
+
+
+    
+
+/****************** body css style ************************/
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: none;
+}
+
+.Logo{display: table;}
+.Logo h1{
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    width: 100%;
+    font-style: var(--font-family-body);
+}
+
+body{background-color: var(--color-background-);}
+footer{background-color:var(--color-background-footer);}
+
+
+.initial-img{
+    background-image:url(images/home_cat.png);
+    background-repeat:no-repeat;
+}
+
+.container-fluid{
+    width:100%;
+    padding-top:10%;
+    padding-left:10%;
+    padding-right:10%;
+    padding-bottom: 5%;
+}
+
+.container-sm{
+    display: flex;
+    align-items: stretch;
+
+}
+
+.card{
+    text-align: center;
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    background-color:  rgba(241, 242, 245, 0.7);
+}
+
+.product-list .card{ 
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+
+.product-list{ 
+    display: grid; 
+    grid-template-columns: 18% 18% 18% 18% 18%; 
+    grid-column-gap: 3%; 
+    margin-left:6.5%;
+    margin-right: 6.5%;
+}
+
+.row1{
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+
+.short_input{width: 41%;}
+.long_input{width: 88%;}
+.form-check-inline, .long_input, .short_input{
+    margin-left: 6%;
+    margin-top:5%;
+}
+
+.container h2{
+    text-align: center;
+    padding-top: 7%;
+}
+
+.center{
+    text-align: center;
+    padding-top: 5%;
+}
+
