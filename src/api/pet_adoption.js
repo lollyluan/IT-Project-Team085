@@ -12,7 +12,7 @@ const reqBody = {
 
 
 app.get('/', function(req, res){
-    console.log(deleteAdoptionApplication(6));
+    console.log(updateAdoptionApplication(17, 'COMPLETE'));
     res.send("sent");
 });
 
@@ -120,7 +120,7 @@ async function getAdoption(token){
   
   async function deleteAdoptionApplication(petId){
     const request = {
-        headers: {'Content-Type': 'application/json'},
+       
         method: 'DELETE',
         headers: {'Content-Type': 'application/json',
         'Authorization':'Bearer '+ token}
@@ -150,4 +150,37 @@ async function getAdoption(token){
         //alert('Something went wrong!');
     });
 
+  }
+
+  async function updateAdoptionApplication(id, status){
+    const request = {
+       //some admin authentication
+        method: 'PUT',
+        headers: {'Content-Type': 'application/json'},
+        body:status
+       
+    }
+    //add authentication here
+   
+    var url = BASE_URL + '/admin/adoption/application/'+id +"?applicationstatus="+status;
+ 
+    fetch(url, request)
+    
+    .then(res => {
+        console.log(res)
+        if(res.ok) {
+            return res.json();
+        }
+        else {
+            return Promise.reject();
+        }
+    })
+    .then(data => {
+       
+       //alert("Successfully submit!")
+    })
+    .catch(err => {
+        //console.log(err);
+        //alert('Something went wrong!');
+    });
   }
