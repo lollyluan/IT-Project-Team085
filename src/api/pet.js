@@ -6,24 +6,46 @@ var express = require("express");
 var app = express();
 
 app.get('/', function(req, res){
-    res.send(deletePet(18));
+    res.send(getPet(1));
+    
 });
 
 // Only works on 3000 regardless of what I set environment port to or how I set [value] in app.set('port', [value]).
 app.listen(3000);
+
+async function getPet(id){
+    var url = BASE_URL + "/pets/" + id;
+    const request = {
+        method: 'GET',
+       
+    }
+    return fetch(url, request)
+    .then(res => {
+        if(res.ok) {
+            return res.json();
+        }
+        else {
+            return Promise.reject();
+        }
+    })
+    .then(data => {
+        console.log(data)
+        return data
+    })  
+}
 async function getPets(pageNo, query) {
-    var url = BASE_URL + '/pet/'+pageNo+"?" ;
-    console.log(url)
+    var url = BASE_URL + '/pets/'+pageNo+"?" +"page="+pageNo;
+    
     const request = {
     method: 'GET',
    
     }
     for(attr in query){
         if(query[attr] !== "" || query !== null){
-            url = url + (attr + "=" + query[attr]+"&")
+            url = url + ("&"+attr + "=" + query[attr])
         }
     }
-    console.log(url)
+    
     return fetch(url, request)
     .then(res => {
         if(res.ok) {
@@ -46,9 +68,9 @@ async function postPet(reqBody){
        
     }
     //add authentication here
-    console.log(request);
+   
     var url = BASE_URL + '/admin/pets' ;
-    console.log(url)
+
     fetch(url, request)
     
     .then(res => {
@@ -95,7 +117,7 @@ async function postPet(reqBody){
         }
     })
     .then(data => {
-        console.log(data);
+       
        //alert("Successfully submit!")
     })
     .catch(err => {
@@ -104,3 +126,5 @@ async function postPet(reqBody){
     });
 
   }
+  //export {getPets, postPet, deletePet}
+  module.exports ={getPets, postPet, deletePet};
