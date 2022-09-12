@@ -1,23 +1,24 @@
 
-
+import React from "react";
 import pkg from 'jwt-decode';
 const {jwt_decode} = pkg;
 import { BehaviorSubject } from 'rxjs';
 import express from"express"
-
+import { useState } from "react";
 const BASE_URL = "http://localhost:8080/api/v1"
 //process.env.REACT_APP_BASE_URL
 
 //const currentUserSubject = new BehaviorSubject(JSON.parse(localStorage.getItem('currentUser')));
 //const currentUser=currentUserSubject.asObservable()
-import Window from 'window' 
+
 const jsdomConfig = { userAgent: 'Custom UA' };
-const window = new Window();
+var token = ""
 var app = express();
-app.get('/', function(req, res){
-    res.send(login('yuntaol@student.unimelb.edu.au', '123456'))
+app.get('/login', function(req, res){
+    login("luyuntao2019@student.unimelb.edu.au", "123456")
+    res.send(isLoggedIn())
 });
-app.listen(3000);
+//app.listen(3000);
 function login(email, password) {
     const url = BASE_URL + '/auth/user/login';
     const requestInit = {
@@ -33,7 +34,7 @@ function login(email, password) {
     fetch(url, requestInit)
     .then(res => {
         if(res.ok) {
-          
+            console.log(res)
             return res.json();
             
         }
@@ -42,11 +43,11 @@ function login(email, password) {
         }
     })
     .then(user => {
-     
+      
         // store user details and jwt token in local storage to keep user logged in between page refreshes
-        window.localStorage.setItem('currentUser', JSON.stringify(user));
+        token = user.token;
         
-        currentUserSubject.next(user);
+       
 
         return user;
     })
@@ -56,7 +57,7 @@ function login(email, password) {
     });
 }
 
-function signUp(username, password, email, phoneNumber, postcode, address) {
+function signUp(email, password, firstname, lastname) {
     const url = BASE_URL + '/auth/user/register';
     const requestInit = {
         method: 'POST',
@@ -73,7 +74,7 @@ function signUp(username, password, email, phoneNumber, postcode, address) {
 
     fetch(url, requestInit)
     .then(res => {
-        console.log(res);
+        
         if(res.ok) {
             return res.json();
         }
@@ -82,20 +83,22 @@ function signUp(username, password, email, phoneNumber, postcode, address) {
         }
     })
     .then(data => {
-        setCookie('token', data.token, data.expiresIn)
-        document.location.href = '/home';
+        console.log(data);
+        //document.location.href = '/home';
     })
     .catch(() => alert('Failed to sign up, try again'));
 }
 
 function isLoggedIn() {
-    return getCookie('token') !== '';
+    return token != '';
 }
-
+function getToken(){
+    return token;
+}
 function getUserId() {
     if(isLoggedIn()) {
         
-        const jwt =jwt_decode(getCookie('token'))
+        const jwt =jwt_decode(token)
 
         return jwt.userId;
     } 
@@ -103,6 +106,7 @@ function getUserId() {
 }
 
 export {
+    getToken,
     login,
     signUp,
     isLoggedIn,

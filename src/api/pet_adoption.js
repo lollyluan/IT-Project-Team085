@@ -2,18 +2,23 @@
 const BASE_URL = "http://localhost:8080/api/v1"
 //process.env.REACT_APP_BASE_URL
 //It's just used for testing
-var express = require("express");
+import {getToken, login, isLoggedIn} from './login.js'
+import express from"express"
 var app = express();
-const token = 'eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ5dW50YW9sQHN0dWRlbnQudW5pbWVsYi5lZHUuYXUiLCJzY29wZXMiOltdLCJ1c2VySWQiOjE5LCJpc3MiOiJodHRwczovL3BldHNob21lLmNvbSIsImlhdCI6MTY2Mjg1NzUzOCwiZXhwIjoxNjYyODc1NTM4fQ.yxubFh7dlVpZEWCfJ6Xv0vOHH_oc6xrPKia3HoDArFw';
+
 const reqBody = {
     reason: "string",
     passport: "string"
 };
 
 
-app.get('/', function(req, res){
-    console.log(updateAdoptionApplication(17, 'COMPLETE'));
+app.get('/adoption', function(req, res){
+    console.log(getAdoption(getToken()));
     res.send("sent");
+});
+app.get('/login', function(req, res){
+    login("luyuntao2019@gmail.com", "123456")
+    res.send(isLoggedIn())
 });
 
 // Only works on 3000 regardless of what I set environment port to or how I set [value] in app.set('port', [value]).
