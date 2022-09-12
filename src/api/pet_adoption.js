@@ -3,34 +3,17 @@ const BASE_URL = "http://localhost:8080/api/v1"
 //process.env.REACT_APP_BASE_URL
 //It's just used for testing
 import {getToken, login, isLoggedIn} from './login.js'
-import express from"express"
-var app = express();
-
-const reqBody = {
-    reason: "string",
-    passport: "string"
-};
 
 
-app.get('/adoption', function(req, res){
-    console.log(getAdoption(getToken()));
-    res.send("sent");
-});
-app.get('/login', function(req, res){
-    login("luyuntao2019@gmail.com", "123456")
-    res.send(isLoggedIn())
-});
 
-// Only works on 3000 regardless of what I set environment port to or how I set [value] in app.set('port', [value]).
-app.listen(3000);
-
-async function postAdoptionApplication(petId, reqBody, token) {
+//add new adoption application
+async function postAdoptionApplication(petId, reqBody) {
     var url = BASE_URL + '/adoption/application/'+petId ;
    
     const request = {
         method: 'POST',
         headers: {'Content-Type': 'application/json',
-        'Authorization':'Bearer '+ token},
+        'Authorization':'Bearer '+ getToken()},
         
         //getCookie('token')},
         body: JSON.stringify(reqBody)
@@ -55,10 +38,11 @@ async function postAdoptionApplication(petId, reqBody, token) {
         //alert('Something went wrong!');
     });
 }
-async function getAdoptionApplication(token){
+//Get all of adoption application of a user
+async function getAdoptionApplication(){
     const request = {
         headers: {'Content-Type': 'application/json',
-        'Authorization':'Bearer '+ token},
+        'Authorization':'Bearer '+ getToken()},
         method: 'GET',
        
        
@@ -88,11 +72,11 @@ async function getAdoptionApplication(token){
     });
 }
 
-
-async function getAdoption(token){
+// get the detail of successful adoption
+async function getAdoption(){
     const request = {
         headers: {'Content-Type': 'application/json',
-        'Authorization':'Bearer '+ token},
+        'Authorization':'Bearer '+ getToken()},
         method: 'GET',
        
        
@@ -122,7 +106,7 @@ async function getAdoption(token){
     });
 }
 
-  
+  //Delete the adoption application
   async function deleteAdoptionApplication(petId){
     const request = {
        
@@ -156,7 +140,7 @@ async function getAdoption(token){
     });
 
   }
-
+//update the status of adoption application
   async function updateAdoptionApplication(id, status){
     const request = {
        //some admin authentication

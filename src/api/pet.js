@@ -2,16 +2,9 @@
 const BASE_URL = "http://localhost:8080/api/v1"
 //process.env.REACT_APP_BASE_URL
 //It's just used for testing
-var express = require("express");
-var app = express();
 
-app.get('/', function(req, res){
-    res.send(getPet(1));
-    
-});
 
-// Only works on 3000 regardless of what I set environment port to or how I set [value] in app.set('port', [value]).
-app.listen(3000);
+import {getToken, login, isLoggedIn} from './login.js'
 
 async function getPet(id){
     var url = BASE_URL + "/pets/" + id;

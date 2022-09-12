@@ -1,10 +1,7 @@
 
-import React from "react";
 import pkg from 'jwt-decode';
 const {jwt_decode} = pkg;
-import { BehaviorSubject } from 'rxjs';
-import express from"express"
-import { useState } from "react";
+
 const BASE_URL = "http://localhost:8080/api/v1"
 //process.env.REACT_APP_BASE_URL
 
@@ -13,12 +10,12 @@ const BASE_URL = "http://localhost:8080/api/v1"
 
 const jsdomConfig = { userAgent: 'Custom UA' };
 var token = ""
-var app = express();
+/*var app = express();
 app.get('/login', function(req, res){
     login("luyuntao2019@student.unimelb.edu.au", "123456")
     res.send(isLoggedIn())
 });
-//app.listen(3000);
+app.listen(3000);*/
 function login(email, password) {
     const url = BASE_URL + '/auth/user/login';
     const requestInit = {
