@@ -1,0 +1,16 @@
+:root {
+    /* Background Colours */
+    --color-background-: #F4F3EE;
+    --color-background-header: #FFFFFF;
+    --color-background-footer: #90A955;
+
+    /* Font Colours */
+    --color-text-white: #ffffff;
+    --color-text-dark: #132A13;
+    --color-text-green: #90A955;
+    --color-text-blank:#000000,0.4;
+}
+
+
+
+footer{background-color:var(--color-background-footer);}
