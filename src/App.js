@@ -1,13 +1,14 @@
-// import logo from './logo.svg';
 import './App.css';
-import LoginPage from './pages/Login/login';
+import PetList from './pages/Petlist/petList';
+
 
 function App() {
   return (
     <div className="App">
-      <LoginPage/>
+      <PetList/>
     </div>
   );
 }
 
 export default App;
+//<LoginPage/>
