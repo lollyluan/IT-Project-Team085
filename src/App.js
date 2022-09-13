@@ -1,10 +1,10 @@
 import './App.css';
-import SearchBar from './Components/searchBar';
+import PageNumber from './Components/pageNumber';
 
 function App() {
   return (
     <div className="App">
-      <SearchBar/>
+      <PageNumber/>
     </div>
   );
 }
