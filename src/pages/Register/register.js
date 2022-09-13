@@ -26,8 +26,7 @@ function SignUp() {
     const handleSignUp = function() {
         if(email!== '' && password !== '') {
             if(password === password2) {
-                alert(email);
-                alert(password)
+             
                signUp(email, password, firstname, lastname)
             }else {
                 alert('Double check your password!');
@@ -37,16 +36,13 @@ function SignUp() {
             alert('Enter username and password!');
         }
     }    
-    const [step, setStep] = useState(0);
-    const [timeoutId, setTimeoutId] = useState(0);
-    const [options, setOptions] = useState([]);
-
+ 
 
 
     return(
            
                 <form class='login-form'>
-                    {
+                    
                         step === 0 ? 
                         <div >
 
@@ -66,16 +62,14 @@ function SignUp() {
                             <label>Re-enter Password</label><br/>
 
                             <input className='inputField' type='password' value={password2} onChange={handleChangePassword2}></input><br/>
-                            <div className='navigate-button' style={{textAlign: 'right'}} onClick={()=>setStep(1)}>{'next >>'}</div>
-                        </div> :
-                        <div>
-                            <div className='navigate-button' style={{textAlign: 'left'}} onClick={()=>setStep(0)}>{'<< go back'}</div>
+                        
+       
                            
                             <div className='button' onClick={handleSignUp}>
                                 Sign Up
                             </div>
                         </div>
-                    }
+                    
                 </form>
       
     )
