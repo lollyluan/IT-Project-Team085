@@ -8,8 +8,8 @@ import Button from 'react-bootstrap/Button';
 
 function PetList() {
   return (
-    <Row xs={1} md={3} className="g-4">
-      {Array.from({ length: 24 }).map((_, idx) => (
+    <Row xs={1} md={5} className="g-4">
+      {Array.from({ length: 15 }).map((_, idx) => (
         <Col>
           <Card>
             <Card.Img variant="top" src={img} />

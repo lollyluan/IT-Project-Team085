@@ -1,14 +1,12 @@
 import './App.css';
-import PetList from './pages/Petlist/petList';
-
+import SearchBar from './Components/searchBar';
 
 function App() {
   return (
     <div className="App">
-      <PetList/>
+      <SearchBar/>
     </div>
   );
 }
 
 export default App;
-//<LoginPage/>
