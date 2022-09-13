@@ -8,14 +8,9 @@ const BASE_URL = "http://localhost:8080/api/v1"
 //const currentUserSubject = new BehaviorSubject(JSON.parse(localStorage.getItem('currentUser')));
 //const currentUser=currentUserSubject.asObservable()
 
-const jsdomConfig = { userAgent: 'Custom UA' };
+
 var token = ""
-/*var app = express();
-app.get('/login', function(req, res){
-    login("luyuntao2019@student.unimelb.edu.au", "123456")
-    res.send(isLoggedIn())
-});
-app.listen(3000);*/
+
 function login(email, password) {
     const url = BASE_URL + '/auth/user/login';
     const requestInit = {
@@ -31,7 +26,7 @@ function login(email, password) {
     fetch(url, requestInit)
     .then(res => {
         if(res.ok) {
-            console.log(res)
+            alert("Logged in successfully")
             return res.json();
             
         }
@@ -43,14 +38,14 @@ function login(email, password) {
       
         // store user details and jwt token in local storage to keep user logged in between page refreshes
         token = user.token;
-        
+        console.log(JSON.stringify(user))
        
 
         return user;
     })
     .catch((e) => {
         console.log('Failed to sign in, try again ' + e);
-        //document.location.href = '/home';
+        document.location.href = '/home';
     });
 }
 
@@ -83,11 +78,12 @@ function signUp(email, password, firstname, lastname) {
         console.log(data);
         //document.location.href = '/home';
     })
-    .catch(() => alert('Failed to sign up, try again'));
+    .catch((e) => {alert('Failed to sign up, try again');
+    console.log(e)});
 }
 
 function isLoggedIn() {
-    return token != '';
+    return token !== '';
 }
 function getToken(){
     return token;
