@@ -2,13 +2,15 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Header from '../../Components/header';
 import Footer from '../../Components/footer';
+import HomeCard from '../../Components/HomeCard';
 
 
 function HomePage(){
     return(
     <div>
         <Header/>
-
+        <h1>ANIMALS PLAY A MEANINGFUL ROLE IN OUR LIVES</h1>
+        <HomeCard/>
     <article className="container">
         <h2>About Us</h2>
         <h3>Around us, there is such a group of pets -
