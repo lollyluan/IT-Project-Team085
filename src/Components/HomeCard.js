@@ -6,8 +6,7 @@ import { CardTitle} from 'reactstrap';
 import { Row } from 'reactstrap';
 import { Col } from 'reactstrap';
 
-
-function homeCard (){
+function HomeCard (){
     return(
 <Row>
 <Col sm="2">
@@ -31,9 +30,11 @@ function homeCard (){
     <CardText>
     Pets are man's best friend, and a little kindness from you can bring them more hope and care.
     </CardText>
+  
     <li className="nav-item">
         <a className="nav-link" href="#">Learn More.</a>
     </li>
+
   </CardBody>
 </Col>
 
@@ -54,4 +55,4 @@ function homeCard (){
     );
 }
 
-export default homeCard
+export default HomeCard
