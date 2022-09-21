@@ -1,32 +1,31 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { NavbarBrand,Nav, NavItem, NavLink,Button } from 'reactstrap';
+
+
 
 function Header (){
     return (
-        <nav className="navbar navbar-expand-lg bg-white">
-        <a className="navbar-brand disabled" href="#">PetHome</a>
-        <div className="collapse navbar-collapse" id="collapsibleNavbar">
-          <ul className="navbar-nav">
-            <li className="nav-item">
-              <a className="nav-link" href="#">Donation</a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="#">Location</a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="#">Finance</a>
-            </li>    
-            <li className="nav-item">
-                <a className="nav-link" href="#">Support</a>
-              </li>   
-          </ul>
-        </div>  
+      <header>
+        <Nav>
+        <NavbarBrand href="/">Pets Home</NavbarBrand>
+          <NavItem>
+            <NavLink href="#">Donation</NavLink>
+          </NavItem>
+          <NavItem>
+            <NavLink href="#">Location</NavLink>
+          </NavItem>
+          <NavItem>
+            <NavLink href="#">Finance</NavLink>
+          </NavItem>
+          <NavItem>
+            <NavLink href="#">Support</NavLink>
+          </NavItem>
+        <Button className='btn' outline color="success">Login</Button>{' '}
+        <Button className='btn' color="success">Register</Button>{' '}
+        </Nav>
 
-        <div className="">
-            <a href="./pages/Login/login" className="btn btn-outline-success" role="button">Log in</a>
-            <a href="#" className="btn btn-success" role="button">Register</a>
-        </div>     
-      </nav>
+      </header>
     );
 }
 

@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 
-import {login, signUp} from '../../api/login'
+import {login, signUp} from '../../api/login';
 
 
 

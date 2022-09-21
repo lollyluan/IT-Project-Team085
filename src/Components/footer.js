@@ -1,32 +1,32 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { NavbarBrand,Nav, NavItem, NavLink } from 'reactstrap';
+
 
 function Footer (){ 
     return(
-        <footer>
-        <article className="navbar navbar-expand-lg">
-        <a className="navbar-brand disabled" href="#">PetHome</a>
-        <ul className="navbar-nav">
-            <li className="nav-item">
-              <a className="nav-link" href="#">Support</a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="#">Community</a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="#">Company</a>
-            </li>   
-            <li className="nav-item">
-                <a className="nav-link" href="#">Help desk</a>
-            </li>   
-            <li className="nav-item">
-                <a className="nav-link" href="#">Blog</a>
-            </li>    
-            <li className="nav-item">
-                <a className="nav-link" href="#">Resources</a>
-            </li> 
-        </ul>
-        </article>
+    <footer>
+      <Nav>
+        <NavbarBrand href="/">Pets Home</NavbarBrand>
+          <NavItem>
+            <NavLink href="#">Support</NavLink>
+          </NavItem>
+          <NavItem>
+            <NavLink href="#">Community</NavLink>
+          </NavItem>
+          <NavItem>
+            <NavLink href="#">Company</NavLink>
+          </NavItem>
+          <NavItem>
+            <NavLink href="#">Help desk</NavLink>
+          </NavItem>
+          <NavItem>
+            <NavLink href="#">Blog</NavLink>
+          </NavItem>
+          <NavItem>
+            <NavLink href="#">Resources</NavLink>
+          </NavItem>
+        </Nav>
         <p>© Pets Home. 2022. We love our users!</p>
         </footer>
     ); 
