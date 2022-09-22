@@ -1,6 +1,6 @@
 // import React, {userState} from react;
 // import { pets } from "../../mock_server/pets";
-import PetList from "../../Components/petList";
+import PetList from "../../Components/petlist";
 import Header from "../../Components/header";
 import React from 'react';
 import SearchBar from "../../Components/searchBar";
