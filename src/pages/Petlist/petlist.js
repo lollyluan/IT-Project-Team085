@@ -6,6 +6,8 @@ import React from 'react';
 import SearchBar from "../../Components/searchBar";
 import PageNumber from "../../Components/pageNumber";
 
+import DropDownList from "../../Components/dropdownlist";
+
 function DisplayPets(){
 
     const searchBarStyle={
@@ -34,7 +36,9 @@ function DisplayPets(){
             <div style={searchBarStyle}>
                 <SearchBar/>
             </div>
-
+            <div>
+                <DropDownList/>
+            </div>
             <div style={petListStyle}>
                 <PetList/>
             </div>

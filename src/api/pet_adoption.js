@@ -173,3 +173,7 @@ async function getAdoption(){
         //alert('Something went wrong!');
     });
   }
+  export{
+    postAdoptionApplication,
+    updateAdoptionApplication
+  }

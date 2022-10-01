@@ -2,11 +2,11 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Col, Form, FormGroup, Label, Input,Button,Row} from 'reactstrap';
 
-export default class PostPet extends React.Component {
+export default class DropDownList extends React.Component {
     render() {
       
     return(
-        <Form className="Post">     
+        <Form className="dropdownlist">     
         <Row>
         <Col lg='4'>
         <FormGroup row className="row-cols-lg-auto g-3 align-items-center">

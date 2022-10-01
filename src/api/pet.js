@@ -4,8 +4,6 @@ const BASE_URL = "http://localhost:8080/api/v1"
 //It's just used for testing
 
 
-import {getToken, login, isLoggedIn} from './login.js'
-
 async function getPet(id){
     var url = BASE_URL + "/pets/" + id;
     const request = {
@@ -27,17 +25,18 @@ async function getPet(id){
     })  
 }
 async function getPets(pageNo, query) {
-    var url = BASE_URL + '/pets/'+pageNo+"?" +"page="+pageNo;
+    var url = BASE_URL + '/pets/'+"?page="+pageNo;
     
     const request = {
     method: 'GET',
    
     }
-    for(attr in query){
+    console.log(query)
+    /*for(attr in query){
         if(query[attr] !== "" || query !== null){
             url = url + ("&"+attr + "=" + query[attr])
         }
-    }
+    }*/
     
     return fetch(url, request)
     .then(res => {
@@ -49,7 +48,7 @@ async function getPets(pageNo, query) {
         }
     })
     .then(data => {
-        console.log(data)
+     
         return data
     })    
 }
@@ -120,4 +119,4 @@ async function postPet(reqBody){
 
   }
   //export {getPets, postPet, deletePet}
-  module.exports ={getPets, postPet, deletePet};
+export {getPets, postPet, deletePet};
