@@ -17,7 +17,7 @@ function PetCard(props) {
         <Card.Title>{props.name}</Card.Title>
         <Card.Text>
           Age: {props.age} months
-         
+        
         </Card.Text>
         <Button variant="#90A955">More Information</Button>
       </Card.Body>

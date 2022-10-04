@@ -14,20 +14,28 @@ import Button from "react-bootstrap/Button";
 import PetInfo from '../pages/petInformation';
 import PetCard from './petCard/petCard';
 import {getPets} from '../api/pet'
-async function PetList(props) {
+import { useEffect , useState} from 'react';
+function PetList(props) {
   const query= {'color': null}
-  const petList = await getPets(1, query)
-  console.log("pet list")
-  console.log(petList)
+  const [petLst, setPetLst] = useState([]);
+  useEffect(()=>{
+    const func = async()=>{
+      const list = await(getPets(1, query))
+      setPetLst(list)
+    }
+    func()
+  })
+ 
+ 
   var pet
   return (
     <Row xs={1} md={5} className="petlist">
     {
-      [...Array(petList.length).keys()].map(function(i){
-        console.log(petList[i].nickname)
+      [...Array(petLst.length).keys()].map(function(i){
+        console.log(petLst[i].nickname)
         return (
           <Col>
-          <PetCard name = {petList[i].nickname} image = {img} age = {petList[i].age}></PetCard>
+          <PetCard name = {petLst[i].nickname} image = {img} age = {petLst[i].age}></PetCard>
           </Col>
           )
       })
