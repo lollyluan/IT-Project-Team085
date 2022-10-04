@@ -6,7 +6,7 @@ import {
   Route,
   Link
 } from "react-router-dom";
-import HomePage from "../pages/HomePage/homepage";
+import HomePage from "../pages/Homepage/homepage";
 import LoginPage from "../pages/Login/login";
 import RegisterPage from "../pages/Register/register";
 export default function HomeRouter() {

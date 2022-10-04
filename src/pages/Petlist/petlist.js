@@ -36,9 +36,7 @@ function DisplayPets(){
             <div style={searchBarStyle}>
                 <SearchBar/>
             </div>
-            <div>
-                <DropDownList/>
-            </div>
+            
             <div style={petListStyle}>
                 <PetList/>
             </div>

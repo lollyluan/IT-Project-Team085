@@ -2,7 +2,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import React from 'react';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
-import img1 from '../../images/cat1.png';
 // import ToggleButton from 'react-bootstrap/ToggleButton';
 
 function PetCard(props) {
@@ -17,7 +16,6 @@ function PetCard(props) {
         <Card.Title>{props.name}</Card.Title>
         <Card.Text>
           Age: {props.age} months
-         
         </Card.Text>
         <Button variant="#90A955">More Information</Button>
       </Card.Body>

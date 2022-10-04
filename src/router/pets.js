@@ -6,6 +6,7 @@ import {
   } from "react-router-dom";
 import DisplayPets from '../pages/Petlist/petlist';
 import PetInfo from '../pages/petInformation';
+import Example from '../pages/test';
 
 function PetRouter(){
     return(
@@ -14,7 +15,10 @@ function PetRouter(){
             <Routes>
                 <Route path="/petlist" element={<DisplayPets/>}/>                    
 
-                <Route path="/petInfo" element={<PetInfo/>}/>                  
+                <Route path="/petInfo" element={<PetInfo/>}/>
+
+                <Route path="/test" element={<Example/>}/>
+
             </Routes>
 
         </BrowserRouter>

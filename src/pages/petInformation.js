@@ -12,7 +12,6 @@ import catd2 from '../images/cat1_details2.jpg';
 import catd3 from '../images/cat1_details3.jpg';
 import Tags from '../Components/Tags';
 import {BsFillGeoAltFill} from "react-icons/bs";
-import { VerticalAlignCenter } from '@mui/icons-material';
 
 
 
@@ -22,8 +21,7 @@ function PetInfo(){
         textAlign:"center",
         marginLeft:"10%",
         marginRight:"10%",
-        marginTop:"30px",
-        justifyContent:'left'
+        marginTop:"30px"
     }
     
     const imageStyle={
@@ -35,7 +33,8 @@ function PetInfo(){
 
     const textStyle={
         marginLeft:"20px",
-        marginRight:"20px"
+        marginRight:"20px",
+        fontSize:"12px"
     }
 
     const infoStyle={
