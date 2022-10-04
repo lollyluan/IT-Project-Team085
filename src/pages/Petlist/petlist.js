@@ -10,7 +10,18 @@ import DropDownList from "../../Components/dropdownlist";
 import { useState } from "react";
 function DisplayPets(){
     const [page, setPage] = useState(1)
-   
+    const query = {
+        "color": "",
+        "sex": "",
+        "age": null,
+        "character": "",
+        "immunization": ""
+    }
+    const setQuery = (attr)=>{
+        ((value)=>{
+            query[attr] = value;
+        })()
+    }
     const searchBarStyle={
         marginTop:"30px",
         marginLeft:"20%",
