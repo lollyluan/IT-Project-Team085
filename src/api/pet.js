@@ -31,7 +31,7 @@ async function getPets(pageNo, query) {
     method: 'GET',
    
     }
-    console.log(query)
+
     /*for(attr in query){
         if(query[attr] !== "" || query !== null){
             url = url + ("&"+attr + "=" + query[attr])
