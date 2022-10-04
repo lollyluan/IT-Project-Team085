@@ -20,7 +20,7 @@ function PetList(props) {
   const [petLst, setPetLst] = useState([]);
   useEffect(()=>{
     const func = async()=>{
-      const list = await(getPets(1, query))
+      const list = await(getPets( props.page, query))
       setPetLst(list)
     }
     func()
@@ -32,7 +32,7 @@ function PetList(props) {
     <Row xs={1} md={5} className="petlist">
     {
       [...Array(petLst.length).keys()].map(function(i){
-        console.log(petLst[i].nickname)
+  
         return (
           <Col>
           <PetCard name = {petLst[i].nickname} image = {img} age = {petLst[i].age}></PetCard>
