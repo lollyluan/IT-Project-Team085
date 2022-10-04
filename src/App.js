@@ -8,7 +8,6 @@ import PetList from './Components/petlist';
 function App() {
   return (
     <div className="App">
-      <PetList/>
     </div>
   );
 }
