@@ -1,8 +1,8 @@
-import React, {useState} from 'react';
-
-import {login, signUp} from '../../api/login';
-
-
+import { Label } from '@mui/icons-material';
+import React from 'react';
+import {useState} from 'react';
+import { Button,Form,Input,Label} from 'reactstrap';
+import {login} from '../../api/login';
 
 
 
@@ -56,31 +56,46 @@ function Login(props) {
 
 
     return (
-   
-            <form class='login-form'>
-                <label>email</label><br/>
+        
+        <body className="initial-img row">
+            <Label className="contianer col-lg-5 Logo">
+                 <h1 className="disabled" href="#">PetHome</h1>
+            </Label>
 
-                <input className='inputField' type='text' value={email} onChange={(e)=>{setEmail(e.target.value)}}></input><br/>
+            <div className="contianer col-lg-7">
+            <Form class='login-form'>
+                <Label>email</Label><br/>
 
-                <label>Password</label><br/>
-                <input className='inputField' type={showPassword ? 'text' : 'password'} value={password} onChange={handleChangePassowrd}></input>
+                <Input className='inputField' type='text' value={email} onChange={(e)=>{setEmail(e.target.value)}}></Input><br/>
+
+                <Label>Password</Label><br/>
+                <Input className='inputField' type={showPassword ? 'text' : 'password'} value={password} onChange={handleChangePassowrd}></Input>
 
             
 
                 <div className='options'>
                     <div>
-                        <input type='checkbox' checked={rememberMe} onClick={()=>{setRememberMe(!rememberMe)}}></input>
+                        <Input type='checkbox' checked={rememberMe} onClick={()=>{setRememberMe(!rememberMe)}}></Input>
                         Remember me
                     </div>
                     <div onClick={()=>{alert('Oh no, can you try to remember it?')}}>
                         Forget password?
                     </div>
                 </div>
-                <div className='button' onClick={handleSignIn}>
+
+                <Button className='button' onClick={handleSignIn}>
                     Sign In
-                </div>
-     
-            </form>
+                </Button>
+
+                <div className="center"><p>- Or - </p></div>
+                <Col className="row1 sbtn">
+                   <Button><img className='btn btn-outline-success' src="icons/google.svg" alt="" onClick={handleSignIn}>Sign up with Google</img></Button>
+                   <Button><img className='btn btn-outline-success' src="icons/facebook.svg" alt="" onClick={handleSignIn}>Sign up with Google</img></Button>
+                </Col>
+                <Label className="center">Don’t have an account, Register Here!</Label>
+            </Form>
+            </div>
+    </body>
      
     );
 }
