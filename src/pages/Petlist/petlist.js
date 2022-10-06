@@ -8,6 +8,7 @@ import PageNumber from "../../Components/pageNumber";
 
 import DropDownList from "../../Components/dropdownlist";
 import { useState } from "react";
+
 function DisplayPets(){
     const [page, setPage] = useState(1)
     const query = {
@@ -29,11 +30,6 @@ function DisplayPets(){
         marginBottom:"30px"
     }
 
-    const petListStyle={
-        marginLeft:"10%",
-        marginRight:"10%"
-    }
-
     const pageNumberStyle={
         marginTop:"30px",
         marginRight:"10%",
@@ -49,7 +45,7 @@ function DisplayPets(){
                 <SearchBar/>
             </div>
          
-            <div style={petListStyle}>
+            <div>
                 <PetList page={page}/>
             </div>
             

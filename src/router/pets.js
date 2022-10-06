@@ -15,7 +15,7 @@ function PetRouter(){
             <Routes>
                 <Route path="/petlist" element={<DisplayPets/>}/>                    
 
-                <Route path="/petInfo" element={<PetInfo/>}/>
+                <Route path="/petInfo/:petId" element={<PetInfo/>}/>
 
                 <Route path="/test" element={<Example/>}/>
 

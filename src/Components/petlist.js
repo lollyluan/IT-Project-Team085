@@ -1,12 +1,5 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import React from 'react';
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-  Link
-} from "react-router-dom";
-
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import img from '../images/cat1.png';
@@ -15,6 +8,7 @@ import PetInfo from '../pages/petInformation';
 import PetCard from './petCard/petCard';
 import {getPets} from '../api/pet'
 import { useEffect , useState} from 'react';
+
 function PetList(props) {
   const query= {'color': null}
   const [petLst, setPetLst] = useState([]);
@@ -35,7 +29,7 @@ function PetList(props) {
   
         return (
           <Col>
-          <PetCard name = {petLst[i].nickname} image = {img} age = {petLst[i].age}></PetCard>
+          <PetCard name = {petLst[i].nickname} image = {img} age = {petLst[i].age} id = {petLst[i].id}></PetCard>
           </Col>
           )
       })
