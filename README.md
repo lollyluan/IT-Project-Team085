@@ -29,3 +29,7 @@ The current site is only partially functional, mainly implementing the main page
 We divide the elements in the page into many tiny components and then assemble them into each pages.
 
 The project is expected to implement volunteer pages in the future, as well as more specific and improved features such as payment process, and design templates where administrators can add pages directly through the website.
+
+
+
+lalallalla
