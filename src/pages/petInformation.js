@@ -12,7 +12,7 @@ import catd2 from '../images/cat1_details2.jpg';
 import catd3 from '../images/cat1_details3.jpg';
 import Tags from '../Components/Tags';
 import {BsFillGeoAltFill} from "react-icons/bs";
-import ApplicationPopup from '../Components/applicationPopup';
+
 
 
 function PetInfo(){
@@ -82,7 +82,7 @@ function PetInfo(){
                             <div style={tagStyle}>
                                 <BsFillGeoAltFill/> Melbourne,VIC
                             </div>                         
-                            <ApplicationPopup/>
+                            <Button variant="success">Apply Now</Button>
                             </Card.Body>
                         </Card>
                 </Col>
