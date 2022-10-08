@@ -20,7 +20,7 @@ function PetCard(props) {
           Age: {props.age} months
         </Card.Text>
         <Link to={`/petInfo/${props.id}`}>
-          <Button variant="#90A955">More Information</Button>
+          <Button>More Information</Button>
         </Link>
       </Card.Body>
     </Card>

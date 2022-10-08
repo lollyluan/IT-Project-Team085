@@ -20,7 +20,6 @@ function PetList(props) {
     func()
   })
  
- 
   var pet
   return (
     <Row xs={1} md={5} className="petlist">
@@ -33,11 +32,7 @@ function PetList(props) {
           </Col>
           )
       })
-        
-        
-    }
-    
-      
+    }      
     </Row>
   )
   
