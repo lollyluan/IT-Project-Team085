@@ -1,5 +1,7 @@
 
 import pkg from 'jwt-decode';
+import $ from 'jquery';
+
 const {jwt_decode} = pkg;
 
 const BASE_URL = "http://localhost:8080/api/v1"
@@ -45,7 +47,8 @@ function login(email, password) {
     })
     .catch((e) => {
         console.log('Failed to sign in, try again ' + e);
-        document.location.href = '/home';
+        $('.App .error_message').html('fuck off!');
+       // document.location.href = '/login';
     });
 }
 
@@ -68,6 +71,8 @@ function signUp(email, password, firstname, lastname) {
     .then(res => {
         
         if(res.ok) {
+            console.log('registered done!');
+            login(email, password);
             return res.json();
         }
         else {

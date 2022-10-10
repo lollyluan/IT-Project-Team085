@@ -57,6 +57,7 @@ function Login(props) {
     return (
         
         <body className="initial-img row">
+            <div className="error_message"></div>
             <Label className="contianer col-lg-4 LogoPosition">
                  <h1 className="disabled Logo" href="#">PetHome</h1>
             </Label>

@@ -2,6 +2,7 @@ import { signUp } from '../../api/login';
 import React, {useState} from 'react';
 import { Button,Form,Input,Label,Row,Col} from 'reactstrap';
 
+
 function SignUp() {
 
     const [email, setEmail] = useState('');
@@ -50,7 +51,7 @@ function SignUp() {
 </Label>
 
 <div className="contianer col-lg-8">
-<Form className='login-form'>
+<Form className='login-form' action="">
     <Label className="contianer col-lg-5">
         <h2 className="disabled" href="#">Create a New Account</h2>
     </Label>
