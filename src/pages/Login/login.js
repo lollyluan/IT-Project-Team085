@@ -1,7 +1,6 @@
-import { Label } from '@mui/icons-material';
 import React from 'react';
 import {useState} from 'react';
-import { Button,Form,Input} from 'reactstrap';
+import { Button,Form,Input,Label} from 'reactstrap';
 import {login} from '../../api/login';
 
 
@@ -58,29 +57,27 @@ function Login(props) {
     return (
         
         <body className="initial-img row">
-            <Label className="contianer col-lg-5 Logo">
-                 <h1 className="disabled" href="#">PetHome</h1>
+            <Label className="contianer col-lg-4 LogoPosition">
+                 <h1 className="disabled Logo" href="#">PetHome</h1>
             </Label>
 
-            <div className="contianer col-lg-7">
-            <Form class='login-form'>
-                <label>email</label><br/>
+            <div className="contianer col-lg-8">
+            <Form className='login-form'>
+            <Label className="contianer col-lg-5">
+                 <h2 className="disabled" href="#">Login</h2>
+            </Label>
+                <Input className='inputField'  placeholder="Email" type='text' value={email} onChange={(e)=>{setEmail(e.target.value)}}></Input><br/>
+                <Input className='inputField'  placeholder="Password" type={showPassword ? 'text' : 'password'} value={password} onChange={handleChangePassowrd}></Input>
 
-                <Input className='inputField' type='text' value={email} onChange={(e)=>{setEmail(e.target.value)}}></Input><br/>
-
-                <label>Password</label><br/>
-                <Input className='inputField' type={showPassword ? 'text' : 'password'} value={password} onChange={handleChangePassowrd}></Input>
-
-            
 
                 <div className='options'>
-                    <div>
+                    <span>
                         <Input type='checkbox' checked={rememberMe} onClick={()=>{setRememberMe(!rememberMe)}}></Input>
                         Remember me
-                    </div>
-                    <div onClick={()=>{alert('Oh no, can you try to remember it?')}}>
+                    </span>
+                    <span onClick={()=>{alert('Oh no, can you try to remember it?')}}>
                         Forget password?
-                    </div>
+                    </span>
                 </div>
 
                 <Button className='button' onClick={handleSignIn}>
@@ -89,6 +86,8 @@ function Login(props) {
 
                 <div className="center"><p>- Or - </p></div>
 
+                <Button className='button'>Login with Google</Button>
+                <Button className='button'>Login with Facebook</Button>
                
                 <Label className="center">Don’t have an account, Register Here!</Label>
             </Form>

@@ -54,6 +54,8 @@ p3{font-size: var(--text-content-title);}
 
 /*********************** button *****************/
 .App-link {color: #61dafb;}
+
+.button{margin:10px}
 /******************* element state ****************************/
 
 .form-control:focus {
@@ -99,6 +101,42 @@ p3{font-size: var(--text-content-title);}
   position: absolute
 }
 
+.container{
+  height:100%;
+  width: 80%;
+  margin: 20%;
+  margin-top:10%;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  background-color:  rgba(241, 242, 245, 0.7);
+  border-radius: 10px;
+}
+
+.login-form{
+  margin-top:20%;
+  margin-bottom: 20%;
+  width: 80%;
+  margin-left: 20%;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 10px;
+  padding: 10%;
+}
+
+.LogoPosition{position: relative;}
+
+.Logo{
+  position: absolute;
+   top: 40%; 
+   left: 50%; 
+   transform: translate(-50%, 50%) 
+}
+
+.smallInput{display: flex; }
+
+.login-form .inputInRow{width: 50%;}
+
+
+form {width: 90%; align-items: center;}
+
 /****************** Header/Footer css style ************************/
 .Slogan {margin-bottom: 4.5rem;padding-left:10%;padding-right:10%;font-size:var(--text-title-desktop)}
 .AboutUs{margin-top: 4.5rem;text-align: left;}
@@ -112,12 +150,13 @@ footer{background-color: var(--color-background-footer);height: 8rem;}
 footer .nav{--bs-nav-link-padding-x: 3rem;padding-left:2%;padding-top:0.5rem;padding-bottom:1.5rem;}
 footer .navbar-brand{font-size: 24px;}
 
-.App body{background-color: var(--color-background-body);}
+.App body{background-color: var(--color-background-body); min-height: 100vh;}
 
 .row{
   padding-left:15%;
   padding-right:15%;
 }
+
 
 .row .col-sm-2 {
   margin-left: 8.5%;

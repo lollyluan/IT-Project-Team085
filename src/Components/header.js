@@ -1,6 +1,7 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { NavbarBrand,Nav, NavItem, NavLink,Button } from 'reactstrap';
+import {Link} from 'react-router-dom';
 
 
 
@@ -21,8 +22,13 @@ function Header (){
           <NavItem>
             <NavLink href="#">Support</NavLink>
           </NavItem>
+        <Link to="/login">
         <Button className='btn' outline color="success">Login</Button>{' '}
+        </Link>
+        
+        <Link to="/register">
         <Button className='btn' color="success">Register</Button>{' '}
+        </Link>
         </Nav>
 
       </header>
