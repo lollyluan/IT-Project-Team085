@@ -3,7 +3,12 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Header from '../../Components/header';
 import Footer from '../../Components/footer';
 import HomeCard from '../../Components/HomeCard';
-
+import {
+    BrowserRouter as Router,
+    Routes,
+    Route,
+    Link
+  } from "react-router-dom"
 
 
 function HomePage(){
