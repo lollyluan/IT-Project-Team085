@@ -6,57 +6,51 @@ import { Col, Form, FormGroup, Label, Input,Button,Row} from 'reactstrap';
 export default class PostPet extends React.Component {
     render() {
     return(
-        <Form className="Post">     
-        <Row>
+        <Form className="Post">   
+        <Row className='NoPadding'>
         <Col lg='4'>
         <FormGroup row className="row-cols-lg-auto g-3 align-items-center">
-          <Label for="Num" sm='1'>1.</Label>
-          <Label for="Category" sm='1'>Category:</Label>
-          <Col lg='2'>
-          <Input type="select" id="Category" name="Category:">
+          <div className='s1'>
+          <span for="Category" sm='1'>Category:</span>
+          </div>
+          <Input  type="select" id="Category" name="Category:">
           <option value="Cats">CAT</option>
           <option value="Dogs">DOG</option>
           </Input>
-          </Col>
+      
         </FormGroup>
         </Col>
 
 
         <Col lg='4'>
         <FormGroup row className="row-cols-lg-auto g-3 align-items-center">
-          <Label for="Name" sm='1'>Pet’s Name:</Label>   
-        <Col lg='2'>
-          <Input type="select" type="Pet's Name" name="Name" id="Pet's Name" placeholder="Name"/>  
-        </Col> 
+          <span className='s1' for="Name" sm='1'>Name:</span>   
+          <Input type="select" type="Pet's Name" name="Name" id="Pet's Name" placeholder="Pet’s Name"/>  
         </FormGroup>
         </Col>
 
         <Col lg='4'>
         <FormGroup row className="row-cols-lg-auto g-3 align-items-center">
-          <Label for="ID" sm='1'>Pet's ID</Label>
-        <Col lg='2'>
-          <Input type="select" type="Pet's ID" name="ID" id="Pet's ID" placeholder="--- --- ---" />
-        </Col>
+          <span className='s1' for="ID" sm='1'>Pet's ID</span>
+          <Input  type="select" type="Pet's ID" name="ID" id="Pet's ID" placeholder="--- --- ---" />
         </FormGroup>
         </Col>
         </Row>
 
-        <Row>
+        <Row className='NoPadding'>
         <Col lg='4'>
         <FormGroup row className="row-cols-lg-auto g-3 align-items-center">
-          <Label for="Country" sm='1'>Country:</Label>
-          <Col lg='2'>
+          <span className='s1' for="Country" sm='1'>Country:</span>
           <Input type="select" id="Country:" name="Country:">
           <option value="Australia">Australia</option>
           </Input>
-          </Col>
+
         </FormGroup>
         </Col>
 
         <Col lg='4'>
         <FormGroup row className="row-cols-lg-auto g-3 align-items-center">
-          <Label for="City" sm={1}>City:</Label>
-          <Col lg='2'>
+          <span className='s1' for="City" sm={1}>City:</span>
           <Input type="select" id="City" name="City:">
           <option value="Sydney">Sydney</option>
           <option value="Melbourne">Melbourne</option>
@@ -64,37 +58,33 @@ export default class PostPet extends React.Component {
           <option value="Perth">Perth</option>
           <option value="Adelaide">Adelaide</option>
           </Input>
-          </Col>
+  
         </FormGroup>
         </Col>
 
         <Col lg='4'>
         <FormGroup row className="row-cols-lg-auto g-3 align-items-center">
-          <Label for="SEX" sm={1}>SEX:</Label>
-          <Col lg='2'>
+          <span className='s1' for="SEX" sm={1}>SEX:</span> 
           <Input type="select" id="Gender" name="Gender:">
           <option value="Boy">MALE</option>
           <option value="Gril">FEMALE</option>
           </Input>
-          </Col>
+
         </FormGroup>
         </Col>
         </Row>
 
-        <Row>
+        <Row className='NoPadding'>
         <Col lg='4'>
         <FormGroup row className="row-cols-lg-auto g-3 align-items-center">
-          <Label for="Age" sm={1}>Age</Label>
-          <Col lg='2'>
+          <span className='s1' for="Age" sm={1}>Age:</span>
           <Input type="select" type="Age" name="month/year" id="Age" placeholder="month/year" />
-        </Col>
         </FormGroup>
         </Col>
-        
+      
         <Col lg='4'>
         <FormGroup row className="row-cols-lg-auto g-3 align-items-center">
-          <Label for="Color" sm={1}>Color</Label>
-          <Col lg='2'>
+          <span className='s1' for="Color" sm={1}>Color:</span>
           <Input type="select" id="Color" name="Color:">
           <option value="Orange">RED</option>
           <option value="Black">BLUE</option>
@@ -103,42 +93,41 @@ export default class PostPet extends React.Component {
           <option value="Double Color">ORANGE</option>
           <option value="Triple Color">PURPLE</option>
           </Input>
-          </Col>
+        </FormGroup>
+        </Col>
+
+        <Col lg='4'>
+        <FormGroup row className="row-cols-lg-auto g-3 align-items-center">
+          <span className='s1' for="Desex" sm={1}>Desex:</span>
+          <Input type="select" id="immunization" name="Immunization">
+          <option value="Yes">Yes</option>
+          <option value="No">No</option>
+          </Input>
         </FormGroup>
         </Col>
         </Row>
 
-        <FormGroup row>
-          <Label for="exampleText" sm={1}>Descirption</Label>
-          <Col lg={8} >
-            <Input type="textarea" name="text" id="exampleText"/>
-          </Col>
+        <Row className='NoPadding'>
+        <Col lg={12}>
+        <FormGroup row className='row-cols-lg-auto g-3 align-items-center'>
+          <span for="exampleText" sm={1}>Descirption:</span>
+          <Input className='textInput' type="textarea" name="text" id="exampleText"/>
         </FormGroup>
+        </Col>
+        </Row>
 
-        <FormGroup row className="row-cols-lg-auto g-3 align-items-center">
-          <Label for="Color" sm={1}>Tags:</Label>
-          <Col lg='2'>
-          <Input id="Tags" multiple name="selectMulti" type="select">
-          <option value="Traumatized">Traumatized</option>
-          <option value="Sterilized">Sterilized</option>
-          <option value="Lazy">Lazy</option>
-          <option value="Defective">Defective</option>
-          <option value="Young">Young</option>
-          <option value="Old">Old</option>
-          <option value="Lively">Lively</option>
-          <option value="Young">Young</option>
-          <option value="Long hair">Long hair</option>
-          </Input>
-          </Col>
-        </FormGroup>
 
-        <FormGroup row>
-          <Label for="exampleFile" sm={1}>Photos:</Label>
+        <Row className='NoPadding'>
+        <Col lg={12}>
+        <FormGroup row className='row-cols-lg-auto g-3 align-items-center'>
+         <span className='s2' for="exampleFile" sm={2}>Photos:</span>
          <div className='AddPhoto'>
-          <img src="icons/Add.svg" className='align-items-center'></img>
+          <img src="icons/Add.svg" className='align-items-center Update'></img>
           <Button size="sm" outline color="success">Update Photos</Button>{' '}
         </div>
-      </FormGroup>
+        </FormGroup>
+        </Col>
+        </Row>
 
         </Form>
     );

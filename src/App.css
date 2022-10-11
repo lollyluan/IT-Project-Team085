@@ -77,11 +77,14 @@ p3{font-size: var(--text-content-title);}
 .row .AddPhoto{
   width: 14rem;
   height: 13rem;
+  padding:5%;
   background: rgba(255, 255, 255, 0.6);
   border: 1px dashed #90A955;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
 }
+
+.Update{margin-bottom: 10%;}
 
 .Post{
   width: 65%;
@@ -93,6 +96,9 @@ p3{font-size: var(--text-content-title);}
   margin-right: 5%;
   margin-top: 1%;
   margin-bottom: 5%;
+  padding-left: 2%;
+  padding-right: 2%;
+  padding-bottom: 2%;
 }
 
 .AdminSide{
@@ -156,6 +162,29 @@ footer .navbar-brand{font-size: 24px;}
   padding-left:15%;
   padding-right:15%;
 }
+
+.NoPadding{
+  padding-right: 0;
+  padding-left: 0;
+}
+
+.NoPadding .row{ margin-top:0;}
+
+
+.row .form-select {width:55%; vertical-align: top;}
+.row .form-control{width:55%; vertical-align: top;}
+.row .textInput{width:85%; vertical-align: top;}
+.row textarea.form-control {min-height: calc(6em + 0.75rem + 2px);}
+
+
+.row-cols-lg-auto .s1 {width: 30%;}
+.row-cols-lg-auto .s2 {width: 10%;}
+
+
+
+.col-lg-4 .row{padding: 0;}
+.col-lg-12 .row{padding: 0;}  
+
 
 
 .row .col-sm-2 {
