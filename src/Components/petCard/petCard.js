@@ -3,13 +3,14 @@ import React from 'react';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 // import ToggleButton from 'react-bootstrap/ToggleButton';
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 
 function PetCard(props) {
 
   // const [checked, setChecked] = React.useState(false);
-  
+  const ID = props.id;
+
   return (
     
     <Card>
@@ -19,11 +20,13 @@ function PetCard(props) {
         <Card.Text>
           Age: {props.age} months
         </Card.Text>
-        <Link to={`/petInfo/${props.id}`}>
-          <Button>More Information</Button>
+        <Link to={`/petInfo?id=${props.id}`}>
+        {/* <Link to={{ pathname: '/petInfo', query:{petId : ID}}}> */}
+          <Button variant="success">More Information</Button>
         </Link>
       </Card.Body>
     </Card>
+    
   );
 }
 

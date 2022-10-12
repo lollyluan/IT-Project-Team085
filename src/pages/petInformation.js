@@ -12,8 +12,14 @@ import catd2 from '../images/cat1_details2.jpg';
 import catd3 from '../images/cat1_details3.jpg';
 import Tags from '../Components/Tags';
 import {BsFillGeoAltFill} from "react-icons/bs";
+import {getPet} from '../api/pet';
+import { useParams, useEffect, useState} from 'react';
 
-
+function GetId(){
+    const {petId} = useParams();
+    console.log(this.props.location.query.petId);
+    return petId;
+}
 
 function PetInfo(){
 
@@ -47,6 +53,17 @@ function PetInfo(){
         marginBottom:"20px"
     }
 
+    const petId = GetId;
+    const [pet, setPet] = useState([]);
+
+    useEffect(()=>{
+      const func = async()=>{
+        const petInfo = await(getPet(petId))
+        setPet(petInfo)
+    }
+    func()
+    })
+
     return (
         <div>
             <Header/>
@@ -77,7 +94,8 @@ function PetInfo(){
                                 and get along well with other cats.
                             </Card.Text>
                             <div style={tagStyle}>
-                                <Tags/>
+                                <Tags color = {pet.color} sex = {pet.sex} age = {pet.age} 
+                                character = {pet.character} immunization = {pet.immunization}></Tags>
                             </div> 
                             <div style={tagStyle}>
                                 <BsFillGeoAltFill/> Melbourne,VIC
