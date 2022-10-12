@@ -13,56 +13,53 @@ import catd3 from '../images/cat1_details3.jpg';
 import Tags from '../Components/Tags';
 import {BsFillGeoAltFill} from "react-icons/bs";
 import {getPet} from '../api/pet';
-import { useParams, useEffect, useState} from 'react';
+import { useEffect, useState} from 'react';
+import{useParams} from 'react-router-dom'
 
-function GetId(){
-    const {petId} = useParams();
-    console.log(this.props.location.query.petId);
-    return petId;
-}
 
 function PetInfo(){
-
+    
     const bodyStyle={
         textAlign:"center",
         marginLeft:"10%",
         marginRight:"10%",
         marginTop:"30px"
-    }
+    };
     
     const imageStyle={
         width:"100%",
         objectFit:"cover",
         height:"120px",
         objectPosition:"0 100%"
-    }
+    };
 
     const textStyle={
         marginLeft:"20px",
         marginRight:"20px",
         fontSize:"12px"
-    }
+    };
 
     const infoStyle={
         // height:"574px"
         VerticalAlignCenter:"center"
-    }
+    };
 
     const tagStyle={
         marginTop:"20px",
         marginBottom:"20px"
-    }
+    };
 
-    const petId = GetId;
+  
     const [pet, setPet] = useState([]);
-
+    const petId = useParams();
     useEffect(()=>{
       const func = async()=>{
-        const petInfo = await(getPet(petId))
+ 
+        const petInfo = await(getPet(petId.petId))
         setPet(petInfo)
     }
     func()
-    })
+    });
 
     return (
         <div>

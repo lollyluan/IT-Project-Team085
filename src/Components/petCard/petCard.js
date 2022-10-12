@@ -20,7 +20,7 @@ function PetCard(props) {
         <Card.Text>
           Age: {props.age} months
         </Card.Text>
-        <Link to={`/petInfo?id=${props.id}`}>
+        <Link to={`/petInfo/${props.id}`}>
         {/* <Link to={{ pathname: '/petInfo', query:{petId : ID}}}> */}
           <Button variant="success">More Information</Button>
         </Link>
