@@ -14,7 +14,8 @@ import Tags from '../Components/Tags';
 import {BsFillGeoAltFill} from "react-icons/bs";
 import {getPet} from '../api/pet';
 import { useEffect, useState} from 'react';
-import{useParams} from 'react-router-dom'
+import{useParams} from 'react-router-dom';
+import ApplicationPopup from '../Components/applicationPopup';
 
 
 function PetInfo(){
@@ -97,7 +98,7 @@ function PetInfo(){
                             <div style={tagStyle}>
                                 <BsFillGeoAltFill/> Melbourne,VIC
                             </div>                         
-                            <Button variant="success">Apply Now</Button>
+                            <ApplicationPopup/>
                             </Card.Body>
                         </Card>
                 </Col>
