@@ -16,23 +16,15 @@ $(document).ready(function () {
 });
 
 function PostPets(){
-
-  
-
-    return(
-
-        
+    return(    
 <div>
     <Nav>
         <NavbarBrand href="/">Pets Home</NavbarBrand>
     </Nav>  
     <AdminSideBar/> 
     <PostPet/>
-    <Button className="addPostTest">+</Button>
+    <Button type="submit">Post</Button>
 </div>
-
-        
-
     )
 
 }

@@ -1,19 +1,39 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Col, Form, FormGroup, Label, Input,Button,Row} from 'reactstrap';
-
+import {postPet } from '../../api/pet';
 
 export default class PostPet extends React.Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {value: 'Cats'};
+
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  handleChange(event) {
+    this.setState({value: event.target.value});
+  }
+
+  handleSubmit(event) {
+    alert(this.state.value);
+    event.preventDefault();
+  }
+
+
     render() {
     return(
-        <Form className="Post">   
+      <div>
+        <Form className="Post" onSubmit={this.handleSubmit}>   
         <Row className='NoPadding'>
         <Col lg='4'>
         <FormGroup row className="row-cols-lg-auto g-3 align-items-center">
           <div className='s1'>
           <span for="Category" sm='1'>Category:</span>
           </div>
-          <Input  type="select" id="Category" name="Category:">
+          <Input  type="select" id="Category" name="Category:" value={this.state.value} onChange={this.handleChange} >
           <option value="Cats">CAT</option>
           <option value="Dogs">DOG</option>
           </Input>
@@ -25,7 +45,7 @@ export default class PostPet extends React.Component {
         <Col lg='4'>
         <FormGroup row className="row-cols-lg-auto g-3 align-items-center">
           <span className='s1' for="Name" sm='1'>Name:</span>   
-          <Input type="select"  name="Name" id="Pet's Name" placeholder="Pet’s Name"/>  
+          <Input type="select" name="Name" id="Pet's Name" placeholder="Pet’s Name"/>  
         </FormGroup>
         </Col>
 
@@ -78,7 +98,7 @@ export default class PostPet extends React.Component {
         <Col lg='4'>
         <FormGroup row className="row-cols-lg-auto g-3 align-items-center">
           <span className='s1' for="Age" sm={1}>Age:</span>
-          <Input type="select"  name="month/year" id="Age" placeholder="month/year" />
+          <Input type="select" name="month/year" id="Age" placeholder="month/year" />
         </FormGroup>
         </Col>
       
@@ -128,8 +148,10 @@ export default class PostPet extends React.Component {
         </FormGroup>
         </Col>
         </Row>
-
         </Form>
+        <Button value="Submit"className="addPostTest">Post</Button>
+        </div>
+
     );
 }
 }
