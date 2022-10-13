@@ -119,4 +119,4 @@ async function postPet(reqBody){
 
   }
   //export {getPets, postPet, deletePet}
-export {getPets, postPet, deletePet};
+export {getPets, postPet, deletePet, getPet};
