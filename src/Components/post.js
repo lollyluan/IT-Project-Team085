@@ -25,14 +25,14 @@ export default class PostPet extends React.Component {
         <Col lg='4'>
         <FormGroup row className="row-cols-lg-auto g-3 align-items-center">
           <span className='s1' for="Name" sm='1'>Name:</span>   
-          <Input type="select" type="Pet's Name" name="Name" id="Pet's Name" placeholder="Pet’s Name"/>  
+          <Input type="select"  name="Name" id="Pet's Name" placeholder="Pet’s Name"/>  
         </FormGroup>
         </Col>
 
         <Col lg='4'>
         <FormGroup row className="row-cols-lg-auto g-3 align-items-center">
           <span className='s1' for="ID" sm='1'>Pet's ID</span>
-          <Input  type="select" type="Pet's ID" name="ID" id="Pet's ID" placeholder="--- --- ---" />
+          <Input  type="select" name="ID" id="Pet's ID" placeholder="--- --- ---" />
         </FormGroup>
         </Col>
         </Row>
@@ -78,7 +78,7 @@ export default class PostPet extends React.Component {
         <Col lg='4'>
         <FormGroup row className="row-cols-lg-auto g-3 align-items-center">
           <span className='s1' for="Age" sm={1}>Age:</span>
-          <Input type="select" type="Age" name="month/year" id="Age" placeholder="month/year" />
+          <Input type="select"  name="month/year" id="Age" placeholder="month/year" />
         </FormGroup>
         </Col>
       
