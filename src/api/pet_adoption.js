@@ -76,7 +76,8 @@ async function getAdoptionApplication(){
 async function getAdoption(){
     const request = {
         headers: {'Content-Type': 'application/json',
-        'Authorization':'Bearer '+ getToken()},
+        'Authorization':'Bearer '+ getToken(),
+        'Access-Control-Allow-Origin': '*'},
         method: 'GET',
        
        

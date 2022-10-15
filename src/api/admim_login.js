@@ -13,11 +13,12 @@ const BASE_URL = "http://localhost:8080/api/v1"
 
 var token = ""
 function login(username, password) {
-    const url = BASE_URL + '/auth/auth/login';
+    const url = BASE_URL + '/auth/admin/login';
     const requestInit = {
         method: 'POST',
         // mode: 'no-cors',
-        headers: {'Content-Type': 'application/json'},
+        headers: {'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': '*'},
         body: JSON.stringify({
             'username': username,
             'password': password
@@ -52,7 +53,7 @@ function login(username, password) {
 }
 
 function signUp(username, password) {
-    const url = BASE_URL + '/auth/user/register';
+    const url = BASE_URL + '/auth/admin/register';
     const requestInit = {
         method: 'POST',
         // mode: 'no-cors',
