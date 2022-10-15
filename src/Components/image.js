@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import ImageUploading from 'react-images-uploading';
+import {encodeImage} from '../utils/image'
 const UploadAndDisplayImage = () => {
     const [images, setImages] = React.useState([]);
   const maxNumber = 69;

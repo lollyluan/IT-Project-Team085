@@ -9,7 +9,7 @@ import UploadAndDisplayImage from './Components/image';
 function App() {
   return (
     <div className="App">
-      <UploadAndDisplayImage/>
+      <PetRouter/>
     </div>
   );
 }

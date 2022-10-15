@@ -1,4 +1,4 @@
-
+import {getToken, login} from './admim_login'
 const BASE_URL = "http://localhost:8080/api/v1"
 //process.env.REACT_APP_BASE_URL
 //It's just used for testing
@@ -53,8 +53,10 @@ async function getPets(pageNo, query) {
     })    
 }
 async function postPet(reqBody){
+    login("string", "string")
     const request = {
-        headers: {'Content-Type': 'application/json'},
+        headers: {'Content-Type': 'application/json',
+        'Authorization':'Bearer '+ getToken()},
         method: 'POST',
         body: JSON.stringify(reqBody)
        
