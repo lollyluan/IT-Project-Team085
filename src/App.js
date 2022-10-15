@@ -5,10 +5,11 @@ import HomeRouter from './router/home';
 import PetRouter from './router/pets';
 import { Pets } from '@mui/icons-material';
 import PetList from './Components/petlist';
+import UploadAndDisplayImage from './Components/image';
 function App() {
   return (
     <div className="App">
-      <HomeRouter/>
+      <UploadAndDisplayImage/>
     </div>
   );
 }
