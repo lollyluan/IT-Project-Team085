@@ -1,39 +1,48 @@
-import React from 'react';
+import React,{useState} from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Col, Form, FormGroup, Label, Input,Button,Row} from 'reactstrap';
-import {postPet } from '../../api/pet';
+import { Col, Form, FormGroup, Input,Button,Row} from 'reactstrap';
+import {postPet} from '../api/pet';
 
-export default class PostPet extends React.Component {
+const PostPet =() =>{
 
-  constructor(props) {
-    super(props);
-    this.state = {value: 'Cats'};
+  const [Descirption, setDescirption] = useState('');
+  const [Category, setCategory] = useState('CAT');
+  const [Country, setCountry] = useState('Australia');
+  const [City, setCity] = useState('Sydney');
+  const [ID, setId] = useState('');
+  const [Age, setAge] = useState('');
+  const [Name,setName] = useState('');
+  const [Gender, setGender] = useState('MALE');
+  const [Color, setColor] = useState('RED');
+  const [Immunization,setImmunization] = useState('Yes');
+  const [isPending,setIsPending] = useState(false);
 
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
+
+    //TODO connect backend
+    const handleSubmit = (e)=> {
+      e.preventDefault();
+      console.log(`${Category},${Name},${Country},${City},${Age},${Gender},${Color},${Immunization}`);
+      if(isPending == 'true') {
+          
+          postPet(Category,Name,Country,City,Age,Gender,Color,Immunization)
+
+      }else {
+          alert('Still Adding');
+      }
+      
   }
 
-  handleChange(event) {
-    this.setState({value: event.target.value});
-  }
 
-  handleSubmit(event) {
-    alert(this.state.value);
-    event.preventDefault();
-  }
-
-
-    render() {
+   
     return(
-      <div>
-        <Form className="Post" onSubmit={this.handleSubmit}>   
+        <Form className="Post" onSubmit={handleSubmit}>   
         <Row className='NoPadding'>
         <Col lg='4'>
         <FormGroup row className="row-cols-lg-auto g-3 align-items-center">
           <div className='s1'>
           <span for="Category" sm='1'>Category:</span>
           </div>
-          <Input  type="select" id="Category" name="Category:" value={this.state.value} onChange={this.handleChange} >
+          <Input  type="select" value={Category} onChange={(e) => setCategory(e.target.value)} >
           <option value="Cats">CAT</option>
           <option value="Dogs">DOG</option>
           </Input>
@@ -45,14 +54,14 @@ export default class PostPet extends React.Component {
         <Col lg='4'>
         <FormGroup row className="row-cols-lg-auto g-3 align-items-center">
           <span className='s1' for="Name" sm='1'>Name:</span>   
-          <Input type="select" name="Name" id="Pet's Name" placeholder="Pet’s Name"/>  
+          <Input type="text"value={Name} onChange={(e) => setName(e.target.value)} placeholder="Pet’s Name"/>  
         </FormGroup>
         </Col>
 
         <Col lg='4'>
         <FormGroup row className="row-cols-lg-auto g-3 align-items-center">
           <span className='s1' for="ID" sm='1'>Pet's ID</span>
-          <Input  type="select" name="ID" id="Pet's ID" placeholder="--- --- ---" />
+          <Input  type="text" value={ID} required onChange={(e) => setId(e.target.value)} placeholder="--- --- ---" />
         </FormGroup>
         </Col>
         </Row>
@@ -61,7 +70,7 @@ export default class PostPet extends React.Component {
         <Col lg='4'>
         <FormGroup row className="row-cols-lg-auto g-3 align-items-center">
           <span className='s1' for="Country" sm='1'>Country:</span>
-          <Input type="select" id="Country:" name="Country:">
+          <Input type="select" value={Country} onChange={(e) => setCountry(e.target.value)}>
           <option value="Australia">Australia</option>
           </Input>
 
@@ -71,7 +80,7 @@ export default class PostPet extends React.Component {
         <Col lg='4'>
         <FormGroup row className="row-cols-lg-auto g-3 align-items-center">
           <span className='s1' for="City" sm={1}>City:</span>
-          <Input type="select" id="City" name="City:">
+          <Input type="select" value={City} onChange={(e) => setCity(e.target.value)}>
           <option value="Sydney">Sydney</option>
           <option value="Melbourne">Melbourne</option>
           <option value="Brisbane">Brisbane</option>
@@ -85,7 +94,7 @@ export default class PostPet extends React.Component {
         <Col lg='4'>
         <FormGroup row className="row-cols-lg-auto g-3 align-items-center">
           <span className='s1' for="SEX" sm={1}>SEX:</span> 
-          <Input type="select" id="Gender" name="Gender:">
+          <Input type="select" value={Gender} onChange={(e) => setGender(e.target.value)} >
           <option value="Boy">MALE</option>
           <option value="Gril">FEMALE</option>
           </Input>
@@ -98,14 +107,14 @@ export default class PostPet extends React.Component {
         <Col lg='4'>
         <FormGroup row className="row-cols-lg-auto g-3 align-items-center">
           <span className='s1' for="Age" sm={1}>Age:</span>
-          <Input type="select" name="month/year" id="Age" placeholder="month/year" />
+          <Input type="text" required value={Age} onChange={(e) => setAge(e.target.value)} placeholder="month/year" />
         </FormGroup>
         </Col>
       
         <Col lg='4'>
         <FormGroup row className="row-cols-lg-auto g-3 align-items-center">
           <span className='s1' for="Color" sm={1}>Color:</span>
-          <Input type="select" id="Color" name="Color:">
+          <Input type="select" value={Color} onChange={(e) => setColor(e.target.value)}>
           <option value="Orange">RED</option>
           <option value="Black">BLUE</option>
           <option value="White">GREEN</option>
@@ -119,7 +128,7 @@ export default class PostPet extends React.Component {
         <Col lg='4'>
         <FormGroup row className="row-cols-lg-auto g-3 align-items-center">
           <span className='s1' for="Desex" sm={1}>Desex:</span>
-          <Input type="select" id="immunization" name="Immunization">
+          <Input type="select" value={Immunization} onChange={(e) => setImmunization(e.target.value)}>
           <option value="Yes">Yes</option>
           <option value="No">No</option>
           </Input>
@@ -131,7 +140,7 @@ export default class PostPet extends React.Component {
         <Col lg={12}>
         <FormGroup row className='row-cols-lg-auto g-3 align-items-center'>
           <span for="exampleText" sm={1}>Descirption:</span>
-          <Input className='textInput' type="textarea" name="text" id="exampleText"/>
+          <Input className='textInput' type="textarea" required value={Descirption} onChange={(e) => setDescirption(e.target.value)}/>
         </FormGroup>
         </Col>
         </Row>
@@ -148,10 +157,13 @@ export default class PostPet extends React.Component {
         </FormGroup>
         </Col>
         </Row>
+        { !isPending &&<Button type="submit" value="Submit" className="addPostTest">Post</Button>}
+        { isPending &&<Button disabled className="addPostTest">Adding...</Button>}
         </Form>
-        <Button value="Submit"className="addPostTest">Post</Button>
-        </div>
+
 
     );
 }
-}
+
+
+export default PostPet;
