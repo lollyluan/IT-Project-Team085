@@ -17,14 +17,14 @@ import {postPet} from '../api/pet';
 
 function PostPet(){
   const[data,setData] = useState({
-        category: "",
+        category: "CAT",
         nickname: "",
         detail: "",
-        color: "",
-        sex: "",
+        color: "RED",
+        sex: "MALE",
         age: "",
-        immunization: "",
-        city: "",
+        immunization: "Yes",
+        city: "Sydney",
         country: ""
   })
 
@@ -32,13 +32,16 @@ function PostPet(){
     await postPet(data);
   })(data), [])*/
   const submit = async(data) =>{
-    await postPet(data)
+    console.log("hello")
+    console.log(data)
+    //await postPet(data)
   }
 
   async function handle(e){
       const newdata = {...data}
       newdata[e.target.id] = e.target.value
       setData(newdata)
+      console.log(data)
       
 
   }
@@ -164,7 +167,7 @@ function PostPet(){
         </FormGroup>
         </Col>
         </Row>
-        <Button type="submit" onClick={submit} className="addPostTest">Post</Button>
+        <Button type="submit" onClick={submit} readOnly = "true" className="addPostTest">Post</Button>
       
         </Form>
 
