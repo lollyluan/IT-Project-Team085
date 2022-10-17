@@ -17,15 +17,15 @@ import {postPet} from '../api/pet';
 
 function PostPet(){
   const[data,setData] = useState({
-        category: "---",
-        nickname: "---",
-        detail: "---",
-        color: "---",
-        sex: "---",
-        age: "---",
-        immunization: "---",
-        city: "---",
-        country: "---"
+        category: "",
+        nickname: "",
+        detail: "",
+        color: "",
+        sex: "",
+        age: "",
+        immunization: "",
+        city: "",
+        country: ""
   })
 
   /*useEffect((async (data)=>{
@@ -64,23 +64,18 @@ function PostPet(){
         <Col lg='4'>
         <FormGroup row className="row-cols-lg-auto g-3 align-items-center">
           <span className='s1' for="Name" sm='1'>Name:</span>   
-          <Input type="text"value={data.nickname} onChange={(e) => handle(e.target.value)} placeholder="Pet’s Name"/>  
+          <Input type="text"value={data.nickname}  id = "nickname" onChange={handle} placeholder="Pet’s Name"/>  
         </FormGroup>
         </Col>
 
-        <Col lg='4'>
-        <FormGroup row className="row-cols-lg-auto g-3 align-items-center">
-          <span className='s1' for="ID" sm='1'>Pet's ID</span>
-          <Input  type="text" value={data.ID} required onChange={(e) => handle(e.target.value)} placeholder="--- --- ---" />
-        </FormGroup>
-        </Col>
+
         </Row>
 
         <Row className='NoPadding'>
         <Col lg='4'>
         <FormGroup row className="row-cols-lg-auto g-3 align-items-center">
           <span className='s1' for="Country" sm='1'>Country:</span>
-          <Input type="select" value={data.country} onChange={(e) => handle(e.target.value)}>
+          <Input type="select" value={data.country}  id = "country" onChange={handle}>
           <option value="Australia">Australia</option>
           </Input>
 
@@ -90,7 +85,7 @@ function PostPet(){
         <Col lg='4'>
         <FormGroup row className="row-cols-lg-auto g-3 align-items-center">
           <span className='s1' for="City" sm={1}>City:</span>
-          <Input type="select" value={data.city} onChange={(e) => handle(e.target.value)}>
+          <Input type="select" value={data.city} id = "city" onChange={handle}>
           <option value="Sydney">Sydney</option>
           <option value="Melbourne">Melbourne</option>
           <option value="Brisbane">Brisbane</option>
@@ -104,7 +99,7 @@ function PostPet(){
         <Col lg='4'>
         <FormGroup row className="row-cols-lg-auto g-3 align-items-center">
           <span className='s1' for="SEX" sm={1}>SEX:</span> 
-          <Input type="select" value={data.sex} onChange={(e) => handle(e.target.value)} >
+          <Input type="select" value={data.sex} id = "sex" onChange={handle} >
           <option value="Boy">MALE</option>
           <option value="Gril">FEMALE</option>
           </Input>
@@ -116,15 +111,15 @@ function PostPet(){
         <Row className='NoPadding'>
         <Col lg='4'>
         <FormGroup row className="row-cols-lg-auto g-3 align-items-center">
-          <span className='s1' for="Age" sm={1}>Age:</span>
-          <Input type="text" required value={data.age} onChange={(e) => handle(e.target.value)} placeholder="month/year" />
+          <span className='s1' for="Age" sm={1} placeholder="0">Age:</span>
+          <Input type="text" required value={data.age} id = "age" onChange={handle} placeholder="month/year" />
         </FormGroup>
         </Col>
       
         <Col lg='4'>
         <FormGroup row className="row-cols-lg-auto g-3 align-items-center">
           <span className='s1' for="Color" sm={1}>Color:</span>
-          <Input type="select" value={data.color} onChange={(e) => handle(e.target.value)}>
+          <Input type="select" value={data.color} id = "color" onChange={handle}>
           <option value="Orange">RED</option>
           <option value="Black">BLUE</option>
           <option value="White">GREEN</option>
@@ -138,7 +133,7 @@ function PostPet(){
         <Col lg='4'>
         <FormGroup row className="row-cols-lg-auto g-3 align-items-center">
           <span className='s1' for="Desex" sm={1}>Desex:</span>
-          <Input type="select" value={data.immunization} onChange={(e) => handle(e.target.value)}>
+          <Input type="select" value={data.immunization} id = "immunization" onChange={handle}>
           <option value="Yes">Yes</option>
           <option value="No">No</option>
           </Input>
@@ -150,7 +145,7 @@ function PostPet(){
         <Col lg={12}>
         <FormGroup row className='row-cols-lg-auto g-3 align-items-center'>
           <span for="exampleText" sm={1}>Descirption:</span>
-          <Input className='textInput' type="textarea" required value={data.detail} onChange={(e) => handle(e.target.value)}/>
+          <Input className='textInput' type="textarea" required value={data.detail} id = "detail" onChange={handle}/>
         </FormGroup>
         </Col>
         </Row>
