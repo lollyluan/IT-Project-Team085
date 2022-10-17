@@ -31,14 +31,16 @@ function PostPet(){
   /*useEffect((async (data)=>{
     await postPet(data);
   })(data), [])*/
-  const submit = async(data) =>console.log(data)
+  const submit = async(data) =>{
+    await postPet(data)
+  }
 
   async function handle(e){
       const newdata = {...data}
       newdata[e.target.id] = e.target.value
       setData(newdata)
-      await postPet(data)
-      console.log(newdata)
+      
+
   }
 
     

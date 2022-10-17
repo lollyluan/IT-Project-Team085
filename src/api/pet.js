@@ -56,7 +56,7 @@ async function postPet(reqBody){
     login("string", "string")
     const request = {
         headers: {'Content-Type': 'application/json',
-        'Authorization':'Bearer '+ "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzdHJpbmciLCJzY29wZXMiOltdLCJ1c2VySWQiOjEsImlzcyI6Imh0dHBzOi8vcGV0c2hvbWUuY29tIiwiaWF0IjoxNjY1OTkzOTE5LCJleHAiOjE2NjYwMTE5MTl9._MvH4tHdqWwNeSu9DV048pny0F9oy86TwyskRg0tCss"},
+        'Authorization':'Bearer '+ getToken()},
         method: 'POST',
         body: JSON.stringify(reqBody)
        
