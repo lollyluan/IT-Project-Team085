@@ -34,9 +34,11 @@ function PostPet(){
   function submit(e){
     e.preventDefault();
     const newdata = {...data}
-    newdata[e.target.id] = e.target.value
-    postPet(newdata)
+    console.log("data")
     console.log(newdata)
+
+    postPet(newdata)
+    
   }
   
 
