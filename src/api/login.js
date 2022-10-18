@@ -18,7 +18,7 @@ function login(email, password) {
     const requestInit = {
         method: 'POST',
         // mode: 'no-cors',
-        headers: {'Content-Type': 'application/json'},
+        headers: {'Content-Type': 'application/json','mode': 'no-cors'},
         body: JSON.stringify({
             'email': email,
             'password': password

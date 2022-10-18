@@ -23,9 +23,9 @@ function PostPet(){
         color: "RED",
         sex: "MALE",
         age: "",
-        immunization: "Yes",
+        immunization: "YES",
         city: "Sydney",
-        country: ""
+        country: "Australia"
   })
 
   /*useEffect((async (data)=>{
@@ -142,8 +142,8 @@ function PostPet(){
         <FormGroup row className="row-cols-lg-auto g-3 align-items-center">
           <span className='s1' for="Desex" sm={1}>Desex:</span>
           <Input type="select" value={data.immunization} id = "immunization" onChange={handle}>
-          <option value="Yes">Yes</option>
-          <option value="No">No</option>
+          <option value="YES">Yes</option>
+          <option value="NO">No</option>
           </Input>
         </FormGroup>
         </Col>
