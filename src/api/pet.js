@@ -78,11 +78,11 @@ async function postPet(reqBody){
     })
     .then(data => {
         console.log(data);
-       //alert("Successfully submit!")
+       alert("Successfully submit!")
     })
     .catch(err => {
-        //console.log(err);
-        //alert('Something went wrong!');
+        console.log(err);
+        alert('Something went wrong!');
     });
 }
 

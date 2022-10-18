@@ -31,19 +31,20 @@ function PostPet(){
   /*useEffect((async (data)=>{
     await postPet(data);
   })(data), [])*/
-  const submit = async(data) =>{
-    console.log("hello")
-    console.log(data)
-    //await postPet(data)
+  function submit(e){
+    e.preventDefault();
+    const newdata = {...data}
+    newdata[e.target.id] = e.target.value
+    postPet(newdata)
+    console.log(newdata)
   }
+  
 
   async function handle(e){
       const newdata = {...data}
       newdata[e.target.id] = e.target.value
       setData(newdata)
-      console.log(data)
-      
-
+     // console.log(data)
   }
 
     
@@ -167,7 +168,7 @@ function PostPet(){
         </FormGroup>
         </Col>
         </Row>
-        <Button type="submit" onClick={submit} readOnly = "true" className="addPostTest">Post</Button>
+        <Button  onClick={submit} className="addPostTest">Post</Button>
       
         </Form>
 
