@@ -31,12 +31,12 @@ async function getPets(pageNo, query) {
     method: 'GET',
    
     }
-
-    /*for(attr in query){
-        if(query[attr] !== "" || query !== null){
-            url = url + ("&"+attr + "=" + query[attr])
-        }
-    }*/
+    var attr
+    for(attr in query){
+      if(query[attr] !== "" || query !== null){
+        url = url + ("&"+attr + "=" + query[attr])
+     }
+    }
     
     return fetch(url, request)
     .then(res => {
