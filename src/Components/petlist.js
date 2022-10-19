@@ -10,15 +10,16 @@ import {getPets} from '../api/pet'
 import { useEffect , useState} from 'react';
 
 function PetList(props) {
-  const query= {'color': null}
+
   const [petLst, setPetLst] = useState([]);
+  
   useEffect(()=>{
     const func = async()=>{
-      const list = await(getPets( props.page, query))
+      const list = await(getPets( props.page, props.query))
       setPetLst(list)
     }
     func()
-  })
+  },)
  
   var pet
   return (
