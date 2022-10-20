@@ -23,6 +23,7 @@ function PostPet(){
         color: "RED",
         sex: "MALE",
         age: "",
+        character:"",
         immunization: "Yes",
         city: "Sydney",
         country: ""
@@ -110,6 +111,7 @@ function PostPet(){
           <Input type="select" value={data.sex} id = "sex" onChange={handle} >
           <option value="Boy">MALE</option>
           <option value="Gril">FEMALE</option>
+          <option value="Gril">UNDEFINED</option>
           </Input>
 
         </FormGroup>
@@ -134,6 +136,11 @@ function PostPet(){
           <option value="Brown">YELLOW</option>
           <option value="Double Color">ORANGE</option>
           <option value="Triple Color">PURPLE</option>
+          <option value="Triple Color">WHITE</option>
+          <option value="Triple Color">BLACK</option>
+          <option value="Triple Color">GREY</option>
+          <option value="Triple Color">OTHER</option>
+          <option value="Triple Color">UNDEFINED</option>
           </Input>
         </FormGroup>
         </Col>
@@ -142,8 +149,9 @@ function PostPet(){
         <FormGroup row className="row-cols-lg-auto g-3 align-items-center">
           <span className='s1' for="Desex" sm={1}>Desex:</span>
           <Input type="select" value={data.immunization} id = "immunization" onChange={handle}>
-          <option value="Yes">Yes</option>
-          <option value="No">No</option>
+          <option value="Yes">YES</option>
+          <option value="No">NO</option>
+          <option value="No">PENDING</option>
           </Input>
         </FormGroup>
         </Col>
