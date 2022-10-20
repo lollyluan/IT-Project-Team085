@@ -7,9 +7,10 @@ import {
   Link
 
 } from "react-router-dom"
-import HomePage from "../pages/Homepage/homepage"
-import LoginPage from "../pages/Login/login"
-import RegisterPage from "../pages/Register/register"
+import AdminLoginPage from "../pages/admin_login"
+
+import PostPets from "../pages/PostPets"
+
 export default function HomeRouter () {
 
 
@@ -19,15 +20,13 @@ export default function HomeRouter () {
         {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
         <Routes>
-          <Route exact path="/register" element={<RegisterPage />}>
+          <Route exact path="/admin/pet" element={<PostPets/>}>
 
           </Route>
-          <Route exact path="/login" element={<LoginPage />}>
+          <Route exact path="/admin/login" element={<AdminLoginPage />}>
 
           </Route>
-          <Route exact path="/" element={<HomePage />}>
-
-          </Route>
+        
         </Routes>
       </div>
     </Router>

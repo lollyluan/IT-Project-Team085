@@ -24,9 +24,9 @@ function PostPet(){
         sex: "MALE",
         age: "",
         character:"",
-        immunization: "Yes",
+        immunization: "YES",
         city: "Sydney",
-        country: ""
+        country: "Australia"
   })
 
   /*useEffect((async (data)=>{
