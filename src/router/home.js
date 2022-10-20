@@ -7,7 +7,7 @@ import {
   Link
 
 } from "react-router-dom"
-import HomePage from "../pages/Homepage/homepage"
+import HomePage from "../pages/HomePage/homepage"
 import LoginPage from "../pages/Login/login"
 import RegisterPage from "../pages/Register/register"
 export default function HomeRouter () {

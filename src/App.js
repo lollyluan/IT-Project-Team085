@@ -9,7 +9,7 @@ import PetList from './Components/petlist';
 import UploadAndDisplayImage from './Components/image';
 import PostPet from "./Components/post";
 import AdminLoginPage from './pages/admin_login';
-
+import HomePage from './pages/HomePage/homepage';
 
 function App() {
   return (
