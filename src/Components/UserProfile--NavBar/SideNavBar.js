@@ -1,42 +1,28 @@
 import React from "react"
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-  Link
-} from "react-router-dom"
-
-import Overview from "./Overview"
-import PersonalInfo from "./PersonInfo"
 
 
 
 export default function SideNavBar () {
   return (
-    <Router>
+    <div className="sideNav userProfile">
+      <img className="avatar" src="" alt="" />
 
-      <nav>
-        <ul>
-          <li>
-            <Link to="/overview">Overview</Link>
-          </li>
-          <li>
-            <Link to="/personalInfo">Profile</Link>
-          </li>
-        </ul>
-      </nav>
+      <div className="name">John Doe</div>
 
+      <div className="location">| Melbourne</div>
 
-      <Routes>
-        <Route exact path="/overview" element={<Overview />}>
-
-        </Route>
-        <Route exact path="/PersonalInfo" element={<PersonalInfo />}>
-
-        </Route>
-
-      </Routes>
-
-    </Router>
+      <ul className="functions">
+        <li><a href="">Overview</a></li>
+        <li><a href="">User Information</a></li>
+        <li><a href="">User Setting </a></li>
+        <li><a href="">Notification Setting </a></li>
+        <li><a href="">Privacy</a></li>
+        <li><a href="">Security</a></li>
+        <li><a href="">Payments</a></li>
+        <li><a href="">Help</a></li>
+        <li><a href="">About</a></li>
+      </ul>
+    </div>
   )
 }
+

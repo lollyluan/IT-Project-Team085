@@ -6,14 +6,21 @@ import PetRouter from './router/pets'
 import { Pets } from '@mui/icons-material'
 import PetList from './Components/petlist'
 
-import UserProfile from "./Components/UserProfile"
+
+
+import Volunteer from "./Components/UserProfile--NavBar/Overview/VolunteerApply"
+import DonationHistory from "./Components/UserProfile--NavBar/Overview/DonationHistory"
+import SideNavBar from "./Components/UserProfile--NavBar/SideNavBar"
 function App () {
   return (
     <div className="App">
       <HomeRouter />
-      <UserProfile />
+
+      <Volunteer />
+      <DonationHistory />
+      <SideNavBar />
     </div>
   )
 }
 
-export default App;
+export default App
