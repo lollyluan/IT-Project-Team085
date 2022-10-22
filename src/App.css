@@ -15,6 +15,7 @@
   --text-tips: 12px;
 
   /* Fonts */
+
   --font-family-body: "Rubik Dirt", cursive;
 
   /* Background Colours */
@@ -68,9 +69,11 @@ p3 {
   color: #61dafb;
 }
 
+
 .button {
   margin: 10px;
 }
+
 /******************* element state ****************************/
 
 .form-control:focus {
@@ -97,9 +100,11 @@ p3 {
   border-radius: 10px;
 }
 
+
 .Update {
   margin-bottom: 10%;
 }
+
 
 .Post {
   width: 65%;
@@ -120,6 +125,7 @@ p3 {
   background: #90a955;
   height: 953px;
   position: absolute;
+
 }
 
 .container {
@@ -164,6 +170,7 @@ p3 {
 form {
   width: 90%;
   align-items: center;
+
 }
 
 /****************** Header/Footer css style ************************/
@@ -195,6 +202,7 @@ header .nav {
 header .navbar-brand {
   font-size: 24px;
 }
+
 
 footer {
   background-color: var(--color-background-footer);
@@ -257,6 +265,7 @@ footer .navbar-brand {
 }
 .col-lg-12 .row {
   padding: 0;
+
 }
 
 .row .col-sm-2 {
