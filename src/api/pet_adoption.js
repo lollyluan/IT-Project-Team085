@@ -1,8 +1,8 @@
-
+import {getToken, login, isLoggedIn} from './login.js'
 const BASE_URL = "http://localhost:8080/api/v1"
 //process.env.REACT_APP_BASE_URL
 //It's just used for testing
-import {getToken, login, isLoggedIn} from './login.js'
+
 
 
 
@@ -109,6 +109,7 @@ async function getAdoption(){
 
   //Delete the adoption application
   async function deleteAdoptionApplication(petId){
+    const token = getToken
     const request = {
        
         method: 'DELETE',

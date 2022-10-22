@@ -6,13 +6,24 @@ import {postAdoptionApplication} from '../api/pet_adoption';
 
 export default function ApplicationPopup(props) {
   const [show, setShow] = useState(false);
-  const [application, setApplication] = useState("")
+  const [application, setApplication] = useState({reason:""})
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
+  async function getApplication(e){
+    const data={...application}
+    data["reason"]= e.target.value
+    setApplication(data)
+    console.log(application)
+  }
+
   const handleSubmit = e =>{
-    postAdoptionApplication(props.id, {reason:application})
+    e.preventDefault()
+    //const apply = {"reason":application}
+    console.log(application)
+    //console.log(apply)
+    postAdoptionApplication(props.id, application)
   }
 
   return (
@@ -32,7 +43,7 @@ export default function ApplicationPopup(props) {
               controlId="popup"
             >
               <Form.Label>Self introdunction of your own conditions, and reason for wanting to adopt~</Form.Label>
-              <Form.Control as="textarea" rows={3} type="text" id="application" onChange={setApplication}/>
+              <Form.Control as='textarea' rows={5} value={application.reason} onChange={getApplication}/>
             </Form.Group>
           </Form>
         </Modal.Body>

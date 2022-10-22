@@ -14,7 +14,7 @@ import AdminLoginPage from './pages/admin_login';
 function App() {
   return (
     <div className="App">
-    <HomeRouter/>
+    <PetRouter/>
     </div>
   );
 }
