@@ -1,4 +1,5 @@
 import './App.css'
+import './userProfile.css'
 import React from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import HomeRouter from './router/home'
