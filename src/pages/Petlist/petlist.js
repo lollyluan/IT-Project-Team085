@@ -5,33 +5,27 @@ import Header from "../../Components/header";
 import React from 'react';
 import SearchBar from "../../Components/searchBar";
 import PageNumber from "../../Components/pageNumber";
-
-import DropDownList from "../../Components/dropdownlist";
 import { useState } from "react";
+
 function DisplayPets(){
     const [page, setPage] = useState(1)
-    const query = {
-        "color": "",
-        "sex": "",
-        "age": null,
-        "character": "",
-        "immunization": ""
+    
+    const [query, setQuery] = useState({
+        color: "",
+        sex: "",
+        immunization: ""
+    });
+    
+    const changeValue = (query) =>{
+        setQuery(query)
+        console.log(query)
     }
-    const setQuery = (attr)=>{
-        ((value)=>{
-            query[attr] = value;
-        })()
-    }
+
     const searchBarStyle={
         marginTop:"30px",
         marginLeft:"20%",
         marginRight:"20%",
         marginBottom:"30px"
-    }
-
-    const petListStyle={
-        marginLeft:"10%",
-        marginRight:"10%"
     }
 
     const pageNumberStyle={
@@ -45,12 +39,13 @@ function DisplayPets(){
         <div>
             <Header/>
 
+            {/* <div style={searchBarStyle} onClick={()=>setQuery(e.target.value)}> */}
             <div style={searchBarStyle}>
-                <SearchBar/>
+                <SearchBar changeValue={changeValue}/>
             </div>
          
-            <div style={petListStyle}>
-                <PetList page={page}/>
+            <div>
+                <PetList page={page} query={query}/>
             </div>
             
             <div style={pageNumberStyle}>

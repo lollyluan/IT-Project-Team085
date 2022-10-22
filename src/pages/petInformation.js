@@ -12,41 +12,55 @@ import catd2 from '../images/cat1_details2.jpg';
 import catd3 from '../images/cat1_details3.jpg';
 import Tags from '../Components/Tags';
 import {BsFillGeoAltFill} from "react-icons/bs";
-import { VerticalAlignCenter } from '@mui/icons-material';
-
+import {getPet} from '../api/pet';
+import { useEffect, useState} from 'react';
+import{useParams} from 'react-router-dom';
+import ApplicationPopup from '../Components/applicationPopup';
 
 
 function PetInfo(){
-
+    
     const bodyStyle={
         textAlign:"center",
         marginLeft:"10%",
         marginRight:"10%",
-        marginTop:"30px",
-        justifyContent:'left'
-    }
+        marginTop:"30px"
+    };
     
     const imageStyle={
         width:"100%",
         objectFit:"cover",
         height:"120px",
         objectPosition:"0 100%"
-    }
+    };
 
     const textStyle={
         marginLeft:"20px",
-        marginRight:"20px"
-    }
+        marginRight:"20px",
+        fontSize:"12px"
+    };
 
     const infoStyle={
         // height:"574px"
         VerticalAlignCenter:"center"
-    }
+    };
 
     const tagStyle={
         marginTop:"20px",
         marginBottom:"20px"
+    };
+
+  
+    const [pet, setPet] = useState([]);
+    const petId = useParams();
+    useEffect(()=>{
+      const func = async()=>{
+ 
+        const petInfo = await(getPet(petId.petId))
+        setPet(petInfo)
     }
+    func()
+    });
 
     return (
         <div>
@@ -78,12 +92,13 @@ function PetInfo(){
                                 and get along well with other cats.
                             </Card.Text>
                             <div style={tagStyle}>
-                                <Tags/>
+                                <Tags color = {pet.color} sex = {pet.sex} age = {pet.age} 
+                                character = {pet.character} immunization = {pet.immunization}></Tags>
                             </div> 
                             <div style={tagStyle}>
                                 <BsFillGeoAltFill/> Melbourne,VIC
                             </div>                         
-                            <Button variant="success">Apply Now</Button>
+                            <ApplicationPopup/>
                             </Card.Body>
                         </Card>
                 </Col>

@@ -15,7 +15,8 @@
   --text-tips: 12px;
 
   /* Fonts */
-  --font-family-body: 'Rubik Dirt', cursive;
+
+  --font-family-body: "Rubik Dirt", cursive;
 
   /* Background Colours */
   --color-background-body: #f4f3ee;
@@ -67,6 +68,12 @@ p3 {
 .App-link {
   color: #61dafb;
 }
+
+
+.button {
+  margin: 10px;
+}
+
 /******************* element state ****************************/
 
 .form-control:focus {
@@ -86,11 +93,18 @@ p3 {
 .row .AddPhoto {
   width: 14rem;
   height: 13rem;
+  padding: 5%;
   background: rgba(255, 255, 255, 0.6);
   border: 1px dashed #90a955;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
 }
+
+
+.Update {
+  margin-bottom: 10%;
+}
+
 
 .Post {
   width: 65%;
@@ -102,12 +116,61 @@ p3 {
   margin-right: 5%;
   margin-top: 1%;
   margin-bottom: 5%;
+  padding-left: 2%;
+  padding-right: 2%;
+  padding-bottom: 2%;
 }
 
 .AdminSide {
   background: #90a955;
   height: 953px;
   position: absolute;
+
+}
+
+.container {
+  height: 100%;
+  width: 80%;
+  margin: 20%;
+  margin-top: 10%;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  background-color: rgba(241, 242, 245, 0.7);
+  border-radius: 10px;
+}
+
+.login-form {
+  margin-top: 20%;
+  margin-bottom: 20%;
+  width: 80%;
+  margin-left: 20%;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 10px;
+  padding: 10%;
+}
+
+.LogoPosition {
+  position: relative;
+}
+
+.Logo {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, 50%);
+}
+
+.smallInput {
+  display: flex;
+}
+
+.login-form .inputInRow {
+  width: 100%;
+}
+
+form {
+  width: 90%;
+  align-items: center;
+
 }
 
 /****************** Header/Footer css style ************************/
@@ -140,6 +203,7 @@ header .navbar-brand {
   font-size: 24px;
 }
 
+
 footer {
   background-color: var(--color-background-footer);
   height: 8rem;
@@ -156,11 +220,52 @@ footer .navbar-brand {
 
 .App body {
   background-color: var(--color-background-body);
+  min-height: 100vh;
 }
 
 .row {
   padding-left: 15%;
   padding-right: 15%;
+}
+
+.NoPadding {
+  padding-right: 0;
+  padding-left: 0;
+}
+
+.NoPadding .row {
+  margin-top: 0;
+}
+
+.row .form-select {
+  width: 55%;
+  vertical-align: top;
+}
+.row .form-control {
+  width: 95%;
+  vertical-align: top;
+}
+.row .textInput {
+  width: 85%;
+  vertical-align: top;
+}
+.row textarea.form-control {
+  min-height: calc(6em + 0.75rem + 2px);
+}
+
+.row-cols-lg-auto .s1 {
+  width: 30%;
+}
+.row-cols-lg-auto .s2 {
+  width: 10%;
+}
+
+.col-lg-4 .row {
+  padding: 0;
+}
+.col-lg-12 .row {
+  padding: 0;
+
 }
 
 .row .col-sm-2 {

@@ -12,15 +12,15 @@ const BASE_URL = "http://localhost:8080/api/v1"
 
 
 var token = ""
-
-function login(email, password) {
-    const url = BASE_URL + '/auth/user/login';
+function login(username, password) {
+    const url = BASE_URL + '/auth/admin/login';
     const requestInit = {
         method: 'POST',
         // mode: 'no-cors',
-        headers: {'Content-Type': 'application/json','mode': 'no-cors'},
+        headers: {'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': '*'},
         body: JSON.stringify({
-            'email': email,
+            'username': username,
             'password': password
         })
     }
@@ -47,13 +47,13 @@ function login(email, password) {
     })
     .catch((e) => {
         console.log('Failed to sign in, try again ' + e);
-        $('.App .error_message').html('not successful!');
+        $('.App .error_message').html('Failed to sign in, try again');
        // document.location.href = '/login';
     });
 }
 
-function signUp(email, password, firstname, lastname) {
-    const url = BASE_URL + '/auth/user/register';
+function signUp(username, password) {
+    const url = BASE_URL + '/auth/admin/register';
     const requestInit = {
         method: 'POST',
         // mode: 'no-cors',
@@ -61,9 +61,8 @@ function signUp(email, password, firstname, lastname) {
         body: JSON.stringify({
        
             'password': password,
-            'email': email,
-            'firstname': firstname,
-            'lastname': lastname
+            'username': username,
+           
         })
     }
 
@@ -72,7 +71,7 @@ function signUp(email, password, firstname, lastname) {
         
         if(res.ok) {
             console.log('registered done!');
-            login(email, password);
+            login(username, password);
             return res.json();
         }
         else {

@@ -1,4 +1,4 @@
-
+import {getToken, login} from './admim_login'
 const BASE_URL = "http://localhost:8080/api/v1"
 //process.env.REACT_APP_BASE_URL
 //It's just used for testing
@@ -31,12 +31,12 @@ async function getPets(pageNo, query) {
     method: 'GET',
    
     }
-
-    /*for(attr in query){
-        if(query[attr] !== "" || query !== null){
-            url = url + ("&"+attr + "=" + query[attr])
-        }
-    }*/
+    var attr
+    for(attr in query){
+      if(query[attr] !== "" || query !== null){
+        url = url + ("&"+attr + "=" + query[attr])
+     }
+    }
     
     return fetch(url, request)
     .then(res => {
@@ -53,8 +53,10 @@ async function getPets(pageNo, query) {
     })    
 }
 async function postPet(reqBody){
+    login("string", "string")
     const request = {
-        headers: {'Content-Type': 'application/json'},
+        headers: {'Content-Type': 'application/json',
+        'Authorization':'Bearer '+ getToken()},
         method: 'POST',
         body: JSON.stringify(reqBody)
        
@@ -76,11 +78,11 @@ async function postPet(reqBody){
     })
     .then(data => {
         console.log(data);
-       //alert("Successfully submit!")
+       alert("Successfully submit!")
     })
     .catch(err => {
-        //console.log(err);
-        //alert('Something went wrong!');
+        console.log(err);
+        alert('Something went wrong!');
     });
 }
 
@@ -119,4 +121,4 @@ async function postPet(reqBody){
 
   }
   //export {getPets, postPet, deletePet}
-export {getPets, postPet, deletePet};
+export {getPets, postPet, deletePet, getPet};

@@ -1,5 +1,8 @@
 import { signUp } from '../../api/login';
 import React, {useState} from 'react';
+import { Button,Form,Input,Label,Row,Col} from 'reactstrap';
+
+
 function SignUp() {
 
     const [email, setEmail] = useState('');
@@ -19,6 +22,8 @@ function SignUp() {
 
     const [lastname, setLastname] = useState('');
    
+     // TODO how to remember
+     const [rememberMe, setRememberMe] = useState(false);
 
 
 
@@ -40,37 +45,61 @@ function SignUp() {
 
 
     return(
-           
-                <form class='login-form'>
-                    
-                        step === 0 ? 
-                        <div >
+<body className="initial-img row noPadding">
+<Label className="contianer col-lg-4 LogoPosition">
+     <h1 className="disabled Logo" href="#">PetHome</h1>
+</Label>
 
-                            <label>First name</label><br/>
+<div className="contianer col-lg-8">
+<Form className='login-form' action="">
+    <Label className="contianer col-lg-5">
+        <h2 className="disabled" href="#">Create a New Account</h2>
+    </Label>
 
-                            <input className='inputField' type='text' value={firstname} onChange={(e)=>{setFirstname(e.target.value)}}></input><br/>
+    <div className='smallInput'>
+    <div className="inputInRow">
+    <Input className='inputField' placeholder="First name" type='text' value={firstname} onChange={(e)=>{setFirstname(e.target.value)}}></Input><br/>
+    </div>
+    <div className="inputInRow">
+    <Input className='inputField'placeholder="Last name" type='text' value={lastname} onChange={(e)=>{setLastname(e.target.value)}}></Input><br/>
+    </div>
+    </div>
 
-                            <label>Last name</label><br/>
-                           
-                            <input className='inputField' type='text' value={lastname} onChange={(e)=>{setLastname(e.target.value)}}></input><br/>
-                            <label>email</label><br/>
-                            <input className='email' type='text' value={email} onChange={e=>setEmail(e.target.value)}></input><br/>
-                            <label>Password</label><br/>
+    <Input className='email'placeholder="Email" type='text' value={email} onChange={e=>setEmail(e.target.value)}></Input><br/>
 
-                            <input className='inputField' type='password' value={password} onChange={handleChangePassword}></input><br/>
+    <div className='smallInput'>
+    <div className="inputInRow">
+    <Input className='inputField' placeholder="Password" type='password' value={password} onChange={handleChangePassword}></Input><br/>
+    </div>
+    <div className="inputInRow">
+    <Input className='inputField' placeholder="Confirm Password" type='password' value={password2} onChange={handleChangePassword2}></Input><br/>
+    </div>
+    </div>
 
-                            <label>Re-enter Password</label><br/>
+    <div className='options'>
+        <div>
+            <Input type='checkbox' checked={rememberMe} onClick={()=>{setRememberMe(!rememberMe)}}></Input>
+            I agreed to the Terms of Use and Praivacy Policy.
+        </div>
+    </div>
+    
+    <Button className='button' onClick={handleSignUp}>
+        Register
+    </Button>
 
-                            <input className='inputField' type='password' value={password2} onChange={handleChangePassword2}></input><br/>
-                        
-       
-                           
-                            <div className='button' onClick={handleSignUp}>
-                                Sign Up
-                            </div>
-                        </div>
-                    
-                </form>
+    <div className="center"><p>- Or - </p></div>
+    <Button className='button'>SignUp with Google</Button>
+    <Button className='button'>SignUp with Facebook</Button>
+   
+    <Label className="center">Don’t have an account, Register Here!</Label>
+
+
+    </Form>
+
+</div>
+                            
+
+</body>
       
     )
 }

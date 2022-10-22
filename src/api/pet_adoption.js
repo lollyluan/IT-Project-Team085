@@ -76,7 +76,8 @@ async function getAdoptionApplication(){
 async function getAdoption(){
     const request = {
         headers: {'Content-Type': 'application/json',
-        'Authorization':'Bearer '+ getToken()},
+        'Authorization':'Bearer '+ getToken(),
+        'Access-Control-Allow-Origin': '*'},
         method: 'GET',
        
        
@@ -145,7 +146,8 @@ async function getAdoption(){
     const request = {
        //some admin authentication
         method: 'PUT',
-        headers: {'Content-Type': 'application/json'},
+        headers: {'Content-Type': 'application/json',
+        'Authorization':'Bearer '+ getToken()},
         body:status
        
     }
