@@ -4,6 +4,7 @@ import { CardBody,CardText,CardTitle,Row,Col,Button } from 'reactstrap';
 import donation from '../images/donation.png';
 import adopter from '../images/adopter.png';
 import volunteer from '../images/volunteer.png';
+import {Link} from "react-router-dom";
 
 function HomeCard (){
     return(
@@ -15,7 +16,9 @@ function HomeCard (){
     <CardText>
     Tens of thousands of pets are homeless every year and they deserve better, please give them a home.
     </CardText>
+    <Link to="/petlist">
     <Button color="link">Learn More.</Button>
+    </Link>
   </CardBody>
 </Col>
 
