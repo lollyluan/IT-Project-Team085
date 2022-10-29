@@ -8,7 +8,7 @@
 
 /***** SideNavBar *****/
 .sideNav {
-  position: relative;
+  position: fixed;
 
   width: 357px;
   height: 999px;
@@ -64,6 +64,17 @@
 }
 
 /* SideNavBar --Overview --Donation history */
+.donationHistory {
+  display: flex;
+  flex-direction: column;
+
+  margin-left: 530px;
+
+  position: fixed;
+  top: 347px;
+  width: 60%;
+}
+
 .donationDetail {
   color: var(--color-text-green);
   background-color: var(--color-background-header);
@@ -90,6 +101,10 @@
 /* SideNavBar --Overview --Volunteer */
 .volunteer {
   text-align: left;
+  margin-left: 530px;
+
+  position: fixed;
+  top: 347px;
 }
 .volunteer .requirement {
   margin: 0 54px 25px;
@@ -130,4 +145,33 @@
 
   font-size: var(--text-article);
   color: white;
+}
+
+.banner {
+  height: 255px;
+  width: 100%;
+  background-color: var(--color-background-footer);
+  color: var(--color-background-body);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  position: absolute;
+}
+
+/* SideNavBar --Overview --navbar */
+.overviewNav {
+  display: flex;
+  height: 92px;
+  justify-content: space-between;
+  align-items: center;
+
+  position: relative;
+  top: 255px;
+  width: 60%;
+
+  margin-left: 530px;
+  padding: 0 39px;
 }

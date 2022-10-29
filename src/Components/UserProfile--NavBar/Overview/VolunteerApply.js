@@ -4,7 +4,7 @@ export default function Volunteer () {
   return (
     <div className="volunteer userProfile">
 
-      <h3>volunteer component</h3>
+
       <div className="requirement">
         <p className="requimentTitle">Volunteer Requirements:</p>
 
