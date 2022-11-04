@@ -16,21 +16,20 @@ import {getPet} from '../api/pet';
 import { useEffect, useState} from 'react';
 import{useParams} from 'react-router-dom';
 import ApplicationPopup from '../Components/applicationPopup';
+import { PropaneSharp } from '@mui/icons-material';
 
 
 function PetInfo(){
     
     const bodyStyle={
         textAlign:"center",
-        marginLeft:"10%",
-        marginRight:"10%",
         marginTop:"30px"
     };
     
     const imageStyle={
         width:"100%",
         objectFit:"cover",
-        height:"120px",
+        height:"90px",
         objectPosition:"0 100%"
     };
 
@@ -41,7 +40,7 @@ function PetInfo(){
     };
 
     const infoStyle={
-        // height:"574px"
+        //height:"480px",
         VerticalAlignCenter:"center"
     };
 
@@ -98,7 +97,7 @@ function PetInfo(){
                             <div style={tagStyle}>
                                 <BsFillGeoAltFill/> Melbourne,VIC
                             </div>                         
-                            <ApplicationPopup/>
+                            <ApplicationPopup petId = {pet.id}/>
                             </Card.Body>
                         </Card>
                 </Col>

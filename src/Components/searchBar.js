@@ -34,13 +34,9 @@ function SearchBar(props) {
     <>
       <InputGroup className="search-bar" variant="outline-success">
         <Button variant="outline-success">< BsSearch/></Button>
-        <DropdownButton title="Filter">
-          <DropdownButton title="Category">             
-              <Dropdown.Item attr={"category"} value={"CAT"}>Cat</Dropdown.Item>
-              <Dropdown.Item attr={"category"} value={"DOG"}>Dog</Dropdown.Item>
-          </DropdownButton>
+        <DropdownButton variant="outline-success" title="Filter">
 
-          <DropdownButton title="Color">
+          <DropdownButton variant="outline-success" title="Color">
               <Dropdown.Item id="color" onClick={getValue} type="RED">Red</Dropdown.Item>
               <Dropdown.Item id="color" onClick={getValue} type="BLUE">Blue</Dropdown.Item>
               <Dropdown.Item id="color" onClick={getValue} type="GREEN">Green</Dropdown.Item>
@@ -54,13 +50,13 @@ function SearchBar(props) {
               <Dropdown.Item id="color" onClick={getValue} type="UNDEFINED">Undefined</Dropdown.Item>          
           </DropdownButton>
             
-          <DropdownButton title="Sex">
+          <DropdownButton variant="outline-success" title="Sex">
               <Dropdown.Item id="sex" onClick={getValue} type="MALE">Male</Dropdown.Item>
               <Dropdown.Item id="sex" onClick={getValue} type="FEMAILE">Female</Dropdown.Item>
               <Dropdown.Item id="sex" onClick={getValue} type="UNDEFINED">Undefined</Dropdown.Item>
           </DropdownButton>
           
-          <DropdownButton title="Immunization">
+          <DropdownButton variant="outline-success" title="Immunization">
               <Dropdown.Item id="immunization" onClick={getValue} type="YES">Yes</Dropdown.Item>
               <Dropdown.Item id="immunization" onClick={getValue} type="NO">No</Dropdown.Item>
           </DropdownButton>
