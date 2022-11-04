@@ -2,14 +2,10 @@ import { flexbox } from "@mui/system"
 import React from "react"
 
 export default function DonationHistory () {
-  const DonationHistoryStyle = {
 
-
-  }
 
   return (
     <div className="donationHistory userProfile">
-      <h3>donation history component</h3>
 
 
       <div className="donationDetail">
