@@ -11,7 +11,6 @@ const BASE_URL = "http://localhost:8080/api/v1"
 //const currentUser=currentUserSubject.asObservable()
 
 
-var token = ""
 
 function login(email, password) {
     const url = BASE_URL + '/auth/user/login';
@@ -39,7 +38,8 @@ function login(email, password) {
     .then(user => {
       
         // store user details and jwt token in local storage to keep user logged in between page refreshes
-        token = user.token;
+        const token = user.token;
+        localStorage.setItem("token", token)
         console.log(JSON.stringify(user))
        
 
@@ -88,15 +88,15 @@ function signUp(email, password, firstname, lastname) {
 }
 
 function isLoggedIn() {
-    return token !== '';
+    return localStorage.getItem('token') != undefined;
 }
 function getToken(){
-    return token;
+    return localStorage.getItem('token');
 }
 function getUserId() {
     if(isLoggedIn()) {
         
-        const jwt =jwt_decode(token)
+        const jwt =jwt_decode(localStorage.getItem('token'))
 
         return jwt.userId;
     } 
