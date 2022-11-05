@@ -21,7 +21,7 @@ export default function ApplicationPopup(props) {
   const handleSubmit = e =>{
     e.preventDefault()
     //const apply = {"reason":application}
-    console.log(application)
+    console.log(props.id)
     //console.log(apply)
     postAdoptionApplication(props.id, application)
   }

@@ -19,7 +19,7 @@ function PetList(props) {
       setPetLst(list)
     }
     func()
-  },)
+  },[])
  
   var pet
   return (

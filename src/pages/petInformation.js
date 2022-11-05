@@ -59,7 +59,7 @@ function PetInfo(){
         setPet(petInfo)
     }
     func()
-    });
+    }, []);
 
     return (
         <div>
@@ -97,7 +97,7 @@ function PetInfo(){
                             <div style={tagStyle}>
                                 <BsFillGeoAltFill/> Melbourne,VIC
                             </div>                         
-                            <ApplicationPopup petId = {pet.id}/>
+                            <ApplicationPopup id = {pet.id}/>
                             </Card.Body>
                         </Card>
                 </Col>
