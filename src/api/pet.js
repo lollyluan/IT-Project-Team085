@@ -32,7 +32,7 @@ async function getPets(pageNo, query) {
     }
     var attr
     for(attr in query){
-      if(query[attr] !== "" || query !== null){
+      if(query[attr] !== "" && query[attr] !== null){
         url = url + ("&"+attr + "=" + query[attr])
      }
     }

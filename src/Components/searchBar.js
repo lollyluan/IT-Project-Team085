@@ -24,8 +24,7 @@ function SearchBar(props) {
     let value = e.target.type
 
     query[attr] = value
-    console.log(attr)
-    console.log(value)
+    
     {props.changeValue(query)}
     // console.log(query)
 }
