@@ -1,6 +1,5 @@
 import {getToken, login} from './admim_login'
-const BASE_URL = "http://localhost:8080/api/v1"
-//process.env.REACT_APP_BASE_URL
+const BASE_URL = process.env.REACT_APP_BASE_URL
 //It's just used for testing
 
 
@@ -28,7 +27,7 @@ async function getPets(pageNo, query) {
     var url = BASE_URL + '/pets/'+"?page="+pageNo;
     
     const request = {
-    method: 'GET',
+        method: 'GET'
    
     }
     var attr

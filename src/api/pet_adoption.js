@@ -1,6 +1,5 @@
 import {getToken, login, isLoggedIn} from './login.js'
-const BASE_URL = "http://localhost:8080/api/v1"
-//process.env.REACT_APP_BASE_URL
+const BASE_URL = process.env.REACT_APP_BASE_URL
 //It's just used for testing
 
 

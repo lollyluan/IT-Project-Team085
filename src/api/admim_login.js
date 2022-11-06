@@ -4,8 +4,7 @@ import $ from 'jquery';
 
 const {jwt_decode} = pkg;
 
-const BASE_URL = "http://localhost:8080/api/v1"
-//process.env.REACT_APP_BASE_URL
+const BASE_URL = process.env.REACT_APP_BASE_URL
 
 //const currentUserSubject = new BehaviorSubject(JSON.parse(localStorage.getItem('currentUser')));
 //const currentUser=currentUserSubject.asObservable()

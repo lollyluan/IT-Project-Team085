@@ -1,5 +1,5 @@
 
-const BASE_URL = "http://localhost:8080/api/v1"
+const BASE_URL = process.env.REACT_APP_BASE_URL
 
 const getImage = (petId)=>{
     const url = BASE_URL+"/image?petId="+petId
