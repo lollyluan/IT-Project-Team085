@@ -6,7 +6,8 @@ const BASE_URL = process.env.REACT_APP_BASE_URL
 async function getPet(id){
     var url = BASE_URL + "/pets/" + id;
     const request = {
-        method: 'GET',
+        "method": 'GET',
+        "Access-Control-Allow-Origin": "*",
        
     }
     return fetch(url, request)
@@ -27,7 +28,8 @@ async function getPets(pageNo, query) {
     var url = BASE_URL + '/pets/'+"?page="+pageNo;
     
     const request = {
-        method: 'GET'
+        "method": 'GET',
+        "Access-Control-Allow-Origin": "*",
    
     }
     var attr
