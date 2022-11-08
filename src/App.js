@@ -14,7 +14,6 @@ import UploadAndDisplayImage from './Components/image'
 import PostPet from "./Components/post"
 import AdminLoginPage from './pages/admin_login'
 
-
 import { BrowserRouter } from 'react-router-dom'
 
 function App () {
@@ -23,7 +22,6 @@ function App () {
 
       <PetRouter></PetRouter>
       <HomeRouter></HomeRouter>
-      <AdminLoginPage></AdminLoginPage>
 
     </div>
   );

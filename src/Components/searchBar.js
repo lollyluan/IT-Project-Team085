@@ -27,8 +27,7 @@ function SearchBar(props) {
     console.log(attr)
     console.log(value)
     {props.changeValue(query)}
-    // console.log(query)
-}
+  }
 
   return (
     <>

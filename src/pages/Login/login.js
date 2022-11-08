@@ -2,7 +2,7 @@ import React from 'react';
 import {useState} from 'react';
 import { Button,Form,Input,Label} from 'reactstrap';
 import {login} from '../../api/login';
-
+import {Link} from "react-router-dom";
 
 
 
@@ -89,8 +89,10 @@ function Login(props) {
 
                 <Button className='button'>Login with Google</Button>
                 <Button className='button'>Login with Facebook</Button>
-               
+
+                <Link to="/register">       
                 <Label className="center">Don’t have an account, Register Here!</Label>
+                </Link>
             </Form>
 
             </div>
