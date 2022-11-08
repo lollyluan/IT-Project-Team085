@@ -177,5 +177,6 @@ async function getAdoption(){
   }
   export{
     postAdoptionApplication,
-    updateAdoptionApplication
+    updateAdoptionApplication,
+    getAdoption,
   }

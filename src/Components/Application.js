@@ -1,37 +1,19 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Col, Form, FormGroup, Label,Row} from 'reactstrap';
-import {getPet} from '../api/pet';
-import { data } from 'jquery';
-
-
-export default class Application extends React.Component {
-
-
-  state = {loading:true};
-
-  async componentDidMount(){
-
-   this.setState({ application:data.results[0], loading:false});  
-   getPet(data)
-}
+import { Col, Form, FormGroup, Label,Row, Button} from 'reactstrap';
 
 
 
-    render() {
+export default function Application (props){
+
+    
     return(
-      <div>
-      <div>
-        {this.state.loading || !this.state.application ? (
-         <div>loading...</div> 
-         ) :(
-          <div>
         <Form className="Post">     
         <Row className='NoPadding'>
-        <Label for="Num" sm='12'>1. <span>PetID:{this.state.application.id}</span></Label>
+        <Label for="Num" sm='12'>1. <span>PetID:XXX XXX XXX</span></Label>
         <Col lg='6'>
         <FormGroup row className="row-cols-lg-auto g-3 align-items-center">
-          <Label for="Adopter’s Name:" sm='1'>Adopter’s Name: <span>{this.state.application.name}</span></Label> 
+          <Label for="Adopter’s Name:" sm='1'>Adopter’s Name:  <span>xxxx xxx</span></Label> 
         </FormGroup>
         </Col>
 
@@ -46,7 +28,7 @@ export default class Application extends React.Component {
         <Row className='NoPadding'>
         <Col lg='6'>
         <FormGroup row className="row-cols-lg-auto g-3 align-items-center">
-          <Label for="Adopter’s Number:" sm='1'>Adopter’s Number:<span>0474 xxxxx</span> </Label>  
+          <Label for="Adopter’s Number:" sm='1'>Adopter’s Number:<span>{props.userId}</span> </Label>  
         </FormGroup>
         </Col>
 
@@ -78,13 +60,17 @@ export default class Application extends React.Component {
         </FormGroup>
         </Col>
         </Row>
+
+        <Button className="button" >
+            Accpet
+        </Button>
+
+        <Button className="button" >
+            Reject
+        </Button>
+
+
         </Form>
-          </div>
-        )}
-      </div>
-    
-       
-      </div>
     );
 }
-}
+
