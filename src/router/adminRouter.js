@@ -14,7 +14,9 @@ import AdminLoginPage from "../pages/admin_login"
 
 import PostPets from "../pages/PostPets"
 
-export default function HomeRouter () {
+
+
+export default function adminRouter () {
 
 
   return (

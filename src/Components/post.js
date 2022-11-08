@@ -72,8 +72,10 @@ function PostPet(){
 
         <Col lg='4'>
         <FormGroup row className="row-cols-lg-auto g-3 align-items-center">
-          <span className='s1' for="Name" sm='1'>Name:</span>   
-          <Input type="text"value={data.nickname}  id = "nickname" onChange={handle} placeholder="Pet’s Name"/>  
+        <div className='s1'>
+          <span for="Name" sm='1'>Name:</span>   
+        </div>
+          <Input type="text"value={data.nickname}  id = "nickname" onChange={handle} placeholder="Pet’s Name"/> 
         </FormGroup>
         </Col>
 

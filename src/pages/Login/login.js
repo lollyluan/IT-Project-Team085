@@ -12,11 +12,9 @@ export default function LoginPage(props) {
     return(
         <div>
           <Login handleSignUp={() => setIsLogin(false)}/> 
-       
         </div>
     )
 }
-
 
 
 function Login(props) {
@@ -34,6 +32,7 @@ function Login(props) {
     const handleChangePassowrd = function(e) {
         setPassword(e.target.value);
     }
+
 
     // TODO how to remember
     const [rememberMe, setRememberMe] = useState(false);
@@ -63,7 +62,7 @@ function Login(props) {
             </Label>
 
             <div className="contianer col-lg-8">
-            <Form className='login-form'>
+            <Form className='login-form' onSubmit={handleSignIn}>
             <Label className="contianer col-lg-5">
                  <h2 className="disabled" href="#">Login</h2>
             </Label>
@@ -81,8 +80,8 @@ function Login(props) {
                     </span>
                 </div>
 
-                <Button className='button' onClick={handleSignIn}>
-                    Sign In
+                <Button className='button' type="submit">
+                    Login
                 </Button>
 
                 <div className="center"><p>- Or - </p></div>
