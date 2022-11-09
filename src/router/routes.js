@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 
 import HomePage from '../pages/HomePage/homepage';
 import Login from '../pages/Login/login';
-import RegisterPage from '../pages/Register/register';
+import RegisterPage from '../pages/Register/Register';
 import DisplayPets from '../pages/Petlist/petlist';
 import PetInfo from '../pages/petInformation';
 import AdminLoginPage from '../pages/admin_login';
@@ -18,7 +18,7 @@ export default function AllRoutes() {
         <Route exact path="/register" element={<RegisterPage />}></Route>
         <Route exact path="/login" element={<Login />}></Route>
         <Route exact path="/DiffLogin" element={<DiffLoginPage />}></Route>
-        <Route exact path="/admin/login" element={<Login />}></Route>
+        <Route exact path="/admin/login" element={<AdminLoginPage />}></Route>
         <Route path="/petlist" element={<DisplayPets />} />
         <Route path="/petInfo/:petId" element={<PetInfo />} />
         <Route exact path="/admin/pet" element={<PostPets />}></Route>
