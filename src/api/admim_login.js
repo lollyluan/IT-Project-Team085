@@ -1,11 +1,11 @@
 
 import pkg from 'jwt-decode';
 import $ from 'jquery';
+import { useNavigate } from 'react-router-dom';
 
 const {jwt_decode} = pkg;
 
-const BASE_URL = "http://localhost:8080/api/v1"
-//process.env.REACT_APP_BASE_URL
+const BASE_URL = process.env.REACT_APP_BASE_URL
 
 //const currentUserSubject = new BehaviorSubject(JSON.parse(localStorage.getItem('currentUser')));
 //const currentUser=currentUserSubject.asObservable()
@@ -27,8 +27,10 @@ function login(username, password) {
    
     fetch(url, requestInit)
     .then(res => {
+        const navigate = useNavigate();
         if(res.ok) {
             alert("Logged in successfully")
+            navigate('/admin/pet')
             return res.json();
             
         }
@@ -68,10 +70,11 @@ function signUp(username, password) {
 
     fetch(url, requestInit)
     .then(res => {
-        
+        const navigate = useNavigate();
         if(res.ok) {
             console.log('registered done!');
             login(username, password);
+            navigate('/admin/pet')
             return res.json();
         }
         else {

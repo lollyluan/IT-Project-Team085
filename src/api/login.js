@@ -1,11 +1,11 @@
 
 import pkg from 'jwt-decode';
 import $ from 'jquery';
+import { useNavigate } from 'react-router-dom';
 
 const {jwt_decode} = pkg;
 
-const BASE_URL = "http://localhost:8080/api/v1"
-//process.env.REACT_APP_BASE_URL
+const BASE_URL = process.env.REACT_APP_BASE_URL
 
 //const currentUserSubject = new BehaviorSubject(JSON.parse(localStorage.getItem('currentUser')));
 //const currentUser=currentUserSubject.asObservable()
@@ -40,8 +40,9 @@ function login(email, password) {
         // store user details and jwt token in local storage to keep user logged in between page refreshes
         const token = user.token;
         localStorage.setItem("token", token)
+        const navigate = useNavigate();
         console.log(JSON.stringify(user))
-       
+        navigate('/HomePage')
 
         return user;
     })
@@ -66,23 +67,24 @@ function signUp(email, password, firstname, lastname) {
             'lastname': lastname
         })
     }
+    console.log(requestInit);
 
     fetch(url, requestInit)
     .then(res => {
-        
-        if(res.ok) {
-            console.log('registered done!');
-            login(email, password);
-            return res.json();
-        }
-        else {
-            return Promise.reject();
-        }
+        return{code:200};
+        // if(res.ok) {
+        //     console.log('registered done!');
+        //     login(email, password);
+        //     return res.json();
+        // }
+        // else {
+        //     return Promise.reject();
+        // }
     })
-    .then(data => {
-        console.log(data);
-        //document.location.href = '/home';
-    })
+    // .then(data => {
+    //     console.log(data);
+    //     //document.location.href = '/home';
+    // })
     .catch((e) => {alert('Failed to sign up, try again');
     console.log(e)});
 }

@@ -22,7 +22,7 @@ function Header (){
           <NavItem>
             <NavLink href="#">Support</NavLink>
           </NavItem>
-        <Link to="/login">
+        <Link to="/DiffLogin">
         <Button className='btn' outline color="success">Login</Button>{' '}
         </Link>
         

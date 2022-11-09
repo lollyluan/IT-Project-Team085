@@ -63,9 +63,9 @@ function Login(props) {
             </Label>
 
             <div className="contianer col-lg-8">
-            <Form className='login-form'>
+            <Form className='login-form' onSubmit={handleSignIn}>
             <Label className="contianer col-lg-5">
-                 <h2 className="disabled" href="#">Login</h2>
+                 <h2 className="disabled" href="#">Login as Admin</h2>
             </Label>
                 <Input className='inputField'  placeholder="username" type='text' value={username} onChange={(e)=>{setUsername(e.target.value)}}></Input><br/>
                 <Input className='inputField'  placeholder="Password" type={showPassword ? 'text' : 'password'} value={password} onChange={handleChangePassowrd}></Input>
@@ -81,12 +81,14 @@ function Login(props) {
                     </span>
                 </div>
 
-                <Button className='button' onClick={handleSignIn}>
-                    Sign In
+                <Button className='button' type="submit">
+                    Login
                 </Button>
 
                 <div className="center"><p>- Or - </p></div>
 
+                <Button className='button'>Login with Google</Button>
+                <Button className='button'>Login with Facebook</Button>
                 
                 <Label className="center">Don’t have an account, Register Here!</Label>
             </Form>

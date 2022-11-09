@@ -1,13 +1,13 @@
 import {getToken, login} from './admim_login'
-const BASE_URL = "http://localhost:8080/api/v1"
-//process.env.REACT_APP_BASE_URL
+const BASE_URL = process.env.REACT_APP_BASE_URL
 //It's just used for testing
 
 
 async function getPet(id){
     var url = BASE_URL + "/pets/" + id;
     const request = {
-        method: 'GET',
+        "method": 'GET',
+        "Access-Control-Allow-Origin": "*",
        
     }
     return fetch(url, request)
@@ -28,12 +28,13 @@ async function getPets(pageNo, query) {
     var url = BASE_URL + '/pets/'+"?page="+pageNo;
     
     const request = {
-    method: 'GET',
+        "method": 'GET',
+        "Access-Control-Allow-Origin": "*",
    
     }
     var attr
     for(attr in query){
-      if(query[attr] !== "" || query !== null){
+      if(query[attr] !== "" && query[attr] !== null){
         url = url + ("&"+attr + "=" + query[attr])
      }
     }

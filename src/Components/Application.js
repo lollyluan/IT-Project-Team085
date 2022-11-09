@@ -1,12 +1,12 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Col, Form, FormGroup, Label,Row} from 'reactstrap';
+import { Col, Form, FormGroup, Label,Row, Button} from 'reactstrap';
 
 
 
+export default function Application (props){
 
-export default class Application extends React.Component {
-    render() {
+    
     return(
         <Form className="Post">     
         <Row className='NoPadding'>
@@ -28,7 +28,7 @@ export default class Application extends React.Component {
         <Row className='NoPadding'>
         <Col lg='6'>
         <FormGroup row className="row-cols-lg-auto g-3 align-items-center">
-          <Label for="Adopter’s Number:" sm='1'>Adopter’s Number:<span>0474 xxxxx</span> </Label>  
+          <Label for="Adopter’s Number:" sm='1'>Adopter’s Number:<span>{props.userId}</span> </Label>  
         </FormGroup>
         </Col>
 
@@ -60,7 +60,17 @@ export default class Application extends React.Component {
         </FormGroup>
         </Col>
         </Row>
+
+        <Button className="button" >
+            Accpet
+        </Button>
+
+        <Button className="button" >
+            Reject
+        </Button>
+
+
         </Form>
     );
 }
-}
+
