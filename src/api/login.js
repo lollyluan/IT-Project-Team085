@@ -42,7 +42,7 @@ function login(email, password) {
         localStorage.setItem("token", token)
         const navigate = useNavigate();
         console.log(JSON.stringify(user))
-        navigate('/')
+        navigate('/HomePage')
 
         return user;
     })

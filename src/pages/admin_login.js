@@ -65,7 +65,7 @@ function Login(props) {
             <div className="contianer col-lg-8">
             <Form className='login-form' onSubmit={handleSignIn}>
             <Label className="contianer col-lg-5">
-                 <h2 className="disabled" href="#">Login</h2>
+                 <h2 className="disabled" href="#">Login as Admin</h2>
             </Label>
                 <Input className='inputField'  placeholder="username" type='text' value={username} onChange={(e)=>{setUsername(e.target.value)}}></Input><br/>
                 <Input className='inputField'  placeholder="Password" type={showPassword ? 'text' : 'password'} value={password} onChange={handleChangePassowrd}></Input>

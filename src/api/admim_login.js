@@ -1,6 +1,7 @@
 
 import pkg from 'jwt-decode';
 import $ from 'jquery';
+import { useNavigate } from 'react-router-dom';
 
 const {jwt_decode} = pkg;
 
@@ -26,8 +27,10 @@ function login(username, password) {
    
     fetch(url, requestInit)
     .then(res => {
+        const navigate = useNavigate();
         if(res.ok) {
             alert("Logged in successfully")
+            navigate('/admin/pet')
             return res.json();
             
         }
@@ -67,10 +70,11 @@ function signUp(username, password) {
 
     fetch(url, requestInit)
     .then(res => {
-        
+        const navigate = useNavigate();
         if(res.ok) {
             console.log('registered done!');
             login(username, password);
+            navigate('/admin/pet')
             return res.json();
         }
         else {

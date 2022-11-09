@@ -44,7 +44,7 @@ const Login = () => {
         <Form className="login-form">
           <Label className="contianer col-lg-5">
             <h2 className="disabled" href="#">
-              Login
+              Login as User
             </h2>
           </Label>
           <Input
