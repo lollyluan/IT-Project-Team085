@@ -23,7 +23,9 @@ function App () {
   return (
     <div className="App">
 
+
       <AllRouter/>
+
 
     </div>
   );

@@ -5,19 +5,24 @@ import Header from "../../Components/header";
 import React from 'react';
 import SearchBar from "../../Components/searchBar";
 import PageNumber from "../../Components/pageNumber";
-import { useState } from "react";
+import { useState, useRef } from "react";
+import { LensTwoTone } from "@mui/icons-material";
 
 function DisplayPets(){
+    
     const [page, setPage] = useState(1)
     
-    const [query, setQuery] = useState({
+    let [query, setQuery] = useState({
         color: "",
         sex: "",
         immunization: ""
     });
-    
+
+    // const ref = useRef(query);
+
     const changeValue = (query) =>{
         setQuery(query)
+        console.log("Here is parent")
         console.log(query)
     }
 

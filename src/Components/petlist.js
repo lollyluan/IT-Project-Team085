@@ -9,17 +9,19 @@ import PetCard from './petCard/petCard';
 import {getPets} from '../api/pet'
 import { useEffect , useState} from 'react';
 
-function PetList(props) {
+function PetList(props){
 
   const [petLst, setPetLst] = useState([]);
+
+  const changeValue = async()=>{
+    const list = await(getPets( props.page, props.query))
+    setPetLst(list)
+  }
+
+  useEffect(() => {
+    changeValue()
+  }, [props]);
   
-  useEffect(()=>{
-    const func = async()=>{
-      const list = await(getPets( props.page, props.query))
-      setPetLst(list)
-    }
-    func()
-  },[])
  
   var pet
   return (
