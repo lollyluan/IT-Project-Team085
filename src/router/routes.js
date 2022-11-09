@@ -21,7 +21,7 @@ export default function AllRoutes() {
         <Route exact path="/admin/login" element={<AdminLoginPage />}></Route>
         <Route path="/petlist" element={<DisplayPets />} />
         <Route path="/petInfo/:petId" element={<PetInfo />} />
-        <Route exact path="/admin/pet" element={<PostPets />}></Route>
+        <Route exact path="/admin/PostPets" element={<PostPets />}></Route>
       </Routes>
     </Router>
   );

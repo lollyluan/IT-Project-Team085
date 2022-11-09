@@ -278,6 +278,16 @@ footer .navbar-brand {
   border-radius: 10px;
 }
 
+ #nickname{
+  width: 55%;
+  vertical-align: top;
+}
+
+#age{
+  width: 55%;
+  vertical-align: top;
+}
+
 /****************** body css style ************************/
 
 @keyframes App-logo-spin {
