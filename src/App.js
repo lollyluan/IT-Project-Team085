@@ -1,5 +1,4 @@
 import './App.css'
-import './userProfile.css'
 
 
 import React from 'react'
@@ -19,16 +18,16 @@ import { BrowserRouter } from 'react-router-dom'
 import Application from './Components/Application'
 import ReviewApplication from './pages/ReviewApplication'
 
+import UserProfile from "./pages/UserProfile/UserProfile"
+
 function App () {
   return (
     <div className="App">
 
-
-      <AllRouter/>
-
+      <AllRouter />
 
     </div>
-  );
+  )
 }
 
-export default App;
+export default App

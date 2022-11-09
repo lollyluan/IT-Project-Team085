@@ -1,11 +1,11 @@
-import { flexbox } from "@mui/system"
 import React from "react"
+
 
 export default function DonationHistory () {
 
 
   return (
-    <div className="donationHistory userProfile">
+    <div className="donationHistory">
 
 
       <div className="donationDetail">
