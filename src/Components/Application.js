@@ -19,7 +19,7 @@ export default function Application (props){
 
         <Col lg='6'>
         <FormGroup row className="row-cols-lg-auto g-3 align-items-center">
-          <Label for="Adopter’s Location:" sm='1'>Pet’s ID:{props.petID}</Label>  
+          <Label for="Adopter’s Location:" sm='1'>Pet’s ID:{props.petId}</Label>  
         </FormGroup>
         </Col>
         </Row>

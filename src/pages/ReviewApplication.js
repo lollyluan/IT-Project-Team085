@@ -18,6 +18,7 @@ function ReviewApplication(){
       }
       func()
       }, []);
+      console.log (application)
 
     return(
 <div>

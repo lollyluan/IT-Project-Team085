@@ -1,0 +1,35 @@
+.donation {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  margin: 0 120px;
+}
+
+.donation > * {
+  margin-top: 56px;
+}
+
+.donation .article {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.donation .article img {
+  width: 587px;
+}
+
+.donationForm label {
+  width: 240px;
+  text-align: center;
+}
+
+.donation div {
+  margin-bottom: 38px;
+}
+.donation input {
+  padding: 5px 0 5px 10px;
+  border-radius: 5px;
+  border: none;
+}
