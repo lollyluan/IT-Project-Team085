@@ -1,8 +1,8 @@
-const BASE_URL = process.env.REACT_APP_BASE_URL
-//It's just used for testing
 
 import {getToken, login, isLoggedIn} from './login.js'
 
+const BASE_URL = process.env.REACT_APP_BASE_URL
+//It's just used for testing
 
 async function getUserProfile(){
     var url = BASE_URL + "/user/" ;
@@ -83,4 +83,6 @@ async function checkComplete(reqBody){
         //alert('Something went wrong!');
     });
 }
+
+export {getUserProfile, updateProfile};
 
