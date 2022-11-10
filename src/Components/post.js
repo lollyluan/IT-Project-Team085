@@ -28,6 +28,7 @@ function PostPet() {
     immunization: 'YES',
     city: 'Sydney',
     country: 'Australia',
+
   });
 
   const fileDataArr = [];
@@ -37,7 +38,6 @@ function PostPet() {
   })(data), [])*/
   function submit(e) {
     e.preventDefault();
-    // 一般上传图片 都是 用 formData 数据类型
     const params = { ...data, images: fileDataArr };
     console.log(
       params
@@ -57,7 +57,7 @@ function PostPet() {
     const baseImg = {};
     reader.readAsDataURL(file);
     reader.onload = () => {
-      baseImg[file.name] = reader.result.split(',')[1];
+      baseImg['image'] = reader.result.split(',')[1];
     };
     fileDataArr.push(baseImg);
   };
