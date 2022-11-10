@@ -1,31 +1,55 @@
-/****************** User profile ************************/
-.userProfile {
-  font-size: var(--text-nav);
+body {
+  /* font-size: var(--text-nav); */
   font-family: var(--font-family-body);
   background-color: var(--color-background-body);
-  text-align: left;
 }
 
-/***** SideNavBar *****/
+.userProfile {
+  text-align: left;
+}
+/* Banner */
+.banner {
+  height: 255px;
+  width: 100%;
+  background-color: var(--color-background-footer);
+  color: var(--color-background-body);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  position: absolute;
+  top: 64px;
+}
+
+/* SideNavBar */
 .sideNav {
-  position: fixed;
+  position: absolute;
 
   width: 357px;
   height: 999px;
-  top: 62px;
+  top: 126px;
   left: 171px;
   border: 2px solid var(--color-background-footer);
   padding-top: 84px;
   border-radius: 250px 250px 30px 30px;
 
-  background-color: #f4f3ee;
-
   z-index: 2;
+
+  background-color: var(--color-background-body);
 }
 
+.sideNav .avatar {
+  display: block;
+
+  width: 128px;
+
+  margin-left: auto;
+  margin-right: auto;
+}
 .sideNav .name {
   font-size: var(--text-content-title);
-  margin-top: 100px;
   text-align: center;
 }
 .sideNav .location {
@@ -63,16 +87,30 @@
   border-bottom: 3px solid var(--color-text-green);
 }
 
-/* SideNavBar --Overview --Donation history */
+/** SideNavBar --Overview --navbar **/
+.overviewNav {
+  display: flex;
+  height: 92px;
+  width: 1500px;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 0 100px;
+
+  position: absolute;
+  top: 200px;
+  left: 355px;
+}
+
+/** SideNavBar --Overview --Donation history **/
 .donationHistory {
   display: flex;
   flex-direction: column;
 
-  margin-left: 530px;
-
-  position: fixed;
-  top: 347px;
-  width: 60%;
+  position: absolute;
+  top: 92px;
+  left: 0;
+  width: 1500px;
 }
 
 .donationDetail {
@@ -98,13 +136,14 @@
   margin-right: 15px;
 }
 
-/* SideNavBar --Overview --Volunteer */
+/** SideNavBar --Overview --Volunteer **/
 .volunteer {
   text-align: left;
-  margin-left: 530px;
 
-  position: fixed;
-  top: 347px;
+  position: absolute;
+  top: 92px;
+  left: 0;
+  width: 1500px;
 }
 .volunteer .requirement {
   margin: 0 54px 25px;
@@ -147,31 +186,8 @@
   color: white;
 }
 
-.banner {
-  height: 255px;
-  width: 100%;
-  background-color: var(--color-background-footer);
-  color: var(--color-background-body);
-
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-
+/* Footer */
+/* .footer {
   position: absolute;
-}
-
-/* SideNavBar --Overview --navbar */
-.overviewNav {
-  display: flex;
-  height: 92px;
-  justify-content: space-between;
-  align-items: center;
-
-  position: relative;
-  top: 255px;
-  width: 60%;
-
-  margin-left: 530px;
-  padding: 0 39px;
-}
+  bottom: 0;
+} */

@@ -2,7 +2,7 @@ import React from "react"
 
 export default function Volunteer () {
   return (
-    <div className="volunteer userProfile">
+    <div className="volunteer">
 
 
       <div className="requirement">
