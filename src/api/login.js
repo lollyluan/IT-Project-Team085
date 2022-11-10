@@ -13,6 +13,7 @@ const BASE_URL = process.env.REACT_APP_BASE_URL
 
 
 function login(email, password) {
+    
     const url = BASE_URL + '/auth/user/login';
     const requestInit = {
         method: 'POST',
@@ -27,6 +28,7 @@ function login(email, password) {
     fetch(url, requestInit)
     .then(res => {
         if(res.ok) {
+            console.log(process.env)
             alert("Logged in successfully")
             return res.json();
             
@@ -39,10 +41,12 @@ function login(email, password) {
       
         // store user details and jwt token in local storage to keep user logged in between page refreshes
         const token = user.token;
-        localStorage.setItem("token", token)
-        const navigate = useNavigate();
-        console.log(JSON.stringify(user))
-        navigate('/HomePage')
+        localStorage.setItem("token", token);
+        
+        window.location.href=process.env.BASE_URL;
+        //const navigate = useNavigate();
+      
+        //navigate('/HomePage')
 
         return user;
     })
@@ -72,15 +76,19 @@ function signUp(email, password, firstname, lastname) {
         if(res.ok){
             alert("sign up successfully, please check your email!")
         }
-        return{code:200};
+        else{
+            alert('Failed to sign up, try again');
+        }
      
     })
     // .then(data => {
     //     console.log(data);
     //     //document.location.href = '/home';
     // })
-    .catch((e) => {alert('Failed to sign up, try again');
-    console.log(e)});
+    .catch((e) => {
+       
+        console.log(e)}
+        );
 }
 
 function isLoggedIn() {

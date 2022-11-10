@@ -22,13 +22,13 @@ const Login = () => {
 
   // login
   const handleSignIn = async () => {
-    // 通过 url 是否包含 admin 判断 是否是 admin 登录  isAdmin true: admin || false: 普通用户
+  
     const api = isAdmin() ? adminLogin : login;
     if (!email || !password) {
       alert('Enter username and password!');
     } else {
-      /* 这块你调 接口的 时候 解开注释 调试一下 */
-    api(email,password)
+      console.log(email + " " + password)
+      api(email,password)
     }
   };
 
