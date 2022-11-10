@@ -10,11 +10,13 @@ function PetCard(props) {
 
   // const [checked, setChecked] = React.useState(false);
   const ID = props.id;
+  const imageLst = props.image[0].image
+
 
   return (
     
     <Card>
-      <Card.Img variant="top" src={props.image} />
+      <Card.Img variant="top" src={`data:image/jpeg;base64,${imageLst}`} />
       <Card.Body>
         <Card.Title>{props.name}</Card.Title>
         <Card.Text>

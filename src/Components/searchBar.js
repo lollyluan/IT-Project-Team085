@@ -4,7 +4,6 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
 import { BsSearch } from 'react-icons/bs';
-import { BsFilter } from 'react-icons/bs';
 import { Dropdown } from 'react-bootstrap';
 import DropdownButton from 'react-bootstrap/DropdownButton';
 

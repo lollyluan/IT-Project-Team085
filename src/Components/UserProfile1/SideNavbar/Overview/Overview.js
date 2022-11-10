@@ -13,11 +13,11 @@ export default function Overview () {
 
       <OverviewNavBar />
       <div className="profileContainer">
-        <Routes>
+        {/* <Routes>
           <Route path="/profile/overview/adoptionHistory" element={<ShowMyPet />}></Route>
           <Route path="/profile/overview/donationHistory" element={<DonationHistory />}></Route>
           <Route path="/profile/overview/volunteer" element={<Volunteer />}></Route>
-        </Routes>
+        </Routes> */}
       </div>
 
     </>

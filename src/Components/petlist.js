@@ -31,7 +31,7 @@ function PetList(props){
   
         return (
           <Col>
-          <PetCard name = {petLst[i].nickname} image = {img} age = {petLst[i].age} id = {petLst[i].id}></PetCard>
+          <PetCard name = {petLst[i].nickname} image = {petLst[i].imageCollectionDTO.imageList} age = {petLst[i].age} id = {petLst[i].id}></PetCard>
           </Col>
           )
       })

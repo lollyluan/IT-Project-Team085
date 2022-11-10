@@ -30,7 +30,7 @@ function login(username, password) {
         const navigate = useNavigate();
         if(res.ok) {
             alert("Logged in successfully")
-            navigate('/admin/pet')
+            navigate('/admin/PostPets')
             return res.json();
             
         }
@@ -74,7 +74,7 @@ function signUp(username, password) {
         if(res.ok) {
             console.log('registered done!');
             login(username, password);
-            navigate('/admin/pet')
+            navigate('/admin/login')
             return res.json();
         }
         else {
