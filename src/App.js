@@ -21,6 +21,10 @@ import ReviewApplication from './pages/ReviewApplication'
 import UserProfile from "./pages/UserProfile/UserProfile"
 
 function App () {
+  const dotenv = require("dotenv")
+  dotenv.config()
+  dotenv.load()
+  console.log(process.env)
   return (
     <div className="App">
 
