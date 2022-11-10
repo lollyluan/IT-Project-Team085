@@ -1,15 +1,19 @@
 import React from 'react'
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
 
-import HomePage from '../pages/HomePage/Homepage'
+import HomePage from '../pages/Homepage/homepage'
 import Login from '../pages/Login/login'
-import RegisterPage from '../pages/Register/Register'
+import RegisterPage from '../pages/Register/register'
 import DisplayPets from '../pages/Petlist/petlist'
 import PetInfo from '../pages/petInformation'
 import AdminLoginPage from '../pages/admin_login'
 import PostPets from '../pages/PostPets'
 import DiffLoginPage from '../pages/DiffLogin'
 import UserProfile from '../pages/UserProfile/UserProfile'
+import OverviewNavBar from '../Components/UserProfile1/SideNavbar/Overview/Overview--Navbar'
+import DonationHistory from '../Components/UserProfile1/SideNavbar/Overview/DonationHistory'
+import Volunteer from '../Components/UserProfile1/SideNavbar/Overview/VolunteerApply'
+import UserInfor from '../Components/UserProfile1/SideNavbar/PersonInfo'
 
 export default function AllRoutes () {
   return (
@@ -23,9 +27,14 @@ export default function AllRoutes () {
         <Route path="/petlist" element={<DisplayPets />} />
         <Route path="/petInfo/:petId" element={<PetInfo />} />
         <Route exact path="/admin/PostPets" element={<PostPets />}></Route>
-        <Route path="/profile" element={<UserProfile />} />
-        <Route exact path="/admin/pet" element={<PostPets />}></Route>
-
+        <Route path="/profile" element={<UserProfile />} >
+          <Route path="/profile/overview" element={<OverviewNavBar />}>
+            <Route index element={<DonationHistory />} />
+            <Route path="donationHistory" element={<DonationHistory />} />
+            <Route path="volunteer" element={<Volunteer />} />
+          </Route>
+          <Route path="/profile/information" element={<UserInfor />} />
+        </Route>
       </Routes>
     </Router>
   )

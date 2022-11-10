@@ -3,8 +3,7 @@ import {
   Routes,
   Route,
   Link,
-  useParams,
-  useRouteMatch
+  Outlet
 } from "react-router-dom"
 
 import OverviewNavBar from "./SideNavbar/Overview/Overview--Navbar"
@@ -18,6 +17,7 @@ import defaultAvatar from "../../images/default_avatar.png"
 
 export default function SideNavBar () {
   return (
+    <>
     <div className="sideNav userProfile">
       <img className="avatar" src={defaultAvatar} alt="" />
 
@@ -36,17 +36,9 @@ export default function SideNavBar () {
         <li><Link to="#">Help</Link></li>
         <li><Link to="#">About</Link></li>
       </ul>
-
-      <Routes>
-        <Route path="/profile/overview" element={<OverviewNavBar />}>
-          <Route index element={<DonationHistory />} />
-          <Route path="donationHistory" element={<DonationHistory />} />
-          <Route path="volunteer" element={<Volunteer />} />
-        </Route>
-        <Route path="/profile/information" element={<UserInfor />} />
-
-      </Routes>
-
+      <Outlet/>
+      
     </div>
+    </>
   )
 }
