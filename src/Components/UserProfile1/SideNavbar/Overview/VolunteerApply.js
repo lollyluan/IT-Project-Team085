@@ -21,9 +21,9 @@ export default function Volunteer () {
       <form className="applyForm">
         <label className="formTitle" htmlFor="applyreason">Apply Reason</label> <br />
         <input type="textarea" id="applyReaon" name="applyreason" /> <br />
-
-        <input type="submit" value="Post" />
-
+        <div className="profileBtn">
+          <input type="submit" className="profileBtm" value="Post" />
+        </div>
       </form>
 
 

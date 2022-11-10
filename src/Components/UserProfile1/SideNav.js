@@ -10,6 +10,8 @@ import {
 import OverviewNavBar from "./SideNavbar/Overview/Overview--Navbar"
 import DonationHistory from "./SideNavbar/Overview/DonationHistory"
 import Volunteer from "./SideNavbar/Overview/VolunteerApply"
+import UserInfor from "./SideNavbar/PersonInfo"
+
 import adoptorAvatar from "../../images/adopter.png"
 import defaultAvatar from "../../images/default_avatar.png"
 
@@ -41,6 +43,8 @@ export default function SideNavBar () {
           <Route path="donationHistory" element={<DonationHistory />} />
           <Route path="volunteer" element={<Volunteer />} />
         </Route>
+        <Route path="/profile/information" element={<UserInfor />} />
+
       </Routes>
 
     </div>

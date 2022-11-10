@@ -19,8 +19,7 @@ body {
   justify-content: center;
   align-items: center;
 
-  position: absolute;
-  top: 64px;
+  position: static;
 }
 
 /* SideNavBar */
@@ -173,21 +172,64 @@ body {
   border: none;
 }
 
-.volunteer .applyForm input[type='submit'] {
+.profileBtm {
   background-color: var(--color-background-footer);
   width: 239px;
   height: 40px;
   border: 2px none var(--color-text-green);
   border-radius: 8px;
   box-shadow: 0px 8px 8px -8px black;
-  margin-left: 38%;
 
   font-size: var(--text-article);
   color: white;
 }
 
-/* Footer */
-/* .footer {
+/** SideNavBar --Persional Info **/
+.userInfor {
   position: absolute;
-  bottom: 0;
-} */
+  top: 200px;
+  left: 355px;
+  width: 790px;
+
+  margin-left: 84px;
+  margin-top: 69px;
+}
+
+.userInfor label {
+  text-align: center;
+  width: 132px;
+}
+
+.userInfor input,
+.userInfor textarea {
+  padding: 5px 0 5px 10px;
+  border-radius: 5px;
+  border: none;
+}
+
+.userInfor div {
+  margin-bottom: 38px;
+}
+
+.userInfor .shortBox {
+  width: 122px;
+  margin-right: 102px;
+}
+
+.userInfor .middleBox {
+  width: 223px;
+}
+
+.userInfor .longBox {
+  width: 580px;
+}
+
+.userInfor .bio {
+  display: flex;
+  align-items: center;
+}
+
+.profileBtn {
+  display: flex;
+  justify-content: center;
+}
