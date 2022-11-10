@@ -47,9 +47,7 @@ function login(email, password) {
         return user;
     })
     .catch((e) => {
-        console.log('Failed to sign in, try again ' + e);
-        $('.App .error_message').html('not successful!');
-       // document.location.href = '/login';
+        alert("failed to sign in, try again!")
     });
 }
 
