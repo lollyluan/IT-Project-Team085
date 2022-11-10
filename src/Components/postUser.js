@@ -25,7 +25,14 @@ function PostUser() {
         country: ''
       });
 
-
+      function submit(e) {
+        e.preventDefault();
+        const newdata = { ...data};
+        console.log(
+            newdata
+        );
+        updateProfile(newdata);
+      }
       function handle(e) {
         const newdata = { ...data };
         newdata[e.target.id] = e.target.value;
@@ -38,30 +45,30 @@ function PostUser() {
                 <input
                     type="text"
                     placeholder='John'
-                    value={firstName}
-                    onChange={(e) => setFirstName(e.target.value)}
+                    id="firstname"
+                    onChange={handle}
                     required />
                 <label>Last Name:</label>
                 <input
                     type="text"
                     placeholder='Smith'
-                    value={lastName}
-                    onChange={(e) => setLastName(e.target.value)}
+                    id="lastname"
+                    onChange={handle}
                     required />
             </div>
             <div>
                 <label>Birthday:</label>
                 <input
                     type="text"
-                    value={birthday}
+                    id="dob"
                     placeholder='11/05/1997'
-                    onChange={(e) => setBirthday(e.target.value)} />
+                    onChange={handle} />
                 <label>ID:</label>
                 <input
                     type="text"
-                    value={id}
+                    id="identification"
                     placeholder='ID Number'
-                    onChange={(e) => setId(e.target.value)} />
+                    onChange={handle} />
             </div>
             <div>
                 <label>Email:</label>
@@ -69,8 +76,7 @@ function PostUser() {
                     type="text"
                     placeholder='Email'
                     value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    required />
+                    onChange={(e) => setEmail(e.target.value)} />
                 <label>Phone:</label>
                 <input
                     type="text"
@@ -83,32 +89,32 @@ function PostUser() {
                 <input
                     type="text"
                     placeholder='Country'
-                    value={country}
-                    onChange={(e) => setCountry(e.target.value)} />
+                    id="country"
+                    onChange={handle} />
                 <label>City:</label>
                 <input
                     type="text"
                     placeholder='City'
-                    value={city}
-                    onChange={(e) => setCity(e.target.value)} />
+                    id="city"
+                    onChange={handle} />
             </div>
             <div>
                 <label>Address:</label>
                 <input
                     type="text"
                     placeholder='Street'
-                    value={address}
-                    onChange={(e) => setAddress(e.target.value)} />
+                    id="address"
+                    onChange={handle} />
             </div>
             <div>
                 <label>Bio:</label>
                 <textarea
                     placeholder='Introduce yourself~'
-                    value={bio}
-                    onChange={(e) => setBio(e.target.value)}>
+                    id="bio"
+                    onChange={handle}>
                 </textarea>
             </div>
-            <button>Submit</button>
+            <button onClick={submit}>Submit</button>
         </form>
     )
 }
