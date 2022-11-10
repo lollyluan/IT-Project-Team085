@@ -7,6 +7,7 @@ import Header from "../../Components/header"
 import Banner from "../../Components/UserProfile1/Banner"
 import SideNavBar from "../../Components/UserProfile1/SideNav"
 import Footer from "../../Components/footer"
+import {Outlet} from "react-router-dom"
 
 
 
@@ -14,12 +15,10 @@ export default function UserProfile () {
 
   return (
     <div>
-      <Router>
         <Header />
         <Banner />
         <SideNavBar />
         <Footer />
-      </Router>
     </div>
   )
 }
