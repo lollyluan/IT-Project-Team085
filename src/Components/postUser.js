@@ -27,11 +27,8 @@ function PostUser() {
 
       function submit(e) {
         e.preventDefault();
-        const newdata = { ...data};
-        console.log(
-            newdata
-        );
-        updateProfile(newdata);
+       
+        updateProfile(data);
       }
       function handle(e) {
         const newdata = { ...data };
