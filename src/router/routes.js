@@ -1,7 +1,7 @@
 import React from 'react'
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
 
-import HomePage from '../pages/Homepage/homepage'
+import HomePage from '../pages/HomePage/Homepage'
 import Login from '../pages/Login/login'
 import RegisterPage from '../pages/Register/register'
 import DisplayPets from '../pages/Petlist/petlist'
@@ -14,6 +14,7 @@ import OverviewNavBar from '../Components/UserProfile1/SideNavbar/Overview/Overv
 import DonationHistory from '../Components/UserProfile1/SideNavbar/Overview/DonationHistory'
 import Volunteer from '../Components/UserProfile1/SideNavbar/Overview/VolunteerApply'
 import UserInfor from '../Components/UserProfile1/SideNavbar/PersonInfo'
+import ReviewApplication from '../pages/ReviewApplication'
 
 export default function AllRoutes () {
   return (
@@ -25,6 +26,7 @@ export default function AllRoutes () {
         <Route exact path="/DiffLogin" element={<DiffLoginPage />}></Route>
         <Route exact path="/admin/login" element={<AdminLoginPage />}></Route>
         <Route path="/petlist" element={<DisplayPets />} />
+        <Route path="/admin/ReviewApplication" element={<ReviewApplication />} />
         <Route path="/petInfo/:petId" element={<PetInfo />} />
         <Route exact path="/admin/PostPets" element={<PostPets />}></Route>
         <Route path="/profile" element={<UserProfile />} >
