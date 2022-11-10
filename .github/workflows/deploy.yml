@@ -1,0 +1,33 @@
+name: Pet's home
+
+
+# Controls when the workflow will run
+on:
+  # Triggers the workflow on push or pull request events but only for the main branch
+  push:
+    branches: [ main ]
+
+
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+  
+    steps:
+      - name: Executing remote command
+        uses: appleboy/ssh-action@v0.1.5
+        with:
+          host: ${{ secrets.HOST }}
+          USERNAME: ${{ secrets.USERNAME }}
+          PORT: ${{ secrets.PORT }}
+          KEY: ${{ secrets.SSHKEY }}
+          script: |
+
+            
+            cd IT-Project-Team085
+            git pull
+            kill -9 $(lsof -t -i :80)
+            npm install
+            npm start
+            
+

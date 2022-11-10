@@ -100,11 +100,14 @@ function getUserId() {
     } 
     return undefined;
 }
-
+function logOut(){
+    localStorage.removeItem("token");
+}
 export {
     getToken,
     login,
     signUp,
     isLoggedIn,
-    getUserId
+    getUserId,
+    logOut
 }
