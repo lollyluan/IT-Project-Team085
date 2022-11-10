@@ -46,12 +46,14 @@ function PetInfo(){
 
   
     const [pet, setPet] = useState([]);
+    const [imageLst, setImageLst] = useState([]);
     const petId = useParams();
     useEffect(()=>{
       const func = async()=>{
  
         const petInfo = await(getPet(petId.petId))
         setPet(petInfo)
+        setImageLst(petInfo.imageCollectionDTO.imageList[0])
     }
     func()
     }, []);
@@ -63,7 +65,7 @@ function PetInfo(){
             <Container style={bodyStyle}>
                 <Row md={1}>
                 <Col md={7}>
-                    <Row><Image src={`data:image/jpeg;base64,${pet.imageCollectionDTO.imageList[0].image}`}/></Row>
+                    <Row><Image src={`data:image/jpeg;base64,${imageLst.image}`}/></Row>
                     <br/>
                     {/* <Row md = {3}>
                         <Col md={4}> <Image style={imageStyle} src={catd1}/> </Col>
