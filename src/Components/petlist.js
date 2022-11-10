@@ -2,9 +2,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import React from 'react';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
-import img from '../images/cat1.png';
-import Button from "react-bootstrap/Button";
-import PetInfo from '../pages/petInformation';
 import PetCard from './petCard/petCard';
 import {getPets} from '../api/pet'
 import { useEffect , useState} from 'react';

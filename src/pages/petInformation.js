@@ -4,19 +4,13 @@ import { Container } from 'react-bootstrap';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Image from 'react-bootstrap/Image';
-import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
-import cat1 from '../images/cat1.png';
-import catd1 from '../images/cat1-details1.jpg';
-import catd2 from '../images/cat1_details2.jpg';
-import catd3 from '../images/cat1_details3.jpg';
 import Tags from '../Components/Tags';
 import {BsFillGeoAltFill} from "react-icons/bs";
 import {getPet} from '../api/pet';
 import { useEffect, useState} from 'react';
 import{useParams} from 'react-router-dom';
 import ApplicationPopup from '../Components/applicationPopup';
-import { PropaneSharp } from '@mui/icons-material';
 
 
 function PetInfo(){
@@ -61,6 +55,8 @@ function PetInfo(){
     func()
     }, []);
 
+    console.log(pet.imageCollectionDTO)
+
     return (
         <div>
             <Header/>
@@ -68,13 +64,13 @@ function PetInfo(){
             <Container style={bodyStyle}>
                 <Row md={1}>
                 <Col md={7}>
-                    <Row><Image src={cat1}/></Row>
+                    {/* <Row><Image src={`data:image/jpeg;base64,${pet.imageCollectionDTO.imageList[0].image}`}/></Row> */}
                     <br/>
-                    <Row md = {3}>
+                    {/* <Row md = {3}>
                         <Col md={4}> <Image style={imageStyle} src={catd1}/> </Col>
                         <Col md={4}> <Image style={imageStyle} src={catd2}/> </Col>
                         <Col md={4}> <Image style={imageStyle} src={catd3}/> </Col>
-                    </Row>
+                    </Row> */}
                     
                 </Col>
                 <Col md={5}>

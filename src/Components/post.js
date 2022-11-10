@@ -3,17 +3,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { Col, Form, FormGroup, Input,Button,Row} from 'reactstrap';
 import {postPet} from '../api/pet';
 
-//const PostPet =() =>{
-//const [detail, setDetail] = useState('');
-//const [category, setCategory] = useState('--');
-//const [country, setCountry] = useState('--');
-//const [city, setCity] = useState('--');
-//const [ID, setId] = useState('--- --- ---');
-//const [age, setAge] = useState('');
-//const [nickname,setNickname] = useState('---');
-//const [sex, setSex] = useState('--');
-//const [color, setColor] = useState('--');
-//const [immunization,setImmunization] = useState('--');
 
 
 function PostPet() {
@@ -33,9 +22,6 @@ function PostPet() {
 
   const fileDataArr = [];
 
-  /*useEffect((async (data)=>{
-    await postPet(data);
-  })(data), [])*/
   function submit(e) {
     e.preventDefault();
     const params = { ...data, images: fileDataArr };

@@ -1,16 +1,12 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { NavbarBrand,Nav, NavItem, NavLink,Button } from 'reactstrap';
-import {Link, Outlet} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 import { isLoggedIn, getToken } from '../api/login';
 import {BsFillFilePersonFill} from 'react-icons/bs';
 
 
 function Header (){
-    //localStorage.clear();
-    console.log("Login===============")
-    console.log(isLoggedIn())
-    console.log(getToken())
 
     return (
       <header>
