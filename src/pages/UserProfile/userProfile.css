@@ -90,7 +90,7 @@ body {
 .overviewNav {
   display: flex;
   height: 92px;
-  width: 1500px;
+  width: 800px;
   justify-content: space-between;
   align-items: center;
 
@@ -109,7 +109,7 @@ body {
   position: absolute;
   top: 92px;
   left: 0;
-  width: 1500px;
+  width: 800px;
 }
 
 .donationDetail {
@@ -142,7 +142,7 @@ body {
   position: absolute;
   top: 92px;
   left: 0;
-  width: 1500px;
+  width: 800px;
 }
 .volunteer .requirement {
   margin: 0 54px 25px;

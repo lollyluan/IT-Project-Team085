@@ -18,7 +18,7 @@ export default function UserProfile () {
         <Header />
         <Banner />
         <SideNavBar />
-        <Footer />
+        {/* <Footer /> */}
     </div>
   )
 }
