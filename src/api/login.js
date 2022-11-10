@@ -71,15 +71,11 @@ function signUp(email, password, firstname, lastname) {
 
     fetch(url, requestInit)
     .then(res => {
+        if(res.ok){
+            alert("sign up successfully, please check your email!")
+        }
         return{code:200};
-        // if(res.ok) {
-        //     console.log('registered done!');
-        //     login(email, password);
-        //     return res.json();
-        // }
-        // else {
-        //     return Promise.reject();
-        // }
+     
     })
     // .then(data => {
     //     console.log(data);

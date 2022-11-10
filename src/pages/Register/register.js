@@ -33,10 +33,10 @@ function SignUp() {
       if (password === password2) {
         const api = isAdmin() ? adminLogin : login;
         try {
-          // 注册
+        
           const res = await signUp(email, password, firstname, lastname);
           console.log(res)
-          // 通过返回值 判断是否注册成功，注册成功，调用 login 接口
+        
           if (res) {
             api(email, password);
           }

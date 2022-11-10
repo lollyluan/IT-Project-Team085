@@ -28,8 +28,10 @@ async function getPets(pageNo, query) {
     var url = BASE_URL + '/pets/'+"?page="+pageNo;
     
     const request = {
-        "method": 'GET',
-        "Access-Control-Allow-Origin": "*",
+        method: 'GET',
+        headers: {'Content-Type': 'application/json',
+        'Origin': "http://localhost:3000"},
+      
    
     }
     var attr
@@ -54,7 +56,7 @@ async function getPets(pageNo, query) {
     })    
 }
 async function postPet(reqBody){
-    login("string", "string")
+   
     const request = {
         headers: {'Content-Type': 'application/json',
         'Authorization':'Bearer '+ getToken()},
