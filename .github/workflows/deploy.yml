@@ -20,14 +20,12 @@ jobs:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
           password: ${{secrets.PASSWORD}}
-        
+          key: ${{ secrets.SSHKEY }}
           script: |
 
             
             cd IT-Project-Team085
-            git pull
-            kill -9 $(lsof -t -i :80)
-            npm install
-            npm start
+            docker-compose down
+            docker-compose up --build
             
 

@@ -1,0 +1,9 @@
+version: "3.8"
+services:
+  app:
+    container_name: pets_home_frontend
+    image: react
+    build: 
+      context: .
+    ports:
+      - 3000:3000
