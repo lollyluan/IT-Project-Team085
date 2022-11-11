@@ -6,4 +6,4 @@ services:
     build: 
       context: .
     ports:
-      - 80:80
+      - ${{PORT}}:${{PORT}}
