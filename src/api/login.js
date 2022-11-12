@@ -10,7 +10,7 @@ const BASE_URL = process.env.REACT_APP_BASE_URL
 //const currentUserSubject = new BehaviorSubject(JSON.parse(localStorage.getItem('currentUser')));
 //const currentUser=currentUserSubject.asObservable()
 
-
+//const navigate = useNavigate();
 
 function login(email, password) {
     
@@ -44,10 +44,7 @@ function login(email, password) {
         localStorage.setItem("token", token);
         
         window.location.href=process.env.BASE_URL;
-        //const navigate = useNavigate();
-      
-        //navigate('/HomePage')
-
+       
         return user;
     })
     .catch((e) => {
@@ -75,6 +72,7 @@ function signUp(email, password, firstname, lastname) {
     .then(res => {
         if(res.ok){
             alert("sign up successfully, please check your email!")
+            window.location.href=process.env.BASE_URL;
         }
         else{
             alert('Failed to sign up, try again');

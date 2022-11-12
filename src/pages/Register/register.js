@@ -2,10 +2,10 @@ import { signUp, login } from '../../api/login';
 import React, { useState } from 'react';
 import { Button, Form, Input, Label, Row, Col } from 'reactstrap';
 import { login as adminLogin } from '../../api/admim_login';
-import { useNavigate } from 'react-router-dom';
+
 
 function SignUp() {
-  const navigate = useNavigate();
+
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -27,29 +27,24 @@ function SignUp() {
     return window.location.href.includes('admin');
   };
 
+
   //TODO connect backend
-  const handleSignUp = async function () {
+  const handleSignUp = async function (e) {
+    e.preventDefault();
     if (email !== '' && password !== '') {
       if (password === password2) {
-        const api = isAdmin() ? adminLogin : login;
-        try {
-        
-          const res = await signUp(email, password, firstname, lastname);
-          console.log(res)
-        
-          if (res) {
-            api(email, password);
-          }
-        } catch (err) {
-          alert('Failed to sign up, try again');
-        }
-      } else {
-        alert('Double check your password!');
+        signUp(email, password, firstname, lastname)
+    
+      } 
+      else{
+        alert("Please confirm your password")
       }
-    } else {
+    }
+    else {
       alert('Enter username and password!');
     }
-  };
+  
+};
 
   return (
     <body className="initial-img row noPadding">
@@ -146,12 +141,9 @@ function SignUp() {
           <div className="center">
             <p>- Or - </p>
           </div>
-          <Button className="button">SignUp with Google</Button>
-          <Button className="button">SignUp with Facebook</Button>
+         
 
-          <Label className="center">
-            Don’t have an account, Register Here!
-          </Label>
+         
         </Form>
       </div>
     </body>
