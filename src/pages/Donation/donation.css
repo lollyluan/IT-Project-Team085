@@ -1,35 +1,50 @@
-.donation {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-
-  margin: 0 120px;
+.donationPage .donationTitle {
+  margin: 56px auto;
 }
 
-.donation > * {
-  margin-top: 56px;
-}
+.donationPage .donationArticle img {
+  vertical-align: top;
 
-.donation .article {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
-
-.donation .article img {
   width: 587px;
+  height: 508px;
+  object-fit: cover;
+  object-position: 100% -260px;
 }
 
-.donationForm label {
-  width: 240px;
-  text-align: center;
+.donationPage .donationArticle .article {
+  display: inline-block;
+  vertical-align: top;
+  margin: 21px;
+
+  width: 500px;
+  text-align: left;
+  font-size: var(--text-article);
 }
 
-.donation div {
-  margin-bottom: 38px;
+.donationPage .donationFormArea {
+  width: 984px;
+  height: 631px;
+
+  margin: 112px auto;
 }
-.donation input {
+
+.donationPage .donationFormArea .donationForm div {
+  margin-top: 63px;
+}
+.donationPage .donationFormArea .donationForm label {
+  width: 295px;
+  text-align: left;
+
+  font-size: var(--text-content-title);
+}
+
+.donationPage .donationFormArea .donationForm input {
   padding: 5px 0 5px 10px;
+
   border-radius: 5px;
-  border: none;
+  border: 1px solid var(--color-text-green);
+}
+
+.donationPage .donationFormArea .donationForm input::placeholder {
+  color: var(--color-text-green);
 }

@@ -14,71 +14,83 @@ function Donation () {
     const [expiry, setExpiry] = useState('')
     const [cvv, setCvv] = useState('')
     return (
-        <div className="donation">
-
-            <h2>Infectious Diseases of a Kitten</h2>
-
-            <div className="article">
-                <img src={donationImage} alt="" />
-                <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur.Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur.Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur.Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur.</p>
+        <div className="donationPage">
+            <div className="donationTitle">
+                <h2>Infectious Diseases of a Kitten</h2>
             </div>
-            <h2>Donation Details</h2>
-            <form className="donationForm">
-                <div>
-                    <label>First Name:</label>
 
-                    <input
-                        type="text"
-                        placeholder='First Name'
-                        value={firstName}
-                        onChange={(e) => setFirstName(e.target.value)}
-                        required />
+            <div className="donationArticle">
+                <img src={donationImage} alt="" />
+                <div className="article">
+                    Feline immunodeficiency virus (FIV) decreases the function of the immune system and causes AIDS in cats. The virus is spread through the saliva of an infected cat, primarily by biting. Cats that roam outdoors, male cats, and older cats are more likely to become infected. This condition is diagnosed using a blood test. Your veterinarian may suggest performing this test when a new cat is acquired.Shortly after becoming infected, cats may have a fever and enlarged lymph nodes. Soon, these signs will disappear. The cat may appear healthy, with no further signs of infection for months or years. There is no cure. Treatment often involves supportive care and treatment for secondary infections. Once a cat is diagnosed with FIV, they will have it for life.
+
                 </div>
+            </div>
 
-                <div>
-                    <label>Last Name:</label>
-                    <input
-                        type="text"
-                        placeholder='Last Name'
-                        value={lastName}
-                        onChange={(e) => setLastName(e.target.value)}
-                        required />
-                </div>
+            <div className="donationFormArea">
+                <div className="donationFormTitle">
+                    <h2>Donation Details</h2></div>
+                <form className="donationForm">
+                    <div>
+                        <label>First Name:</label>
 
-                <div>
-                    <label>Email Address:</label>
-                    <input
-                        type="text"
-                        placeholder='Example@gmail.com'
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
-                        required />
-                </div>
+                        <input
+                            type="text"
+                            placeholder='Thank'
+                            value={firstName}
+                            onChange={(e) => setFirstName(e.target.value)}
+                            required />
+                    </div>
 
-                <div>
-                    <label>Phone:</label>
-                    <input
-                        type="text"
-                        placeholder='Phone Number'
-                        value={phone}
-                        onChange={(e) => setPhone(e.target.value)}
-                        required />
-                </div>
+                    <div>
+                        <label>Last Name:</label>
 
-                <div>
-                    <label>Donation Amount:</label>
-                    <input
-                        type="text"
-                        placeholder="Enter an Amount"
-                        value={amount}
-                        onChange={(e) => setAmount(e.target.value)} />
-                </div>
+                        <input
+                            type="text"
+                            placeholder='You'
+                            value={lastName}
+                            onChange={(e) => setLastName(e.target.value)}
+                            required />
+                    </div>
 
-                <div className="">
-                    <button>Proceed</button>
-                </div>
+                    <div>
+                        <label>Email Address:</label>
 
-            </form>
+                        <input
+                            type="text"
+                            placeholder='For'
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
+                            required />
+                    </div>
+
+                    <div>
+                        <label>Phone:</label>
+
+                        <input
+                            type="text"
+                            placeholder='Donation'
+                            value={phone}
+                            onChange={(e) => setPhone(e.target.value)}
+                            required />
+                    </div>
+
+                    <div>
+                        <label>Donation Amount:</label>
+
+                        <input
+                            type="text"
+                            placeholder="ヾ(^▽^*)))"
+                            value={amount}
+                            onChange={(e) => setAmount(e.target.value)} />
+                    </div>
+
+                    <div>
+                        <button className="profileBtm">Proceed</button>
+                    </div>
+                </form>
+
+            </div>
         </div>
     )
 
