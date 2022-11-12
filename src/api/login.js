@@ -43,7 +43,7 @@ function login(email, password) {
         const token = user.token;
         localStorage.setItem("token", token);
         
-        window.location.href=process.env.REACT_APP_BASE_URL;
+        window.location.href=process.env.REACT_APP_HOME;
        
         return user;
     })
@@ -72,7 +72,7 @@ function signUp(email, password, firstname, lastname) {
     .then(res => {
         if(res.ok){
             alert("sign up successfully, please check your email!")
-            window.location.href=process.env.REACT_APP_BASE_URL;
+            window.location.href=process.env.REACT_APP_HOME;
         }
         else{
             alert('Failed to sign up, try again');
