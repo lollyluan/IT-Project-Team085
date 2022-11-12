@@ -28,6 +28,10 @@
   margin: 112px auto;
 }
 
+.donationPage .donationFormArea > * {
+  margin: 0 auto;
+}
+
 .donationPage .donationFormArea .donationForm div {
   margin-top: 63px;
 }
