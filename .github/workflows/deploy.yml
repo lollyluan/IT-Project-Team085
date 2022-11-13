@@ -27,7 +27,7 @@ jobs:
             
             cd IT-Project-Team085
             git pull
-            docker-compose down
+            docker-compose down --rmi all
             docker-compose up --build
             
 
