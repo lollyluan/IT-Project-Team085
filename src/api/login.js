@@ -72,7 +72,7 @@ function signUp(email, password, firstname, lastname) {
     .then(res => {
         if(res.ok){
             alert("sign up successfully, please check your email!")
-            window.location.href=process.env.REACT_APP_HOME;
+            window.location.href=process.env.REACT_APP_HOME + "login";
         }
         else{
             alert('Failed to sign up, try again');
