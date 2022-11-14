@@ -1,38 +1,58 @@
-import React from 'react'
+import { PictureAsPdf } from '@mui/icons-material';
+import { name } from 'file-loader';
+import React, { useEffect } from 'react'
 import { useState } from "react"
-
+import {updateProfile, getUserProfile} from '../../../api/user';
 
 
 function UserInfor () {
-  const [firstName, setFirstName] = useState('')
-  const [lastName, setLastName] = useState('')
-  const [birthday, setBirthday] = useState('')
-  const [id, setId] = useState('')
-  const [email, setEmail] = useState('')
-  const [phone, setPhone] = useState('')
-  const [country, setCountry] = useState('')
-  const [city, setCity] = useState('')
-  const [address, setAddress] = useState('')
-  const [bio, setBio] = useState('')
+  useEffect(() => {
+    getUserProfile()
+      .then(data => setData(data))
+      .catch(err => alert('Something went wrong!'))
 
+  },[data]);
+  
+  const [data, setData] = useState({
+    address: '',
+    dob: '',
+    firstname: '',
+    lastname: '',
+    bio: '',
+    identification: '',
+    city: '',
+    country: ''
+  });
+
+  function submit(e) {
+    e.preventDefault();  
+    updateProfile(data).then(newdata => setData(newdata));
+  }
+  function handle(e) {
+    const newdata = { ...data };
+    newdata[e.target.id] = e.target.value;
+    setData(newdata);
+  }
   return (
-    <form className='userInfor'>
+    <form className='userInfor' onSubmit={submit}>
       <div>
         <label>First Name:</label>
         <input
           type="text"
-          placeholder='John'
+          placeholder= "John"
           className='shortBox'
-          value={firstName}
-          onChange={(e) => setFirstName(e.target.value)}
+          value={data.firstname}
+          id="firstname"
+          onChange={handle}
           required />
         <label>Last Name:</label>
         <input
           type="text"
           placeholder='Smith'
           className='shortBox'
-          value={lastName}
-          onChange={(e) => setLastName(e.target.value)}
+          id="lastname"
+          value={data.lastname}
+          onChange={handle}
           required />
       </div>
       <div>
@@ -41,32 +61,17 @@ function UserInfor () {
           type="text"
           placeholder='11/05/1997'
           className='shortBox'
-          value={birthday}
-          onChange={(e) => setBirthday(e.target.value)} />
+          value={data.dob}
+          id="dob"
+          onChange={handle} />
         <label>ID:</label>
         <input
           type="text"
-          value={id}
+          value={data.identification}
           placeholder='ID Number'
+          id="identification"
           className='middleBox'
-          onChange={(e) => setId(e.target.value)} />
-      </div>
-      <div>
-        <label>Email:</label>
-        <input
-          type="text"
-          placeholder='Email'
-          className='middleBox'
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          required />
-        <label>Phone:</label>
-        <input
-          type="text"
-          placeholder='Phone Number'
-          className='middleBox'
-          value={phone}
-          onChange={(e) => setPhone(e.target.value)} />
+          onChange={handle} />
       </div>
       <div>
         <label>Country:</label>
@@ -74,15 +79,17 @@ function UserInfor () {
           type="text"
           placeholder='Country'
           className='middleBox'
-          value={country}
-          onChange={(e) => setCountry(e.target.value)} />
+          value={data.country}
+          id="country"
+          onChange={handle} />
         <label>City:</label>
         <input
           type="text"
           placeholder='City'
           className='middleBox'
-          value={city}
-          onChange={(e) => setCity(e.target.value)} />
+          value={data.city}
+          id="city"
+          onChange={handle} />
       </div>
       <div>
         <label>Address:</label>
@@ -90,24 +97,24 @@ function UserInfor () {
           type="text"
           placeholder='123, Happy Street'
           className='longBox'
-          value={address}
-          onChange={(e) => setAddress(e.target.value)} />
+          value={data.address}
+          id="address"
+          onChange={handle} />
       </div>
       <div className='bio'>
         <label>Bio:</label>
         <textarea
           placeholder='Introduce yourself~'
           className='longBox'
-          value={bio}
-          onChange={(e) => setBio(e.target.value)}>
+          value={data.bio}
+          id = "bio"
+          onChange={handle}>
         </textarea>
       </div>
       <div className='profileBtn'>
-        <button className='profileBtm' >Submit</button>
+        <input className='profileBtm' type="submit" />
       </div>
     </form>
-
-
   )
 }
 

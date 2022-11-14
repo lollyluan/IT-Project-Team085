@@ -4,15 +4,45 @@ import Header from "../../Components/header"
 import { useState } from "react"
 import donationImage from "../../images/donation-project1.jpg"
 import './donation.css'
+import { postDonation, getDonation } from "../../api/donation"
 
 function Donation () {
-    const [firstName, setFirstName] = useState('')
-    const [lastName, setLastName] = useState('')
-    const [email, setEmail] = useState('')
-    const [phone, setPhone] = useState('')
-    const [amount, setAmount] = useState('')
-    const [expiry, setExpiry] = useState('')
-    const [cvv, setCvv] = useState('')
+    // const [firstName, setFirstName] = useState('')
+    // const [lastName, setLastName] = useState('')
+    // const [email, setEmail] = useState('')
+    // const [phone, setPhone] = useState('')
+    // const [amount, setAmount] = useState('')
+
+    function submit(e) {
+        e.preventDefault();
+        postDonation(data);
+    }
+
+    function handle(e) {
+        const newdata = {...data};
+        newdata[e.target.id] = e.target.value;
+        setData(newdata);
+    }
+
+    const [data, setData] = useState({
+        // firstName: '',
+        // lastName: '',
+        // email: '',
+        // phone: '',
+        // amount: '',
+        firstName: '',
+        lastName: '',
+        email: '',
+        phoneCountryCode: '+61',
+        phoneNumber: 0,
+        donationAmount: 20,
+        payment: "DEBIT_CREDIT",
+        cardNumber: 0,
+        expiryMonth: 0,
+        expiryYear: 0,
+        cvv: 0
+    });
+
     return (
         <div className="donationPage">
             <div className="donationTitle">
@@ -30,15 +60,16 @@ function Donation () {
             <div className="donationFormArea">
                 <div className="donationFormTitle">
                     <h2>Donation Details</h2></div>
-                <form className="donationForm">
+                <form className="donationForm" onSubmit={submit}>
                     <div>
                         <label>First Name:</label>
 
                         <input
                             type="text"
                             placeholder='Thank'
-                            value={firstName}
-                            onChange={(e) => setFirstName(e.target.value)}
+                            value={data.firstName}
+                            id = 'firstName'
+                            onChange={handle}
                             required />
                     </div>
 
@@ -48,8 +79,9 @@ function Donation () {
                         <input
                             type="text"
                             placeholder='You'
-                            value={lastName}
-                            onChange={(e) => setLastName(e.target.value)}
+                            value={data.lastName}
+                            id = 'lastName'
+                            onChange={handle}
                             required />
                     </div>
 
@@ -59,8 +91,9 @@ function Donation () {
                         <input
                             type="text"
                             placeholder='For'
-                            value={email}
-                            onChange={(e) => setEmail(e.target.value)}
+                            value={data.email}
+                            id = 'email'
+                            onChange={handle}
                             required />
                     </div>
 
@@ -70,8 +103,9 @@ function Donation () {
                         <input
                             type="text"
                             placeholder='Donation'
-                            value={phone}
-                            onChange={(e) => setPhone(e.target.value)}
+                            value={data.phoneNumber}
+                            id = 'phoneNumber'
+                            onChange={handle}
                             required />
                     </div>
 
@@ -81,15 +115,16 @@ function Donation () {
                         <input
                             type="text"
                             placeholder="ヾ(^▽^*)))"
-                            value={amount}
-                            onChange={(e) => setAmount(e.target.value)} />
+                            value={data.donationAmount}
+                            id = 'donationAmount'
+                            onChange={handle} 
+                            required/>
                     </div>
 
                     <div>
-                        <button className="profileBtm">Proceed</button>
+                        <input className="profileBtm" type='submit' />
                     </div>
                 </form>
-
             </div>
         </div>
     )
