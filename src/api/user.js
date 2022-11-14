@@ -34,7 +34,8 @@ async function updateProfile(reqBody) {
         method: 'POST',
         headers: {'Content-Type': 'application/json',
         'Authorization':'Bearer '+ getToken()},
-        body: reqBody
+        body:JSON.stringify(reqBody)
+
     }
   
     
@@ -49,6 +50,7 @@ async function updateProfile(reqBody) {
     })
     .then(data => {
         console.log(data)
+        alert("Successfully submit!")
         return data
     })    
 }
@@ -76,11 +78,11 @@ async function checkComplete(reqBody){
     })
     .then(data => {
         console.log(data);
-       //alert("Successfully submit!")
+       alert("Successfully submit!")
     })
     .catch(err => {
         //console.log(err);
-        //alert('Something went wrong!');
+        alert('Something went wrong!');
     });
 }
 
