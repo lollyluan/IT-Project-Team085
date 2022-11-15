@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { Button, Form, Input, Label } from 'reactstrap';
 import { login } from '../../api/login';
 import { login as adminLogin } from '../../api/admim_login';
+import { Link } from 'react-router-dom';
 
 const Login = () => {
  
@@ -95,8 +96,18 @@ const Login = () => {
           <Button className="button">Login with Google</Button>
           <Button className="button">Login with Facebook</Button>
 
-          <Label className="center">
-            Don’t have an account, Register Here!
+          <Label className="center" style={{display:'inline-block'}}>
+            Don’t have an account, 
+          </Label>
+          
+          <Link to="/register">
+          <Label className="center" style={{display:'inline-block'}}>
+            &nbsp;Register
+          </Label>
+          </Link>
+          
+          <Label className="center" style={{display:'inline-block'}}>
+            &nbsp;Here!
           </Label>
         </Form>
       </div>

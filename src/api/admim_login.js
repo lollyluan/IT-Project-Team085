@@ -27,10 +27,9 @@ function login(username, password) {
    
     fetch(url, requestInit)
     .then(res => {
-        const navigate = useNavigate();
         if(res.ok) {
             alert("Logged in successfully")
-            navigate('/admin/PostPets')
+            window.location.href=process.env.REACT_APP_HOME;
             return res.json();
             
         }
