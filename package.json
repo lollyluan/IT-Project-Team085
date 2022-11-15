@@ -28,7 +28,7 @@
     "config": "^3.3.8",
     "css-loader": "1.0.0",
     "dotenv": "6.0.0",
-    "dotenv-expand": "4.2.0",
+    "dotenv-expand": "^4.2.0",
     "dotenv-webpack": "^8.0.1",
     "env-cmd": "^10.1.0",
     "eslint": "5.12.0",

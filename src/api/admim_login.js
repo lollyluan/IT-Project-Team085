@@ -11,7 +11,7 @@ const BASE_URL = process.env.REACT_APP_BASE_URL
 //const currentUser=currentUserSubject.asObservable()
 
 
-var token = ""
+
 function login(username, password) {
     const url = BASE_URL + '/auth/admin/login';
     const requestInit = {
@@ -40,8 +40,7 @@ function login(username, password) {
     .then(user => {
       
         // store user details and jwt token in local storage to keep user logged in between page refreshes
-        token = user.token;
-        console.log(JSON.stringify(user))
+        localStorage.setItem('token', user.token)
        
 
         return user;
@@ -89,19 +88,23 @@ function signUp(username, password) {
 }
 
 function isLoggedIn() {
-    return token !== '';
+    return localStorage.getItem('token')!==undefined;
 }
 function getToken(){
-    return token;
+    return localStorage.getItem('token');
 }
 function getUserId() {
     if(isLoggedIn()) {
         
-        const jwt =jwt_decode(token)
+        const jwt =jwt_decode(localStorage.getItem('token'))
 
         return jwt.userId;
     } 
     return undefined;
+}
+function logOut(){
+    localStorage.removeItem("token");
+    window.location.href=process.env.REACT_APP_HOME;
 }
 
 export {
@@ -109,5 +112,6 @@ export {
     login,
     signUp,
     isLoggedIn,
-    getUserId
+    getUserId,
+    logOut
 }
