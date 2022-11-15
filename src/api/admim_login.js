@@ -17,8 +17,7 @@ function login(username, password) {
     const requestInit = {
         method: 'POST',
         // mode: 'no-cors',
-        headers: {'Content-Type': 'application/json',
-        'Access-Control-Allow-Origin': '*'},
+        headers: {'Content-Type': 'application/json','mode': 'no-cors'},
         body: JSON.stringify({
             'username': username,
             'password': password
@@ -27,14 +26,17 @@ function login(username, password) {
    
     fetch(url, requestInit)
     .then(res => {
+        alert("sent")
         if(res.ok) {
             alert("Logged in successfully")
-            window.location.href=process.env.REACT_APP_HOME;
+           
             return res.json();
             
         }
         else {
+            alert("failed to login, try again!")
             return Promise.reject();
+            
         }
     })
     .then(user => {
@@ -42,7 +44,7 @@ function login(username, password) {
         // store user details and jwt token in local storage to keep user logged in between page refreshes
         localStorage.setItem('token', user.token)
        
-
+        window.location.href=process.env.REACT_APP_HOME;
         return user;
     })
     .catch((e) => {
@@ -59,9 +61,9 @@ function signUp(username, password) {
         // mode: 'no-cors',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify({
-       
-            'password': password,
             'username': username,
+            'password': password
+            
            
         })
     }

@@ -3,22 +3,11 @@ import { useState } from 'react'
 import { Button, Form, Input, Label } from 'reactstrap'
 import { login } from '../api/admim_login'
 
-export default function AdminLoginPage (props) {
-    const [isLogin, setIsLogin] = useState(true)
-
-    return (
-        <div>
-            <Login handleSignUp={() => setIsLogin(false)} />
-
-        </div>
-    )
-}
 
 
 
-function Login (props) {
-    const { handleSignUp } = props
-
+export default function AdminLoginPage() {
+ 
     const [username, setUsername] = useState('')
 
     const [showPassword, setShowPassword] = useState(false)
@@ -38,8 +27,7 @@ function Login (props) {
 
     //TODO connect backend
     const handleSignIn = () => {
-        console.log("hello")
-        console.log(`${username}, ${password}`)
+        
         if (username !== '' && password !== '') {
 
             login(username, password)
@@ -78,7 +66,7 @@ function Login (props) {
                         </span>
                     </div>
 
-                    <Button className='button' type="submit">
+                    <Button className='button' type="submit" onClick={handleSignIn}>
                         Login
                     </Button>
 
