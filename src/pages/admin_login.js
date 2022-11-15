@@ -3,9 +3,6 @@ import { useState } from 'react'
 import { Button, Form, Input, Label } from 'reactstrap'
 import { login } from '../api/admim_login'
 
-
-
-
 export default function AdminLoginPage (props) {
     const [isLogin, setIsLogin] = useState(true)
 

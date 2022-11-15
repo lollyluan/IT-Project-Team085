@@ -106,6 +106,7 @@ function getUserId() {
 }
 function logOut(){
     localStorage.removeItem("token");
+    window.location.href=process.env.REACT_APP_HOME;
 }
 export {
     getToken,

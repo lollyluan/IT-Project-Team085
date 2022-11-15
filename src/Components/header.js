@@ -2,11 +2,15 @@ import React from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { NavbarBrand, Nav, NavItem, NavLink, Button } from 'reactstrap'
 import { Link } from 'react-router-dom'
-import { isLoggedIn, getToken } from '../api/login'
+import { isLoggedIn, getToken,logOut } from '../api/login'
 import { BsFillFilePersonFill } from 'react-icons/bs'
 
-
 function Header () {
+
+  const handleLogout = async () => {
+    logOut();
+  };
+
 
   return (
     <header>
@@ -28,6 +32,8 @@ function Header () {
         <div className="functionArea">
           {isLoggedIn() === true ?
             <div>
+              <Button className='btn' outline color="success" onClick = {handleLogout}>Logout</Button>{' '}
+
               <Link to="/profile">
                 <Button>< BsFillFilePersonFill /></Button>
               </Link>
