@@ -8,7 +8,7 @@ WORKDIR /
 # where available (npm@5+)
 COPY package*.json /
 
-RUN npm install -g npm@9.1.1
+RUN npm install 
 
 
 # If you are building your code for production
@@ -17,5 +17,5 @@ RUN npm install -g npm@9.1.1
 # Bundle app source
 COPY . .
 
-EXPOSE 80
+EXPOSE 3000
 CMD [ "npm", "start" ]
