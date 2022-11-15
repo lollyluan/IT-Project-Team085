@@ -1,34 +1,32 @@
-import 'bootstrap/dist/css/bootstrap.min.css';
-import { Nav,NavbarBrand } from 'reactstrap';
-import AdminSideBar from '../Components/AdminSideBar';
-import Application from '../Components/Application';
-import React, { useState ,useEffect} from 'react';
-import {getAdoption} from '../api/pet_adoption';
+import 'bootstrap/dist/css/bootstrap.min.css'
+import { Nav, NavbarBrand } from 'reactstrap'
+import AdminSideBar from '../Components/AdminSideBar'
+import Application from '../Components/Application'
+import React, { useState, useEffect } from 'react'
+import { getAdoption } from '../api/pet_adoption'
 
 
 
-function ReviewApplication(){
-    
-    const [application, setApplication] = useState([]);
+function ReviewApplication () {
 
-    useEffect(()=>{
-    const func = async()=>{
-        const list = await(getAdoption())
-        setApplication(list)
-      }
-      func()
-      }, []);
-      console.log (application)
+    const [application, setApplication] = useState([])
 
-    return(
-<div>
-    <Nav>
-        <NavbarBrand>Pets Home</NavbarBrand>
-    </Nav>  
-    <AdminSideBar/> 
-    <Application ></Application>
+    useEffect(() => {
+        const func = async () => {
+            const list = await (getAdoption())
+            setApplication(list)
+        }
+        func()
+    }, [])
+    console.log(application)
 
-</div>
+    return (
+        <div>
+            <Nav>
+                <NavbarBrand>Pets Home</NavbarBrand>
+            </Nav>
+            <AdminSideBar />
+        </div>
 
 
     )

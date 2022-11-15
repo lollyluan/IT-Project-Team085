@@ -16,7 +16,7 @@
 
   /* Fonts */
 
-  --font-family-body: 'Rubik Dirt', cursive;
+  --font-family-body: 'Comic Sans MS', 'Rubik Dirt', cursive;
   font-family: var(--font-family-body);
 
   /* Background Colours */
