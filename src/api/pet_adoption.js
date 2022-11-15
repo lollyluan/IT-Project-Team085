@@ -179,4 +179,5 @@ async function getAdoption(){
     postAdoptionApplication,
     updateAdoptionApplication,
     getAdoption,
+    getAdoptionApplication
   }

@@ -6,7 +6,6 @@ import React from 'react';
 import SearchBar from "../../Components/searchBar";
 import PageNumber from "../../Components/pageNumber";
 import { useState, useRef } from "react";
-import { LensTwoTone } from "@mui/icons-material";
 
 function DisplayPets(){
     
