@@ -44,7 +44,7 @@ function login(username, password) {
         // store user details and jwt token in local storage to keep user logged in between page refreshes
         localStorage.setItem('token', user.token)
        
-        window.location.href=process.env.REACT_APP_HOME+'/admin/Dashboard';
+        window.location.href=process.env.REACT_APP_HOME+'admin/Dashboard';
         return user;
     })
     .catch((e) => {
