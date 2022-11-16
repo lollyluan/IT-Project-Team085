@@ -26,7 +26,7 @@ function login(username, password) {
    
     fetch(url, requestInit)
     .then(res => {
-        alert("sent")
+       
         if(res.ok) {
             alert("Logged in successfully")
            

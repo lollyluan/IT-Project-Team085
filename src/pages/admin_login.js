@@ -29,7 +29,7 @@ export default function AdminLoginPage() {
     const handleSignIn = () => {
         
         if (username !== '' && password !== '') {
-
+            alert("logging in")
             login(username, password)
 
         } else {
