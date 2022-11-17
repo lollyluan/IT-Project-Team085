@@ -60,7 +60,7 @@ function PostPet() {
         <Col lg="4">
           <FormGroup row className="row-cols-lg-auto g-3 align-items-center">
             <div className="s1">
-              <span for="Category" sm="1">
+              <span for="category" sm="1">
                 Category:
               </span>
             </div>
@@ -97,7 +97,7 @@ function PostPet() {
       <Row className="NoPadding">
         <Col lg="4">
           <FormGroup row className="row-cols-lg-auto g-3 align-items-center">
-            <span className="s1" for="Country" sm="1">
+            <span className="s1" for="country" sm="1">
               Country:
             </span>
             <Input
@@ -132,9 +132,9 @@ function PostPet() {
               SEX:
             </span>
             <Input type="select" value={data.sex} id="sex" onChange={handle}>
-              <option value="Boy">MALE</option>
-              <option value="Gril">FEMALE</option>
-              <option value="Gril">UNDEFINED</option>
+              <option value="MALE">MALE</option>
+              <option value="FEMALE">FEMALE</option>
+              <option value="UNDEFINED">UNDEFINED</option>
             </Input>
           </FormGroup>
         </Col>
@@ -168,17 +168,17 @@ function PostPet() {
               id="color"
               onChange={handle}
             >
-              <option value="Orange">RED</option>
-              <option value="Black">BLUE</option>
-              <option value="White">GREEN</option>
-              <option value="Brown">YELLOW</option>
-              <option value="Double Color">ORANGE</option>
-              <option value="Triple Color">PURPLE</option>
-              <option value="Triple Color">WHITE</option>
-              <option value="Triple Color">BLACK</option>
-              <option value="Triple Color">GREY</option>
-              <option value="Triple Color">OTHER</option>
-              <option value="Triple Color">UNDEFINED</option>
+              <option value="RED">RED</option>
+              <option value="BLUE">BLUE</option>
+              <option value="GREEN">GREEN</option>
+              <option value="YELLO">YELLOW</option>
+              <option value="ORANGE">ORANGE</option>
+              <option value="PURPLE">PURPLE</option>
+              <option value="WHITE">WHITE</option>
+              <option value="BLACK">BLACK</option>
+              <option value="GREY">GREY</option>
+              <option value="OTHER">OTHER</option>
+              <option value="UNDEFINED">UNDEFINED</option>
             </Input>
           </FormGroup>
         </Col>
@@ -194,9 +194,9 @@ function PostPet() {
               id="immunization"
               onChange={handle}
             >
-              <option value="Yes">YES</option>
-              <option value="No">NO</option>
-              <option value="No">PENDING</option>
+              <option value="YES">YES</option>
+              <option value="NO">NO</option>
+              <option value="PENDING">PENDING</option>
             </Input>
           </FormGroup>
         </Col>
