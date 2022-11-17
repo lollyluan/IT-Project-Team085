@@ -70,8 +70,8 @@ function PostPet() {
               id="category"
               onChange={handle}
             >
-              <option value="Cats">CAT</option>
-              <option value="Dogs">DOG</option>
+              <option value="CAT">CAT</option>
+              <option value="DOG">DOG</option>
             </Input>
           </FormGroup>
         </Col>
