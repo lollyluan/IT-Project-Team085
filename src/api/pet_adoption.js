@@ -22,9 +22,11 @@ async function postAdoptionApplication(petId, reqBody) {
     return fetch(url, request)
     .then(res => {
         if(res.ok) {
+            alert("Submit successfully!")
             return res.json();
         }
         else {
+            
             return Promise.reject();
         }
     })
@@ -34,7 +36,7 @@ async function postAdoptionApplication(petId, reqBody) {
     })    
     .catch(err => {
         console.log(err);
-        //alert('Something went wrong!');
+        alert('Something went wrong!');
     });
 }
 //Get all of adoption application of a user

@@ -21,7 +21,7 @@ function PetCard(props) {
 
         </Card.Text>
         <Link to={`/petInfo/${props.id}`}>
-          <Button variant="success">More Information</Button>
+          <Button size="sm" variant="success">More Information</Button>
         </Link>
       </Card.Body>
     </Card>

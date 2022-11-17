@@ -3,6 +3,7 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Modal from 'react-bootstrap/Modal';
 import {postAdoptionApplication} from '../api/pet_adoption';
+import { checkComplete } from '../api/user';
 
 export default function ApplicationPopup(props) {
   const [show, setShow] = useState(false);
@@ -15,15 +16,15 @@ export default function ApplicationPopup(props) {
     const data={...application}
     data["reason"]= e.target.value
     setApplication(data)
-    console.log(application)
   }
 
   const handleSubmit = e =>{
     e.preventDefault()
-    //const apply = {"reason":application}
-    console.log(props.id)
-    //console.log(apply)
-    postAdoptionApplication(props.id, application)
+    // if(checkComplete()){
+    //   postAdoptionApplication(props.id, application);
+    // }
+    console.log(application);
+    postAdoptionApplication(props.id, application);
   }
 
   return (

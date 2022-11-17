@@ -32,7 +32,7 @@ function Header () {
         <div className="functionArea">
           {isLoggedIn() === true ?
             <div>
-              <Button className='btn' outline color="success" onClick = {handleLogout}>Logout</Button>{' '}
+              <Button className='btn' outline color="success" onClick = {handleLogout}>Logout</Button>&nbsp;
 
               <Link to="/profile">
                 <Button>< BsFillFilePersonFill /></Button>
@@ -41,11 +41,11 @@ function Header () {
             :
             <div>
               <Link to="/DiffLogin">
-                <Button className='btn' outline color="success">Login</Button>{' '}
+                <Button className='btn' outline color="success">Login</Button>&nbsp;
               </Link>
 
               <Link to="/register">
-                <Button className='btn' color="success">Register</Button>{' '}
+                <Button className='btn' color="success">Register</Button>
               </Link>
             </div>
 
