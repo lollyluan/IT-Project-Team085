@@ -71,7 +71,7 @@ function signUp(email, password, firstname, lastname) {
     fetch(url, requestInit)
     .then(res => {
         if(res.ok){
-            alert("sign up successfully, please check your email!")
+            alert("sign up successfully!")
             window.location.href=process.env.REACT_APP_HOME + "login";
         }
         else{
