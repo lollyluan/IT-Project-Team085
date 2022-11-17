@@ -172,7 +172,7 @@ function PostPet() {
               <option value="BLUE">BLUE</option>
               <option value="GREEN">GREEN</option>
               <option value="YELLO">YELLOW</option>
-              <option value="ORANGE">ORANGE</option>
+              <option value="ORINGE">ORANGE</option>
               <option value="PURPLE">PURPLE</option>
               <option value="WHITE">WHITE</option>
               <option value="BLACK">BLACK</option>
