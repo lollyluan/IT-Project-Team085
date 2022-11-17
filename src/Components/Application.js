@@ -54,9 +54,6 @@ export default function Application (props){
         </FormGroup>
         </Col>
         </Row>
-
-        <Button>Compelete</Button>
-        <Button>Reject</Button>
         </Form>
     );
 }
