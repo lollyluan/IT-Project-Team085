@@ -86,5 +86,7 @@ async function checkComplete(reqBody){
     });
 }
 
-export {getUserProfile, updateProfile};
+export {getUserProfile, 
+    checkComplete, 
+    updateProfile};
 
