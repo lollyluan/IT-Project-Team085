@@ -1,0 +1,61 @@
+.petInfor {
+  width: 1250px;
+  height: 700px;
+  margin: 100px auto;
+
+  display: grid;
+
+  grid-template-rows: 2fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 2fr;
+  grid-template-areas:
+    'lgImg lgImg lgImg petContent'
+    'smImg1 smImg2 smImg3 petContent';
+
+  row-gap: 30px;
+  column-gap: 30px;
+}
+
+.petInfor .lgImg {
+  grid-area: lgImg;
+}
+
+.petInfor .smImg1 {
+  grid-area: smImg1;
+}
+
+.petInfor .smImg2 {
+  grid-area: smImg2;
+}
+
+.petInfor .smImg3 {
+  grid-area: smImg3;
+}
+
+.petInfor .lgImg .picture1 {
+  width: 100%;
+  height: 491px;
+  object-fit: cover;
+  object-position: 0 70%;
+  border-radius: 10px;
+}
+
+.petInfor .pictureSmall {
+  width: 100%;
+  height: 182px;
+  object-fit: cover;
+  object-position: 0 70%;
+  border-radius: 10px;
+}
+
+.petInfor .petContent {
+  grid-area: petContent;
+}
+
+.petInfor .petContent .tags {
+  margin-top: 24px;
+}
+
+.petInfor .petContent .location {
+  margin-top: 32px;
+  margin-bottom: 38px;
+}
