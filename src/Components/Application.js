@@ -22,13 +22,13 @@ export default function Application (props){
         <Label for="Num" sm='12'></Label>
         <Col lg='6'>
         <FormGroup row className="row-cols-lg-auto g-3 align-items-center">
-          <Label for="Adopter’s Name:" sm='1'>First Name:{props.firstname}</Label> 
+          <Label for="Adopter’s Name:" sm='1'>First Name: firstname</Label> 
         </FormGroup>
         </Col>
 
         <Col lg='6'>
         <FormGroup row className="row-cols-lg-auto g-3 align-items-center">
-          <Label for="Adopter’s Name:" sm='1'>Last Name:{props.lastname}</Label> 
+          <Label for="Adopter’s Name:" sm='1'>Last Name:lastname</Label> 
         </FormGroup>
         </Col>
         </Row>
@@ -42,7 +42,7 @@ export default function Application (props){
 
         <Col lg='6'>
         <FormGroup row className="row-cols-lg-auto g-3 align-items-center">
-          <Label for="Adopter’s Email:" sm='1'>Email:{props.email}</Label>  
+          <Label for="Adopter’s Email:" sm='1'>Email:xxxxxxx@gmail.com</Label>  
         </FormGroup>
         </Col>
         </Row>

@@ -6,27 +6,27 @@ import Application from '../Components/Application';
 import {getAdoptionApplication}  from '../api/pet_adoption';
 import { useEffect , useState} from 'react';
 
-function ApplicationList(props){
+function ApplicationList(){
 
-  const [ApplicationLst,setApplicationLst] = useState([]);
-
-  const changeValue = async()=>{
-    const list = await(getAdoptionApplication())
-    setApplicationLst(list)
-  }
+  const [applicationLst,setApplicationLst] = useState([]);
 
   useEffect(() => {
-    changeValue()
-  }, [props]);
+    const func = async()=>{
+      const lst = await(getAdoptionApplication());
+      console.log(lst)
+      setApplicationLst(lst)
+    }
+    func()
+  }, []);
   
  
   return (
-    <Row xs={1}>
+    <Row md={1}>
     {
-      [...Array(ApplicationLst.length).keys()].map(function(i){ 
+      [...Array(applicationLst.length).keys()].map(function(i){ 
         return(
           <Col>
-          <Application petId = {ApplicationLst[i].petId} FisrtName = {ApplicationLst[i].firstname} LastName = {ApplicationLst[i].lastname} userId = {ApplicationLst[i].userId} city = {ApplicationLst[i].city}  email = {ApplicationLst[i].email} reason = {ApplicationLst[i].reason} ></Application>
+          <Application petId = {applicationLst[i].petId} userId = {applicationLst[i].userId} reason = {applicationLst[i].reason} ></Application>
           </Col>
           )
       })

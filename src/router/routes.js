@@ -19,7 +19,7 @@ import Volunteer from '../Components/UserProfile1/SideNavbar/Overview/VolunteerA
 import UserInfor from '../Components/UserProfile1/SideNavbar/PersonInfo'
 
 import ReviewApplication from '../pages/ReviewApplication'
-import Application from '../Components/Application'
+import ApplicationList from '../Components/ApplicationList'
 import PostPet from '../Components/post'
 
 import Donation from "../pages/Donation/donation"
@@ -51,7 +51,7 @@ export default function AllRoutes () {
         </Route>
 
         <Route path="/admin/Dashboard" element={<ReviewApplication />} >
-          <Route path="allApplication" element={<Application />} />
+          <Route path="allApplication" element={<ApplicationList />} />
           <Route path="postPet" element={<PostPet />} />
         </Route>
       </Routes>

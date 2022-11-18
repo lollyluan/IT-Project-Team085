@@ -20,7 +20,7 @@ function ReviewApplication () {
                 <NavbarBrand>Pets Home</NavbarBrand>&nbsp;
                 <Button className='btn' outline color="success" onClick = {handleLogout}>Logout</Button>
             </Nav>
-            <Application/>
+            
             <AdminSideBar />
         </div>
 

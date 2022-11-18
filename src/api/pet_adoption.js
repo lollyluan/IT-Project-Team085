@@ -44,16 +44,17 @@ async function postAdoptionApplication(petId, reqBody) {
 async function getAdoptionApplication(){
     const request = {
         headers: {'Content-Type': 'application/json',
-        'Authorization':'Bearer '+ getToken()},
+        'Authorization':'Bearer '+ getToken(),
+        'Origin': "http://localhost:3000"},
         method: 'GET',
        
        
     }
     //add authentication here
    
-    var url = BASE_URL + '/adoption/application' ;
+    var url = BASE_URL + '/admin/adoption/application' ;
 
-    fetch(url, request)
+    return fetch(url, request)
     
     .then(res => {
         console.log(res)
@@ -65,13 +66,11 @@ async function getAdoptionApplication(){
         }
     })
     .then(data => {
-        console.log(data);
+        console.log(data)
+        return data;
        //alert("Successfully submit!")
     })
-    .catch(err => {
-        //console.log(err);
-        //alert('Something went wrong!');
-    });
+    
 }
 
 // get the detail of successful adoption
