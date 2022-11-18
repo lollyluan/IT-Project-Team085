@@ -6,9 +6,9 @@ import { Link, useParams } from "react-router-dom";
 
 
 function PetCard(props) {
-
+  
   const imageLst = props.image[0].image
-
+  
 
   return (
     

@@ -36,7 +36,8 @@ async function postAdoptionApplication(petId, reqBody) {
     })    
     .catch(err => {
         console.log(err);
-        alert('Something went wrong!');
+        alert('Something went wrong! Please complete your personal information');
+        window.location.href=process.env.REACT_APP_HOME+'/profile/information'
     });
 }
 //Get all of adoption application of a user

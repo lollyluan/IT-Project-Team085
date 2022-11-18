@@ -7,7 +7,6 @@ import cat1 from "../images/cat1_details3.jpg"
 import { useEffect, useState} from 'react';
 import {useParams} from 'react-router-dom';
 import {getPet} from '../api/pet';
-
 import "./petInforStyle.css"
 
 
@@ -21,15 +20,22 @@ function PetInfor2 () {
  
         const petInfo = await(getPet(petId.petId))
         setPet(petInfo)
-        setImageLst(petInfo.imageCollectionDTO.imageList[0])
+        if(petInfo.imageCollectionDTO.imageList.length === 0){
+          setImageLst("")
+        }else{
+          setImageLst(petInfo.imageCollectionDTO.imageList[0])
+        }
+        console.log(imageLst)
     }
     func()
     }, []);
 
   const temp = "test"
   return (
+    <>
+    <Header />
     <div className="petInfor">
-
+      
       <div className="lgImg">
         <img src={`data:image/jpeg;base64,${imageLst.image}`} alt="" className='picture1' />
       </div>
@@ -61,6 +67,7 @@ function PetInfor2 () {
       </div>
 
     </div>
+    </>
   )
 }
 export default PetInfor2
