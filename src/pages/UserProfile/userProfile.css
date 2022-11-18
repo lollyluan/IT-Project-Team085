@@ -239,8 +239,8 @@ body {
 /** SideNavBar --Persional Info **/
 .userInfor {
   position: absolute;
-  top: 200px;
-  left: 355px;
+  top: 310px;
+  left: 528px;
   width: 790px;
 
   margin-left: 84px;
@@ -279,6 +279,7 @@ body {
 .userInfor .bio {
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
 .profileBtn {
