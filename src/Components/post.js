@@ -133,7 +133,7 @@ function PostPet() {
             </span>
             <Input type="select" value={data.sex} id="sex" onChange={handle}>
               <option value="MALE">MALE</option>
-              <option value="FEMALE">FEMALE</option>
+              <option value="FEMAILE">FEMALE</option>
               <option value="UNDEFINED">UNDEFINED</option>
             </Input>
           </FormGroup>
