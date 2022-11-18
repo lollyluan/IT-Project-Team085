@@ -1,21 +1,37 @@
 import React from 'react'
-
+import Header from '../Components/header';
 import { BsFillGeoAltFill } from "react-icons/bs"
 import ApplicationPopup from '../Components/applicationPopup'
 import Tags from '../Components/Tags'
 import cat1 from "../images/cat1_details3.jpg"
+import { useEffect, useState} from 'react';
+import {useParams} from 'react-router-dom';
+import {getPet} from '../api/pet';
 
 import "./petInforStyle.css"
 
 
 function PetInfor2 () {
 
+  const [pet, setPet] = useState([]);
+    const [imageLst, setImageLst] = useState([]);
+    const petId = useParams();
+    useEffect(()=>{
+      const func = async()=>{
+ 
+        const petInfo = await(getPet(petId.petId))
+        setPet(petInfo)
+        setImageLst(petInfo.imageCollectionDTO.imageList[0])
+    }
+    func()
+    }, []);
+
   const temp = "test"
   return (
     <div className="petInfor">
 
       <div className="lgImg">
-        <img src={cat1} alt="" className='picture1' />
+        <img src={`data:image/jpeg;base64,${imageLst.image}`} alt="" className='picture1' />
       </div>
 
       <div className="smImg1">
@@ -31,16 +47,16 @@ function PetInfor2 () {
       </div>
 
       <div className="petContent">
-        <h1>Moss</h1>
-        <h3>Mose is now about a year old, a typical orange patterned male cat with a very nice and friendly personality, and has been wandering outside for a while, so he may need a little more generous space to keep. He has been de-sexed and is healthy in all aspects, but his tail was once a bit internally damaged, but has recovered and does not affect his normal life. Hope to find a loving family and get along well with other cats.</h3>
+        <h1>{pet.nickname}</h1>
+        <h3>{pet.detail}</h3>
         <div className='tags'>
-          <Tags color={temp} sex={temp} age={temp}
-            character={temp} immunization={temp}></Tags>
+          <Tags color={pet.color} sex={pet.sex} age={pet.age}
+            character={pet.character} immunization={pet.immunization}></Tags>
         </div>
         <div className='location'>
-          <BsFillGeoAltFill /> {temp},{temp}
+          <BsFillGeoAltFill /> {pet.city},{pet.country}
         </div>
-        <ApplicationPopup id={temp} />
+        <ApplicationPopup id = {pet.id} />
 
       </div>
 

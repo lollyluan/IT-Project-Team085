@@ -5,7 +5,7 @@ import HomePage from '../pages/HomePage/homepage'
 import Login from '../pages/Login/login'
 import RegisterPage from '../pages/Register/register'
 import DisplayPets from '../pages/Petlist/petlist'
-import PetInfo from '../pages/petInformation'
+import PetInfo2 from '../pages/petInformation2'
 import AdminLoginPage from '../pages/admin_login'
 import PostPets from '../pages/PostPets'
 import DiffLoginPage from '../pages/DiffLogin'
@@ -31,7 +31,7 @@ export default function AllRoutes () {
         <Route exact path="/admin/login" element={<AdminLoginPage />}></Route>
         <Route path="/petlist" element={<DisplayPets />} />
 
-        <Route path="/petInfo/:petId" element={<PetInfo />} />
+        <Route path="/petInfo/:petId" element={<PetInfo2 />} />
         <Route exact path="/admin/PostPets" element={<PostPets />}></Route>
 
         <Route path="/profile" element={<UserProfile />} >
