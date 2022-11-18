@@ -34,9 +34,8 @@ export default function SideNavBar () {
           <li><Link to="#">Help</Link></li>
           <li><Link to="#">About</Link></li>
         </ul>
-        <Outlet />
-
       </div>
+      <Outlet />
     </>
   )
 }

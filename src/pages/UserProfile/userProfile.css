@@ -97,8 +97,60 @@ body {
   padding: 0 100px;
 
   position: absolute;
-  top: 200px;
-  left: 355px;
+  top: 310px;
+  left: 528px;
+
+  font-size: 20px;
+}
+
+.overviewNav a:link,
+.overviewNav a:visited {
+  text-decoration: none;
+  color: black;
+}
+
+.overviewNav a:hover {
+  text-decoration: underline;
+}
+
+/** SideNavBar --Overview --Adoption history **/
+.adoptedPet {
+  height: 232px;
+  width: 346px;
+  background-image: url('../../images/default_bg.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  position: absolute;
+  top: 411px;
+  left: 528px;
+  margin-left: 80px;
+
+  border-radius: 20px;
+}
+
+.myPetBtm {
+  background-color: transparent;
+  width: 130px;
+  height: 40px;
+  border: 1px solid var(--color-text-green);
+  border-radius: 8px;
+
+  margin: 164px auto;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.myPetBtm > a:link,
+.myPetBtm > a:visited {
+  text-decoration: none;
+  color: var(--color-text-green);
+}
+
+.myPetBtm > a:hover {
+  text-decoration: underline;
 }
 
 /** SideNavBar --Overview --Donation history **/
@@ -107,8 +159,8 @@ body {
   flex-direction: column;
 
   position: absolute;
-  top: 92px;
-  left: 0;
+  top: 411px;
+  left: 528px;
   width: 800px;
 }
 
@@ -140,8 +192,8 @@ body {
   text-align: left;
 
   position: absolute;
-  top: 92px;
-  left: 0;
+  top: 411px;
+  left: 528px;
   width: 800px;
 }
 .volunteer .requirement {

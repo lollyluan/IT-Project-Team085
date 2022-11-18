@@ -12,6 +12,8 @@ import DiffLoginPage from '../pages/DiffLogin'
 
 import UserProfile from '../pages/UserProfile/UserProfile'
 import OverviewNavBar from '../Components/UserProfile1/SideNavbar/Overview/Overview--Navbar'
+import ShowMyPet from '../Components/UserProfile1/SideNavbar/Overview/AdoptionHistory'
+
 import DonationHistory from '../Components/UserProfile1/SideNavbar/Overview/DonationHistory'
 import Volunteer from '../Components/UserProfile1/SideNavbar/Overview/VolunteerApply'
 import UserInfor from '../Components/UserProfile1/SideNavbar/PersonInfo'
@@ -37,6 +39,7 @@ export default function AllRoutes () {
         <Route path="/profile" element={<UserProfile />} >
           <Route path="/profile/overview" element={<OverviewNavBar />}>
             <Route index element={<DonationHistory />} />
+            <Route path="adoptionHistory" element={<ShowMyPet />} />
             <Route path="donationHistory" element={<DonationHistory />} />
             <Route path="volunteer" element={<Volunteer />} />
           </Route>
