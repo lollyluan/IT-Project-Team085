@@ -34,8 +34,8 @@ function Donation () {
         lastName: '',
         email: '',
         phoneCountryCode: '+61',
-        phoneNumber: 0,
-        donationAmount: 20,
+        phoneNumber: '',
+        donationAmount: '',
         payment: "DEBIT_CREDIT",
         cardNumber: 0,
         expiryMonth: 0,
@@ -101,7 +101,7 @@ function Donation () {
                         <label>Phone:</label>
 
                         <input
-                            type="text"
+                            type="tel"
                             placeholder='Donation'
                             value={data.phoneNumber}
                             id = 'phoneNumber'
@@ -113,7 +113,7 @@ function Donation () {
                         <label>Donation Amount:</label>
 
                         <input
-                            type="text"
+                            type="number"
                             placeholder="ヾ(^▽^*)))"
                             value={data.donationAmount}
                             id = 'donationAmount'

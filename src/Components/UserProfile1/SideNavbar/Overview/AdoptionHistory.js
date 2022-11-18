@@ -1,7 +1,10 @@
 import React from "react"
+import { Link } from "react-router-dom"
 
 export default function ShowMyPet () {
   return (
-    <h1>This is my pet</h1>
+    <div className="adoptedPet">
+      <div className="myPetBtm"><Link to="/petlist">Learn More.</Link></div>
+    </div>
   )
 }

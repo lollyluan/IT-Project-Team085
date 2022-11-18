@@ -30,7 +30,9 @@ function HomeCard (){
     <CardText>
     Pets are man's best friend, and a little kindness from you can bring them more hope and care.
     </CardText>
-    <Button color="link">Learn More.</Button>
+    <Link to ="/donation">
+      <Button color="link">Learn More.</Button>
+    </Link>
   </CardBody>
 </Col>
 

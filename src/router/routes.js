@@ -12,6 +12,8 @@ import DiffLoginPage from '../pages/DiffLogin'
 
 import UserProfile from '../pages/UserProfile/UserProfile'
 import OverviewNavBar from '../Components/UserProfile1/SideNavbar/Overview/Overview--Navbar'
+import ShowMyPet from '../Components/UserProfile1/SideNavbar/Overview/AdoptionHistory'
+
 import DonationHistory from '../Components/UserProfile1/SideNavbar/Overview/DonationHistory'
 import Volunteer from '../Components/UserProfile1/SideNavbar/Overview/VolunteerApply'
 import UserInfor from '../Components/UserProfile1/SideNavbar/PersonInfo'
@@ -19,6 +21,8 @@ import UserInfor from '../Components/UserProfile1/SideNavbar/PersonInfo'
 import ReviewApplication from '../pages/ReviewApplication'
 import Application from '../Components/Application'
 import PostPet from '../Components/post'
+
+import Donation from "../pages/Donation/donation"
 
 export default function AllRoutes () {
   return (
@@ -33,10 +37,13 @@ export default function AllRoutes () {
 
         <Route path="/petInfo/:petId" element={<PetInfo2 />} />
         <Route exact path="/admin/PostPets" element={<PostPets />}></Route>
-
+        
+        <Route path = "/donation" element={<Donation/>}/>
+        
         <Route path="/profile" element={<UserProfile />} >
           <Route path="/profile/overview" element={<OverviewNavBar />}>
             <Route index element={<DonationHistory />} />
+            <Route path="adoptionHistory" element={<ShowMyPet />} />
             <Route path="donationHistory" element={<DonationHistory />} />
             <Route path="volunteer" element={<Volunteer />} />
           </Route>
