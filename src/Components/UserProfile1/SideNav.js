@@ -1,4 +1,6 @@
-import React from "react"
+import React, { useEffect } from 'react'
+import { useState } from "react"
+import {getUserProfile} from '../../api/user';
 import {
   Link,
   Outlet
@@ -14,14 +16,32 @@ import defaultAvatar from "../../images/default_avatar.png"
 
 
 export default function SideNavBar () {
+  useEffect(() => {
+    getUserProfile()
+      .then(data => setData(data))
+      .catch(err => alert('Something went wrong!'))
+
+  },[]);
+  
+  const [data, setData] = useState({
+    address: '',
+    dob: '',
+    firstname: '',
+    lastname: '',
+    bio: '',
+    identification: '',
+    city: '',
+    country: ''
+  });
+
   return (
     <>
       <div className="sideNav userProfile">
         <img className="avatar" src={defaultAvatar} alt="" />
 
-        <div className="name">John Doe</div>
+        <div className="name">{data.firstname} {data.lastname}</div>
 
-        <div className="location">| Melbourne</div>
+        <div className="location">| {data.city}</div>
 
         <ul className="functions">
           <li><Link to="/profile/overview">Overview</Link></li>
