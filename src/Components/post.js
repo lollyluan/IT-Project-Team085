@@ -28,7 +28,13 @@ function PostPet() {
     console.log(
       params
     );
-    postPet(params);
+    if(params.images == []){
+      alert("Please submit image")
+    }
+    else{
+      postPet(params);
+    }
+    
   }
 
   const uploadImage = e => {

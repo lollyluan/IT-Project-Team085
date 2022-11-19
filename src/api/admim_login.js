@@ -9,7 +9,7 @@ const BASE_URL = process.env.REACT_APP_BASE_URL
 
 //const currentUserSubject = new BehaviorSubject(JSON.parse(localStorage.getItem('currentUser')));
 //const currentUser=currentUserSubject.asObservable()
-
+const role = "admin"
 
 
 function login(username, password) {
@@ -43,8 +43,8 @@ function login(username, password) {
       
         // store user details and jwt token in local storage to keep user logged in between page refreshes
         localStorage.setItem('token', user.token)
-       
-        window.location.href=process.env.REACT_APP_HOME+'/admin/Dashboard/postPet';
+        localStorage.setItem('role', role)
+        window.location.href=process.env.REACT_APP_HOME+'admin/Dashboard/postPet';
         return user;
     })
     .catch((e) => {
@@ -89,14 +89,14 @@ function signUp(username, password) {
     console.log(e)});
 }
 
-function isLoggedIn() {
-    return localStorage.getItem('token')!==undefined;
+function loggedIn() {
+    return (localStorage.getItem('token')!==undefined  && localStorage.getItem('role')==role);
 }
 function getToken(){
     return localStorage.getItem('token');
 }
 function getUserId() {
-    if(isLoggedIn()) {
+    if(loggedIn()) {
         
         const jwt =jwt_decode(localStorage.getItem('token'))
 
@@ -106,6 +106,7 @@ function getUserId() {
 }
 function logOut(){
     localStorage.removeItem("token");
+    localStorage.removeItem("role");
     window.location.href=process.env.REACT_APP_HOME;
 }
 
@@ -113,7 +114,7 @@ export {
     getToken,
     login,
     signUp,
-    isLoggedIn,
+    loggedIn,
     getUserId,
     logOut
 }

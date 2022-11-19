@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom';
 const {jwt_decode} = pkg;
 
 const BASE_URL = process.env.REACT_APP_BASE_URL
-
+const role="user"
 //const currentUserSubject = new BehaviorSubject(JSON.parse(localStorage.getItem('currentUser')));
 //const currentUser=currentUserSubject.asObservable()
 
@@ -42,7 +42,7 @@ function login(email, password) {
         // store user details and jwt token in local storage to keep user logged in between page refreshes
         const token = user.token;
         localStorage.setItem("token", token);
-        
+        localStorage.setItem('role', role);
         window.location.href=process.env.REACT_APP_HOME;
        
         return user;
@@ -90,7 +90,7 @@ function signUp(email, password, firstname, lastname) {
 }
 
 function isLoggedIn() {
-    return localStorage.getItem('token') != undefined;
+    return (localStorage.getItem('token') != undefined&& localStorage.getItem('role')==role);
 }
 function getToken(){
     return localStorage.getItem('token');
@@ -106,6 +106,7 @@ function getUserId() {
 }
 function logOut(){
     localStorage.removeItem("token");
+    localStorage.removeItem('role')
     window.location.href=process.env.REACT_APP_HOME;
 }
 export {
