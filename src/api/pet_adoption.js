@@ -177,9 +177,46 @@ async function getAdoption(){
         //alert('Something went wrong!');
     });
   }
+
+
+  
+    //Get all of detailed adoption applications of a user
+    async function getDetailedAdoption(){
+        const request = {
+            headers: {'Content-Type': 'application/json',
+            'Authorization':'Bearer '+ getToken(),
+            'Origin': "http://localhost:3000"},
+            method: 'GET',
+        
+        
+        }
+        //add authentication here
+    
+        var url = BASE_URL + '/adoption/application' ;
+
+        return fetch(url, request)
+        
+        .then(res => {
+            console.log(res)
+            if(res.ok) {
+                return res.json();
+            }
+            else {
+                return Promise.reject();
+            }
+        })
+        .then(data => {
+            console.log(data)
+            return data;
+        //alert("Successfully submit!")
+        })
+        
+    };
+
   export{
     postAdoptionApplication,
     updateAdoptionApplication,
     getAdoption,
-    getAdoptionApplication
+    getAdoptionApplication,
+    getDetailedAdoption
   }
