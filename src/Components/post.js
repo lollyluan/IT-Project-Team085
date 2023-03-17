@@ -23,9 +23,8 @@ function PostPet() {
 
   const fileDataArr = [];
 
-  function submit(e) {
+function submit(e) {
     e.preventDefault();
-    
     fData.append("category", data.category)
     fData.append("nickname", data.nickname)
     fData.append("detail", data.detail)
@@ -37,12 +36,11 @@ function PostPet() {
     fData.append("city", data.city)
     fData.append("country", data.country)
     fData.append("images", fileDataArr)
-    console.log(data)
     if(fData.images == []){
       alert("Please submit image")
     }
     else{
-      postPet(data);
+      postPet(fData); 
     }
     
   }
@@ -50,19 +48,11 @@ function PostPet() {
   const uploadImage = e => {
     const fileData = e.target.files;
     for (let i = 0; i < fileData.length; i++) {
-      changeImg(fileData[i]);
+      fileDataArr.push(fileData[i]);
     }
   };
 
-  const changeImg = file => {
-    const reader = new FileReader();
-    const baseImg = {};
-    reader.readAsDataURL(file);
-    reader.onload = () => {
-      baseImg['image'] = reader.result;
-    };
-    fileDataArr.push(baseImg);
-  };
+  
 
   function handle(e) {
     const newdata = { ...data };

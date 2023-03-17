@@ -48,11 +48,12 @@ async function postPet(reqBody){
     const request = {
         headers: {
             'Accept': "application/json",
-        'Content-Type': 'multipart/form-data',
-        'Authorization':'Bearer '+ getToken()
-    },
+            'Content-Type': 'multipart/form-data',
+            'Authorization':'Bearer '+ getToken(),
+            "Content-Length": reqBody.getLengthSync 
+        },
         method: 'POST',
-        data: reqBody,
+        data: reqBody
        
         
     }
