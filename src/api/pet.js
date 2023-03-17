@@ -1,4 +1,5 @@
 import {getToken, login} from './admim_login'
+import axios, * as others from 'axios';
 const BASE_URL = process.env.REACT_APP_BASE_URL
 //It's just used for testing
 
@@ -41,52 +42,31 @@ async function getPets(pageNo, query) {
      }
     }
     
-    return fetch(url, request)
-    .then(res => {
-        if(res.ok) {
-            return res.json();
-        }
-        else {
-            return Promise.reject();
-        }
-    })
-    .then(data => {
      
-        return data
-    })    
 }
 async function postPet(reqBody){
-   
     const request = {
-        headers: {'Content-Type': 'application/json',
-        'Authorization':'Bearer '+ getToken()},
+        headers: {
+            'Accept': "application/json",
+        'Content-Type': 'multipart/form-data',
+        'Authorization':'Bearer '+ getToken()
+    },
         method: 'POST',
-        body: JSON.stringify(reqBody)
+        data: reqBody,
        
+        
     }
     //add authentication here
-   
+    console.log(getToken())
     var url = BASE_URL + '/admin/pets' ;
 
-    fetch(url, request)
-    
-    .then(res => {
-        console.log(res)
-        if(res.ok) {
-            return res.json();
-        }
-        else {
-            return Promise.reject();
-        }
+    await axios.post(url , request)
+    .then(function (response) {
+        console.log(JSON.stringify(response.data));
     })
-    .then(data => {
-        console.log(data);
-       alert("Successfully submit!")
-    })
-    .catch(err => {
-        console.log(err);
-        alert('Something went wrong!');
-    });
+    .catch(function (error) {
+        console.log(error);
+    }); 
 }
 
 

@@ -2,9 +2,10 @@ import React,{useState, useEffect} from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Col, Form, FormGroup, Input,Button,Row} from 'reactstrap';
 import {postPet} from '../api/pet';
-
-
-
+var FormData = require('form-data')
+var axios = require('axios');
+const fs = require('fs').promises;
+var fData = new FormData();
 function PostPet() {
   const [data, setData] = useState({
     category: 'CAT',
@@ -24,15 +25,24 @@ function PostPet() {
 
   function submit(e) {
     e.preventDefault();
-    const params = { ...data, images: fileDataArr };
-    console.log(
-      params
-    );
-    if(params.images == []){
+    
+    fData.append("category", data.category)
+    fData.append("nickname", data.nickname)
+    fData.append("detail", data.detail)
+    fData.append("color", data.color)
+    fData.append("sex", data.sex)
+    fData.append("age", data.age)
+    fData.append("character", data.character)
+    fData.append("immunization", data.immunization)
+    fData.append("city", data.city)
+    fData.append("country", data.country)
+    fData.append("images", fileDataArr)
+    console.log(data)
+    if(fData.images == []){
       alert("Please submit image")
     }
     else{
-      postPet(params);
+      postPet(data);
     }
     
   }
@@ -49,7 +59,7 @@ function PostPet() {
     const baseImg = {};
     reader.readAsDataURL(file);
     reader.onload = () => {
-      baseImg['image'] = reader.result.split(',')[1];
+      baseImg['image'] = reader.result;
     };
     fileDataArr.push(baseImg);
   };
