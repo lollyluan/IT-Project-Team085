@@ -2,10 +2,11 @@ import React,{useState, useEffect} from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Col, Form, FormGroup, Input,Button,Row} from 'reactstrap';
 import {postPet} from '../api/pet';
-var FormData = require('form-data')
+var fs = require('fs')
+
 var axios = require('axios');
-const fs = require('fs').promises;
-var fData = new FormData();
+
+
 function PostPet() {
   const [data, setData] = useState({
     category: 'CAT',
@@ -18,29 +19,21 @@ function PostPet() {
     immunization: 'YES',
     city: 'Sydney',
     country: 'Australia',
+    images: []
 
   });
 
-  const fileDataArr = [];
+const [uploadedFiles, setUploadedFiles] = useState([])
+const fileDataArr = []
 
 function submit(e) {
     e.preventDefault();
-    fData.append("category", data.category)
-    fData.append("nickname", data.nickname)
-    fData.append("detail", data.detail)
-    fData.append("color", data.color)
-    fData.append("sex", data.sex)
-    fData.append("age", data.age)
-    fData.append("character", data.character)
-    fData.append("immunization", data.immunization)
-    fData.append("city", data.city)
-    fData.append("country", data.country)
-    fData.append("images", fileDataArr)
-    if(fData.images == []){
+    
+    if(data.images == []){
       alert("Please submit image")
     }
     else{
-      postPet(fData); 
+      postPet(data); 
     }
     
   }
@@ -48,9 +41,17 @@ function submit(e) {
   const uploadImage = e => {
     const fileData = e.target.files;
     for (let i = 0; i < fileData.length; i++) {
-      fileDataArr.push(fileData[i]);
+      const file = fileData[i]
+      fileDataArr.push(file);
     }
+    console.log(fileDataArr)
+    const newdata = { ...data };
+    newdata["images"] = fileDataArr;
+    setData(newdata);
   };
+
+
+
 
   
 
