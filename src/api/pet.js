@@ -1,46 +1,64 @@
 import {getToken, login} from './admim_login'
 import axios, * as others from 'axios';
+import $ from 'jquery';
 const BASE_URL = process.env.REACT_APP_BASE_URL
 //It's just used for testing
 var FormData = require('form-data')
-
 async function getPet(id){
     var url = BASE_URL + "/pets/" + id;
     const request = {
         "method": 'GET',
-        "Access-Control-Allow-Origin": "*",
        
     }
-    return fetch(url, request)
-    .then(res => {
+    return await fetch(url, request)
+    .then(res =>{
         if(res.ok) {
+            
             return res.json();
         }
         else {
             return Promise.reject();
         }
     })
+    
     .then(data => {
-        console.log(data)
-        return data
-    })  
+        return data;
+    })
+    .catch(error => console.log('error', error));
 }
-async function getPets(pageNo, query) {
+async function  getPets(pageNo, query) {
     var url = BASE_URL + '/pets/'+"?page="+pageNo;
     
-    const request = {
-        method: 'GET',
-        headers: {'Content-Type': 'application/json',
-        'Origin': "http://localhost:3000"},
-      
-   
-    }
+    var myHeaders = new Headers();
+    myHeaders.append("Origin", "localhost:3000/");
+
     var attr
     for(attr in query){
       if(query[attr] !== "" && query[attr] !== null){
         url = url + ("&"+attr + "=" + query[attr])
      }
     }
+    var requestOptions = {
+        method: 'GET',
+        headers: myHeaders,
+        redirect: 'follow'
+      };
+      
+    return await axios(url, requestOptions)
+    .then(res =>{
+        if(res.status == 200) {
+            
+            return res.data
+        }
+        else {
+            return Promise.reject();
+        }
+    })
+    .then(data => {
+        return data;
+    })
+    
+    .catch(error => console.log('error', error));
     
      
 }
@@ -59,11 +77,6 @@ async function postPet(data){
     Array.from(data.images).forEach(image=>{
         fData.append("images", image,  image.name)
     })
-    
-    console.log(data.images[0])
-    console.log("fdata")
-    console.log(fData)
-   
     //add authentication here
     var url = BASE_URL + '/admin/pets' ;
 
@@ -91,8 +104,6 @@ async function postPet(data){
     const request = {
         headers: {'Content-Type': 'application/json'},
         method: 'DELETE',
-        
-       
     }
     //add authentication here
    
@@ -101,7 +112,6 @@ async function postPet(data){
     fetch(url, request)
     
     .then(res => {
-        console.log(res)
         if(res.ok) {
             return res.json();
         }

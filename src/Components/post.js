@@ -22,8 +22,6 @@ function PostPet() {
     images: []
 
   });
-
-const [uploadedFiles, setUploadedFiles] = useState([])
 const fileDataArr = []
 
 function submit(e) {
