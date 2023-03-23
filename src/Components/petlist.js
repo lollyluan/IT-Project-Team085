@@ -17,10 +17,11 @@ const BASE_URL = process.env.REACT_APP_BASE_URL
 function PetList(props){
   const [petList, setPetList] = useState([]);
   const [cover, setCover] = useState(0);
-  var credentials = AWS.SharedIniFileCredentials({profile: 'default'});
-  AWS.config.credentials = credentials;
+  const [imageList, setImageList] = useState({})
   AWS.config.update({
     region: AWS_REGION,
+    accessKeyId: AWS_S3_ACCESS_KEY,
+    secretAccessKey: AWS_S3_SECRET_KEY
   });
   const s3 = new AWS.S3()
 
@@ -65,9 +66,10 @@ function PetList(props){
             if (err) {
               //console.error(err);
             } else {
-              const imageSrc = `data:${data.ContentType};base64,${data.Body.toString('base64')}`;
-              //TODO: using state
-              //d.imageSrc= imageSrc;
+              const imageSrc = data.Body.toString('base64');
+              const newImageList = {...imageList};
+              newImageList[d.id] = imageSrc;
+              setImageList(newImageList);
               
             }
           });
@@ -97,9 +99,10 @@ function PetList(props){
     {
     
       [...Array(petList.length).keys()].map(function(i){
+        console.log(petList[i].imageSrc)
         return (
           <Col>
-          <PetCard name = {petList[i].name} image = {cover} age = {petList[i].age} id = {petList[i]}></PetCard>
+          <PetCard name = {petList[i].name} image = {imageList[petList[i].id]} age = {petList[i].age} id = {petList[i]}></PetCard>
           </Col>
           )
       }) 

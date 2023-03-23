@@ -8,11 +8,10 @@ import { Link, useParams } from "react-router-dom";
 function PetCard(props) {
   
 
-  
-
   return (
     
     <Card>
+       <Card.Img variant="top" src={`data:image/jpeg;base64,${props.image}`} />
       
       <Card.Body>
         <Card.Title>{props.name}</Card.Title>
