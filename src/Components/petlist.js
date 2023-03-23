@@ -3,19 +3,33 @@ import React from 'react';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import PetCard from './petCard/petCard';
-//import {getPets} from '../api/pet'
 import 'core-js/stable/promise';
 import { useEffect , useState} from 'react';
 import axios from 'axios';
+var AWS = require('aws-sdk');
+// Set the Region 
 
-
-
+const AWS_S3_ACCESS_KEY= process.env.REACT_APP_AWS_S3_ACCESS_KEY
+const AWS_S3_SECRET_KEY= process.env.REACT_APP_AWS_S3_SECRET_KEY
+const AWS_S3_BUCKET_NAME= process.env.REACT_APP_AWS_S3_BUCKET_NAME
+const AWS_REGION = process.env.REACT_APP_AWS_REGION
+const BASE_URL = process.env.REACT_APP_BASE_URL
 function PetList(props){
   const [petList, setPetList] = useState([]);
   const [cover, setCover] = useState(0);
+  var credentials = AWS.SharedIniFileCredentials({profile: 'default'});
+  AWS.config.credentials = credentials;
+  AWS.config.update({
+    region: AWS_REGION,
+  });
+  const s3 = new AWS.S3()
+
+  
+
   async function  getPets(pageNo, query) {
     
-    const BASE_URL = process.env.REACT_APP_BASE_URL
+    
+    
     var url = BASE_URL + '/pets/'+"?page="+pageNo;
     
     var myHeaders = new Headers();
@@ -45,18 +59,18 @@ function PetList(props){
     })
     .then( data=>
       {
-        
         Array.from(data).forEach(d=>{
-          const premise = Promise.resolve(d.cover);
-          premise.then(setCover);
-          const subscription = premise.then(result => {
-            setCover(result);
+          const params = { Bucket: AWS_S3_BUCKET_NAME, Key: d.cover};
+          s3.getObject(params, (err, data) => {
+            if (err) {
+              //console.error(err);
+            } else {
+              const imageSrc = `data:${data.ContentType};base64,${data.Body.toString('base64')}`;
+              //TODO: using state
+              //d.imageSrc= imageSrc;
+              
+            }
           });
-
-          // Clean up the subscription when the component unmounts
-          return () => {
-            subscription.cancel();
-          };
         })
         return data
       })
