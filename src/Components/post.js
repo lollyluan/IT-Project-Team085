@@ -26,7 +26,7 @@ const fileDataArr = []
 
 function submit(e) {
     e.preventDefault();
-    
+    alert("uploading...")
     if(data.images == []){
       alert("Please submit image")
     }

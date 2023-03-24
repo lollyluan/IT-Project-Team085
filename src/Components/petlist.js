@@ -6,6 +6,8 @@ import PetCard from './petCard/petCard';
 import 'core-js/stable/promise';
 import { useEffect , useState} from 'react';
 import axios from 'axios';
+import { getPets } from '../api/pet';
+
 var AWS = require('aws-sdk');
 // Set the Region 
 
@@ -24,47 +26,6 @@ function PetList(props){
     secretAccessKey: AWS_S3_SECRET_KEY
   });
   const s3 = new AWS.S3()
-
-  
-
-  async function  getPets(pageNo, query) {
-    
-    
-    
-    var url = BASE_URL + '/pets/'+"?page="+pageNo;
-    
-    var myHeaders = new Headers();
-    myHeaders.append("Origin", "localhost:3000/");
-  
-    var attr
-    for(attr in query){
-      if(query[attr] !== "" && query[attr] !== null){
-        url = url + ("&"+attr + "=" + query[attr])
-     }
-    }
-    var requestOptions = {
-        method: 'GET',
-        headers: myHeaders,
-        redirect: 'follow'
-      };
-    
-
-    return await axios(url, requestOptions)
-    .then(res =>{
-        if(res.status == 200) {
-            
-            return res.data
-        }
-        else {
-            return Promise.reject();
-        }
-    })
-    .then(data => {
-        return data;
-    })
-    
-    .catch(error => console.log('error', error));
-  }
 
 
   const getImagePremise =(data)=>{
@@ -100,10 +61,9 @@ function PetList(props){
     {
     
       [...Array(petList.length).keys()].map(function(i){
-        console.log(imageList[i])
         return (
           <Col>
-          <PetCard name = {petList[i].name} image = {imageList[i]} age = {petList[i].age} id = {petList[i]}></PetCard>
+          <PetCard name = {petList[i].name} image = {imageList[i]} age = {petList[i].age} id = {petList[i].id}></PetCard>
           </Col>
           )
       }) 
