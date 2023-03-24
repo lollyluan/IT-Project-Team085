@@ -94,8 +94,11 @@ async function postPet(data){
     
     fetch(url, requestOptions)
       .then(response => response.text())
-      .then(result => console.log(result))
-      .catch(error => console.log('error', error));
+      .then(result => alert("successfully added"))
+      .catch(error => {
+        console.log('error', error)
+        alert("something went wrong ...")
+      });
 }
 
 
@@ -120,12 +123,11 @@ async function postPet(data){
         }
     })
     .then(data => {
-       
-       //alert("Successfully submit!")
+       alert("Successfully delete!")
     })
     .catch(err => {
-        //console.log(err);
-        //alert('Something went wrong!');
+        console.log(err);
+        alert('Something went wrong!');
     });
 
   }

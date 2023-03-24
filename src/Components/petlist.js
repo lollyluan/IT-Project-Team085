@@ -17,7 +17,7 @@ const BASE_URL = process.env.REACT_APP_BASE_URL
 function PetList(props){
   const [petList, setPetList] = useState([]);
   const [cover, setCover] = useState(0);
-  const [imageList, setImageList] = useState({})
+  const [imageList, setImageList] = useState([])
   AWS.config.update({
     region: AWS_REGION,
     accessKeyId: AWS_S3_ACCESS_KEY,
@@ -47,7 +47,8 @@ function PetList(props){
         headers: myHeaders,
         redirect: 'follow'
       };
-      
+    
+
     return await axios(url, requestOptions)
     .then(res =>{
         if(res.status == 200) {
@@ -58,24 +59,6 @@ function PetList(props){
             return Promise.reject();
         }
     })
-    .then( data=>
-      {
-        Array.from(data).forEach(d=>{
-          const params = { Bucket: AWS_S3_BUCKET_NAME, Key: d.cover};
-          s3.getObject(params, (err, data) => {
-            if (err) {
-              //console.error(err);
-            } else {
-              const imageSrc = data.Body.toString('base64');
-              const newImageList = {...imageList};
-              newImageList[d.id] = imageSrc;
-              setImageList(newImageList);
-              
-            }
-          });
-        })
-        return data
-      })
     .then(data => {
         return data;
     })
@@ -83,26 +66,44 @@ function PetList(props){
     .catch(error => console.log('error', error));
   }
 
-  
-  const changeValue = async()=>{
-      const list = await(getPets( props.page, props.query))
-      setPetList(list)
+
+  const getImagePremise =(data)=>{
+    return Array.from(data).map(d =>{
+      const params = { Bucket: AWS_S3_BUCKET_NAME, Key: d.cover};
+      return new Promise(async (resolve, reject) => {
+        await s3.getObject(params, (err, data) => {
+          if (err) {
+            console.log(err)
+            reject(err);
+          } else {
+            resolve(data.Body.toString('base64'));
+        }
+        });
+      });
+    })
   }
 
   useEffect(() => {
-    changeValue()
     
-  }, [props]);
+    const fetch = async()=>{
+      const list = await(getPets( props.page, props.query))
+      await Promise.all(getImagePremise(list)).then((imageData) => {
+        setImageList(imageData);
+      })
+      setPetList(list)
+    };
+    fetch();
+  }, []);
 
   return (
     <Row xs={1} md={5} className="petlist">
     {
     
       [...Array(petList.length).keys()].map(function(i){
-        console.log(petList[i].imageSrc)
+        console.log(imageList[i])
         return (
           <Col>
-          <PetCard name = {petList[i].name} image = {imageList[petList[i].id]} age = {petList[i].age} id = {petList[i]}></PetCard>
+          <PetCard name = {petList[i].name} image = {imageList[i]} age = {petList[i].age} id = {petList[i]}></PetCard>
           </Col>
           )
       }) 
