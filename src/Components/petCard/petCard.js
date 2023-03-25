@@ -7,13 +7,12 @@ import { Link, useParams } from "react-router-dom";
 
 function PetCard(props) {
   
-  const imageLst = props.image[0].image
-  
 
   return (
     
     <Card>
-      <Card.Img variant="top" src={`data:image/jpeg;base64,${imageLst}`} />
+       <Card.Img variant="top" src={`data:image/jpeg;base64,${props.image}`} />
+      
       <Card.Body>
         <Card.Title>{props.name}</Card.Title>
         <Card.Text>

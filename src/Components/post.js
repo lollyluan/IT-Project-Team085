@@ -2,7 +2,9 @@ import React,{useState, useEffect} from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Col, Form, FormGroup, Input,Button,Row} from 'reactstrap';
 import {postPet} from '../api/pet';
+var fs = require('fs')
 
+var axios = require('axios');
 
 
 function PostPet() {
@@ -17,22 +19,19 @@ function PostPet() {
     immunization: 'YES',
     city: 'Sydney',
     country: 'Australia',
+    images: []
 
   });
+const fileDataArr = []
 
-  const fileDataArr = [];
-
-  function submit(e) {
+function submit(e) {
     e.preventDefault();
-    const params = { ...data, images: fileDataArr };
-    console.log(
-      params
-    );
-    if(params.images == []){
+    alert("uploading...")
+    if(data.images == []){
       alert("Please submit image")
     }
     else{
-      postPet(params);
+      postPet(data); 
     }
     
   }
@@ -40,19 +39,19 @@ function PostPet() {
   const uploadImage = e => {
     const fileData = e.target.files;
     for (let i = 0; i < fileData.length; i++) {
-      changeImg(fileData[i]);
+      const file = fileData[i]
+      fileDataArr.push(file);
     }
+    console.log(fileDataArr)
+    const newdata = { ...data };
+    newdata["images"] = fileDataArr;
+    setData(newdata);
   };
 
-  const changeImg = file => {
-    const reader = new FileReader();
-    const baseImg = {};
-    reader.readAsDataURL(file);
-    reader.onload = () => {
-      baseImg['image'] = reader.result.split(',')[1];
-    };
-    fileDataArr.push(baseImg);
-  };
+
+
+
+  
 
   function handle(e) {
     const newdata = { ...data };
